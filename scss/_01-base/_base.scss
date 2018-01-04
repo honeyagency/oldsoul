@@ -1,0 +1,11 @@
+body {
+    border-top: 5px solid map-get($brown, dark);
+
+    .page-title {
+        display: none;
+    }
+
+    ul.products {
+        display: none;
+    }
+}

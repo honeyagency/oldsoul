@@ -1,12 +1,12 @@
-$link-color: #4aa4ff;
+$link-color: map-get($brown, main);
 
-$default-font: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !default;
+$default-font: "europa", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !default;
 
-$base-serif-font:$default-font;
+$base-serif-font: "bookman-jf-pro",serif;
 $base-sans-font:$default-font;
-$heading-font-family:$default-font;
+$heading-font-family:$base-serif-font;
 
-$heading-font-weight: 600;
+$heading-font-weight: 300;
 
 $max-width: (
 	xs: 480px,
@@ -18,7 +18,7 @@ $max-width: (
 
 $base-animation: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
-$base-font-color: #024958;
+$base-font-color: $black;
 $base-font-size: 1.1em;
 $base-padding: 1em;
 $base-line-height: 1.6;
@@ -26,7 +26,8 @@ $base-line-height: 1.6;
 $base-border-radius: 8px;
 $gr:1.610833;
 
-$grid:1;
+$grid:			1;
+$max-wrap:		1280px;
 
 //
 // Media Queries & Breakpoints

@@ -1,0 +1,44 @@
+.section--home-cafe-grid {
+    .block--cafe-grid-item {
+        i {
+            width: 15px;
+            display: inline-block;
+            margin-right: 0.5em;
+
+            svg {
+                width: 100%;
+            }
+        }
+
+        .icon-hand {
+            width: 22px;
+        }
+
+        box-sizing: border-box;
+
+        @include media($screen-sm) {
+            &:nth-of-type(-n+2) {
+                border-bottom: 1px solid map-get($brown, light);
+                padding-bottom: 2em * $grid;
+            }
+
+            &:nth-of-type(n+3) {
+                padding-top: 2em * $grid;
+            }
+
+            &:nth-of-type(odd) {
+                border-right: 1px solid map-get($brown, light);
+                padding-right: 2em * $grid;
+            }
+
+            &:nth-of-type(even) {
+                padding-left: 2em * $grid;
+            }
+        }
+        .cafe--meta{
+        	font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+        }
+    }
+}

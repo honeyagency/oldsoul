@@ -1,0 +1,33 @@
+.section--home-about {
+    position: relative;
+    width: 100%;
+
+    .icon-leaves, .icon-beans-wide {
+        display: inline-block;
+
+        svg {
+            width: 100%;
+        }
+
+        z-index: 99;
+        position: absolute;
+    }
+
+    .icon-leaves {
+        width: 380px;
+        left: -5em;
+        top: -5em;
+    }
+
+    .icon-beans-wide {
+        width: 400px;
+        top: 3em;
+        overflow: hidden;
+        right: 0;
+
+        svg {
+            position: relative;
+            right: -3em;
+        }
+    }
+}

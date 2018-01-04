@@ -1,0 +1,27 @@
+.color--brown-dark {
+    color: map-get($brown, dark);
+}
+
+.color--brown {
+    color: map-get($brown, main);
+}
+
+.color--brown-faded {
+    color: map-get($brown, faded);
+}
+
+.color--brown-light {
+    color: map-get($brown, light);
+}
+
+.color--black {
+    color: $black;
+}
+
+.color--green {
+    color: $green;
+}
+
+.color--white {
+    color: $white;
+}

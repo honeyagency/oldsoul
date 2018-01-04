@@ -1,0 +1,20 @@
+<nav role="navigation" class="section--sub-nav">
+	<a class="text--uppercase font--smaller letter--1" href="" id="triggerSearch"><i class="icon-search" data-grunticon-embed></i>Search</a>
+	<ul class="inline-block">
+		{% for item in submenu.get_items %}
+			<li class="nav-item text--uppercase font--smaller letter--1  {{item.classes | join(' ')}}">
+				<a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+				{% if item.get_children %}
+					<ul class="nav nav-drop">
+						{% for child in item.get_children %}
+							<li class="nav-drop-item">
+								<a class="nav-link" href="{{child.get_link}}">{{child.title}}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</li>
+		{% endfor %}
+	</ul>
+{% include 'components/blocks/block--cart-indicator.twig' %}
+</nav>

@@ -1,1 +1,15 @@
-nav {}
+// nav resets
+nav {
+    ul, li, a {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+        list-style-type: none;
+
+        li.nav-item {
+            display: inline-block;
+        }
+    }
+}

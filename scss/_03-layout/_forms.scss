@@ -1,6 +1,7 @@
-$formbordercolor: black;
-$formtextcolor: black;
-$formplaceholdercolor: blue;
+$formbordercolor: map-get($brown, light);
+$formtextcolor: map-get($brown, dark);
+$formplaceholdercolor: map-get($brown, formtext);
+$formfieldbackground: transparent;
 
 $forminvalidbackground: red;
 $forminvalidcolor: white;
@@ -9,7 +10,7 @@ $formsuccessbackground: orange;
 $formsuccesstextcolor: white;
 
 $formbuttonbackground: orange;
-$formbuttoncolor: white;
+$formbuttoncolor: map-get($brown, main);
 
 fieldset {
     background-color: transparent;
@@ -32,11 +33,13 @@ input,
 select,
 textarea,
 #{$all-text-inputs},[type="submit"] {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: 600;
     font-family: $base-sans-font;
     color: $formtextcolor;
     appearance: none;
-
+    margin-bottom: .5em;
+    background: $formfieldbackground;
     border: 1px solid $formbordercolor;
     border-radius: 0 !important;
     box-shadow: none;
@@ -54,11 +57,13 @@ textarea,
     }
 
     &::-webkit-input-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
         color: $formplaceholdercolor;
     }
 
     &:-moz-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
 
         /* Firefox 18- */
@@ -66,6 +71,7 @@ textarea,
     }
 
     &::-moz-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
 
         /* Firefox 19+ */
@@ -73,6 +79,7 @@ textarea,
     }
 
     &:-ms-input-placeholder {
+        text-transform: uppercase;
         transition: color .2s ease-in-out;
         color: $formplaceholdercolor;
     }
@@ -81,6 +88,10 @@ textarea,
         -webkit-box-shadow: 0 0 0 30px white inset;
         background: transparent;
     }
+}
+
+#{$all-text-inputs} {
+    width: 100%;
 }
 
 textarea {
@@ -173,8 +184,10 @@ div.wpcf7-mail-sent-ok {
 }
 
 button, [type="submit"] {
-    background-color: $formbuttonbackground;
+    background-color: $formfieldbackground;
     color: $formbuttoncolor;
-    letter-spacing: 3px;
     text-transform: uppercase;
+    padding: 0;
+    border: 0;
+    border-bottom: 2px solid;
 }

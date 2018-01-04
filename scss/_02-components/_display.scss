@@ -25,6 +25,7 @@
 .margin--center {
     margin: 0 auto;
     display: block;
+
 }
 
 .center {
@@ -48,4 +49,52 @@
 
 .relative {
     position: relative;
+}
+
+.full-height {
+    height: 100vh;
+    max-height: 52vw;
+}
+
+.cover {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contain {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+.table {
+    display: table;
+}
+
+.table-cell {
+    display: table-cell;
+}
+
+.float--right-dsk {
+    @include media($screen-sm) {
+        float: right;
+    }
+}
+.border-box{
+    box-sizing: border-box;
+}
+.inline-background{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.z-99{
+    z-index: 99;
+}
+.overflow-no{
+    overflow: hidden;
 }

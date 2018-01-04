@@ -21,7 +21,16 @@
  * @since    Timber 0.1
  */
 
-$context = Timber::get_context();
-$post = new TimberPost();
-$context['post'] = $post;
-Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );
+$context                = Timber::get_context();
+$post                   = new TimberPost();
+$context['post']        = $post;
+$context['woocommerce'] = woocommerce_content();
+global $woocommerce;
+$context['cart'] = $woocommerce->cart->get_cart();
+$context['prefooter'] = prepareGlobalPreFooter();
+
+if (is_front_page()) {
+    $context['home']  = prepareHomepageFields();
+    $context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
+}
+Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

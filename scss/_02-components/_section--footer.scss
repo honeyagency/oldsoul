@@ -1,0 +1,58 @@
+.section--footer {
+    border-bottom: 1px solid map-get($brown, light);
+
+    .block--footer-email, .block--footer-contact {
+        border-bottom: 1px solid map-get($brown, light);
+
+        @include media($screen-md) {
+            border-bottom: none;
+            border-right: 1px solid map-get($brown, light);
+        }
+    }
+
+    .block--footer-email {
+        @include media($screen-xs) {}
+
+
+        @include media($screen-sm) {
+            border-right: 1px solid map-get($brown, light);
+        }
+    }
+
+    .social-icon-link {
+        i {
+            &.icon-social--facebook {
+                height: 22px;
+            }
+
+            &.icon-social--twitter {
+                height: 18px;
+            }
+
+            &.icon-social--instagram {
+                height: 20px;
+            }
+
+            @include media($screen-sm) {
+                &.icon-social--facebook {
+                    height: 35px;
+                }
+
+                &.icon-social--twitter {
+                    height: 28px;
+                }
+
+                &.icon-social--instagram {
+                    height: 32px;
+                }
+            }
+
+
+            display: inline-block;
+
+            svg {
+                height: 100%;
+            }
+        }
+    }
+}

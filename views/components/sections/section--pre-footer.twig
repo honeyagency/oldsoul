@@ -1,0 +1,7 @@
+{% if prefooter == 'blank' %}
+	{% include 'components/blocks/block--prefooter-blank.twig' %}
+{% elseif prefooter.layout == 'bg-img' %}
+	{% include 'components/blocks/block--prefooter-bg-img.twig' %}
+{% elseif prefooter.layout == 'testimonial' %}
+	{% include 'components/blocks/block--prefooter-testimonial.twig' %}
+{% endif %}

@@ -1,0 +1,12 @@
+<div class="block--footer-contact grid--one grid--sm-half grid--md-third spacing--vert-1 spacing--horiz-1 spacing--dsk-horiz-2 border-box nog">
+		<h3>{{options.contact.title}}</h3>
+		<div class="flex flex--wrap justify--center align--items-center spacing--dsk-vert-2">
+			{% if options.contact.facebook.url %}<a class="social-icon-link grid--fifth grid--sm-fifth grid--md-third grid--lg-fifth" href="{{options.contact.facebook.url}}" target="{{options.contact.facebook.target}}" title="{{options.contact.facebook.title}} on Facebook"><i class="icon-social--facebook" data-grunticon-embed></i></a>{% endif %}
+			{% if options.contact.twitter.url %}<a class="social-icon-link grid--fifth grid--sm-fifth grid--md-third grid--lg-fifth" href="{{options.contact.twitter.url}}" target="{{options.contact.twitter.target}}" title="{{options.contact.twitter.title}} on twitter"><i class="icon-social--twitter" data-grunticon-embed></i></a>{% endif %}
+			{% if options.contact.instagram.url %}<a class="social-icon-link grid--fifth grid--sm-fifth grid--md-third grid--lg-fifth" href="{{options.contact.instagram.url}}" target="{{options.contact.instagram.target}}" title="{{options.contact.instagram.title}} on instagram"><i class="icon-social--instagram" data-grunticon-embed></i></a>{% endif %}
+		</div>
+		<div class="font--medium-dsk color--brown">
+		{{options.contact.phone}}<br>
+		<a href="mailto:{{options.contact.email}}">{{options.contact.email}}</a>
+	</div>
+	</div>

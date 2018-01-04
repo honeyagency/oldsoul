@@ -8,8 +8,9 @@ if (!class_exists('Timber')) {
 
 class StarterSite extends TimberSite
 {
-    
-    function __construct() {
+
+    public function __construct()
+    {
         add_theme_support('post-formats');
         add_theme_support('post-thumbnails');
         add_theme_support('menus');
@@ -19,28 +20,35 @@ class StarterSite extends TimberSite
         add_action('init', array($this, 'register_taxonomies'));
         parent::__construct();
     }
-    
-    function register_post_types() {
-        
+
+    public function register_post_types()
+    {
+
         //this is where you can register custom post types
-        
+
     }
-    
-    function register_taxonomies() {
-        
+
+    public function register_taxonomies()
+    {
+
         //this is where you can register custom taxonomies
-        
+
     }
-    
-    function add_to_context($context) {
-        $context['menu'] = new TimberMenu();
-        $context['site'] = $this;
-        $context['assets'] = get_template_directory_uri() . '/app';
+
+    public function add_to_context($context)
+    {
+        $context['menu']    = new TimberMenu('15');
+        $context['submenu'] = new TimberMenu('16');
+        $context['site']    = $this;
+        $context['options'] = prepareSiteOptions();
+        $context['assets']  = get_template_directory_uri() . '/app';
+
         return $context;
     }
-    
-    function add_to_twig($twig) {
-        
+
+    public function add_to_twig($twig)
+    {
+
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension(new Twig_Extension_StringLoader());
         $twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
@@ -50,8 +58,8 @@ class StarterSite extends TimberSite
 
 new StarterSite();
 
-require_once ('library/admin.php');
- // admin settings & customization
+require_once 'library/admin.php';
+// admin settings & customization
 
-require_once ('library/buscemi.php');
- // lots of extra theme stuff
+require_once 'library/buscemi.php';
+// lots of extra theme stuff

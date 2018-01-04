@@ -1,0 +1,71 @@
+.icon-logo {
+    position: relative;
+    display: inline-block;
+
+    @include media($screen-xs) {}
+
+
+    @include media($screen-sm) {}
+
+
+    @include media($screen-md) {
+        width: 345px;
+        margin-top: -5px;
+    }
+
+
+    @include media($screen-lg) {}
+
+
+    @include media($screen-xl) {}
+}
+
+.icon-cart {
+    display: inline-block;
+    width: 14px;
+}
+
+.icon-search {
+    display: inline-block;
+    height: 10px;
+
+    svg {
+        height: 100%;
+    }
+}
+
+.icon-logo-monogram {
+    width: 50px;
+    display: inline-block;
+
+    svg {
+        width: 100%;
+    }
+}
+
+.icon-footer-guy {
+    margin: 0 auto;
+    display: block;
+    top: -2em;
+    position: relative;
+    width: 140px;
+
+    svg {
+        width: 100%;
+    }
+}
+
+.icon-beans--two {
+    width: 150px;
+
+    @include media($screen-sm) {
+        width: 210px;
+    }
+
+
+    display: inline-block;
+
+    svg {
+        width: 100%;
+    }
+}

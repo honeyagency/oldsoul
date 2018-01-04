@@ -4,6 +4,7 @@ body {
     font-size: 1.2rem;
     color: $base-font-color;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
 %headings {
@@ -15,19 +16,19 @@ body {
 h1, h2, h3, h4, h5, h6 {
     @extend %headings;
 
+    -webkit-font-smoothing: antialiased;
     word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -o-hyphens: auto;
-    hyphens: auto;
-    text-transform: uppercase;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    -o-hyphens: none;
+    hyphens: none;
 }
 
 // mobile
 $h1: 2.5 * $base-font-size;
-$h2: 1.075 * $base-font-size;
-$h3: 0.95 * $base-font-size;
+$h2: 1.175 * $base-font-size;
+$h3: 1.1 * $base-font-size;
 $h4: 0.9 * $base-font-size;
 $h5: 0.875 * $base-font-size;
 $h6: 0.7 * $base-font-size;
@@ -46,7 +47,7 @@ h2 {
 
 h3 {
     font-size: 0.85em;
-    letter-spacing: 1.6px;
+    margin-bottom: .5em;
 }
 
 h4 {

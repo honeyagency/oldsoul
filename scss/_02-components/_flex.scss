@@ -12,6 +12,10 @@
     flex-wrap: wrap;
 }
 
+.flex--column {
+    flex-direction: column;
+}
+
 .justify--between {
     justify-content: space-between;
 }
@@ -89,4 +93,15 @@
     @include media($screen-sm) {
         display: none !important;
     }
+}
+
+.order--1 {
+    order: 1;
+}
+
+.order--2 {
+    order: 2;
+}
+.grow--1{
+    flex-grow: 1;
 }
