@@ -1,0 +1,10 @@
+.block--cafe-details{
+	border-left: 1px solid map-get($brown, light);
+@include media($screen-xs){}
+	@include media($screen-sm){
+			padding-left: 2em;
+	}
+	@include media($screen-md){}
+	@include media($screen-lg){}
+	@include media($screen-xl){}
+}

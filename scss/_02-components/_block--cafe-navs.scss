@@ -1,0 +1,48 @@
+.nextprev {
+    display: inline-block;
+    position: absolute;
+        top: 5em;
+    // top: 50%;
+    span {
+        display: inline-block;
+        transform: rotateZ(180deg);
+    }
+
+    i {
+        width: 20px;
+
+        svg {
+            path {
+                fill: map-get($brown, main);
+            }
+        }
+    }
+
+    span {
+        border-bottom: 2px solid;
+    }
+
+    &:first-of-type {
+        transform-origin: left;
+        transform: rotateZ(90deg);
+
+        i {
+            transform: rotateZ(270deg) rotateY(180deg);
+        }
+
+        left: 0;
+        margin-left: 2em;
+    }
+
+    &:last-of-type {
+        i {
+            transform: rotateZ(90deg);
+        }
+
+
+        right: 0;
+        transform-origin: right;
+        transform: rotate(-90deg);
+        margin-right: 2em;
+    }
+}

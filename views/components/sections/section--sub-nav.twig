@@ -1,8 +1,9 @@
-<nav role="navigation" class="section--sub-nav">
-	<a class="text--uppercase font--smaller letter--1" href="" id="triggerSearch"><i class="icon-search" data-grunticon-embed></i>Search</a>
-	<ul class="inline-block">
+<nav role="navigation" class="section--sub-nav grid--lg-three-fifths">
+	
+	<ul class="flex flex--wrap justify--between align--items-center">
+		<a class="text--uppercase font--smaller font--bold letter--2" href="" id="triggerSearch"><i class="icon-search" data-grunticon-embed></i> Search</a>
 		{% for item in submenu.get_items %}
-			<li class="nav-item text--uppercase font--smaller letter--1  {{item.classes | join(' ')}}">
+			<li class="nav-item text--uppercase font--smaller font--bold letter--1  {{item.classes | join(' ')}}">
 				<a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
 				{% if item.get_children %}
 					<ul class="nav nav-drop">
@@ -15,6 +16,7 @@
 				{% endif %}
 			</li>
 		{% endfor %}
+		{% include 'components/blocks/block--cart-indicator.twig' %}
 	</ul>
-{% include 'components/blocks/block--cart-indicator.twig' %}
+
 </nav>

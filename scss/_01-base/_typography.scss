@@ -184,3 +184,12 @@ code, pre {
 p {
     margin-bottom: 1em;
 }
+
+hr {
+    border: 0;
+    border-bottom: 1px solid;
+
+    &.small {
+        width: 200px;
+    }
+}

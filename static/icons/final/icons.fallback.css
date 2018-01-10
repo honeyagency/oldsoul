@@ -2,9 +2,13 @@
 
 .icon-beans-wide { background-image: url('app/icons/beans-wide.png'); background-repeat: no-repeat; }
 
+.icon-calendar { background-image: url('app/icons/calendar.png'); background-repeat: no-repeat; }
+
 .icon-cart { background-image: url('app/icons/cart.png'); background-repeat: no-repeat; }
 
 .icon-clock { background-image: url('app/icons/clock.png'); background-repeat: no-repeat; }
+
+.icon-envelope { background-image: url('app/icons/envelope.png'); background-repeat: no-repeat; }
 
 .icon-footer-guy { background-image: url('app/icons/footer-guy.png'); background-repeat: no-repeat; }
 
@@ -15,6 +19,14 @@
 .icon-logo-monogram { background-image: url('app/icons/logo-monogram.png'); background-repeat: no-repeat; }
 
 .icon-logo { background-image: url('app/icons/logo.png'); background-repeat: no-repeat; }
+
+.icon-map--alley { background-image: url('app/icons/map--alley.png'); background-repeat: no-repeat; }
+
+.icon-map--capitol { background-image: url('app/icons/map--capitol.png'); background-repeat: no-repeat; }
+
+.icon-map--oak { background-image: url('app/icons/map--oak.png'); background-repeat: no-repeat; }
+
+.icon-map--weatherstone { background-image: url('app/icons/map--weatherstone.png'); background-repeat: no-repeat; }
 
 .icon-phone { background-image: url('app/icons/phone.png'); background-repeat: no-repeat; }
 

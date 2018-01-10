@@ -1,0 +1,22 @@
+<div class="block--cafe-event flex flex--wrap justify--between align--items-start border--bot-1 spacing--vert-2">
+	{% if event.image %}<div class="grid--half"><img data-original="{{event.image|resize(480)}}"  width="240" alt="{{event.image._wp_attachment_image_alt}}"></div>{% endif %}
+	<div class="{% if event.image %}grid--half{% else %}grid--one{% endif %}">
+		<h5>{{event.title}}</h5>
+		<time>
+		<span class="text--uppercase font--bold font--small">
+			<i class="icon-calendar" data-grunticon-embed></i>
+			{% if event.format == 'date' %}
+				{{event.date|date('M d')}}
+			{% else %}
+				{{event.date}}
+			{% endif %}
+		</span>
+		{% if event.time.start %}
+		<span class="font--bold font--small">
+		<i class="icon-clock" data-grunticon-embed></i> 
+			{{event.time.start|date('g')}}{% if event.time.start|date('i') != '00' %}:{{event.time.start|date('i')}}{% endif %}{% if event.time.start|date('a') == 'am' and event.time.end|date('a') == 'pm' %}{{event.time.start|date('a')}}{% endif %}{% if event.time.end %} - {{event.time.end|date('g')}}{% if event.time.end|date('i') != '00' %}:{{event.time.end|date('i')}}{% endif %}{{event.time.end|date('a')}}{% endif %}
+		</span>
+	{% endif %}
+		</time>
+	</div>
+</div>

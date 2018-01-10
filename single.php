@@ -14,7 +14,12 @@ $post = Timber::query_post();
 $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 $context['prefooter'] = prepareGlobalPreFooter();
-
+if ($post->post_type == 'cafe') {
+	$context['cafe'] = prepareCafeFields();
+	
+	$context['next'] = getNextPostLooped();
+  $context['previous'] = getPreviousPostLooped();
+}
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {

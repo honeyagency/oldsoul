@@ -72,7 +72,6 @@ function buscemi_scripts()
 
     wp_enqueue_script('buscemi_script', get_template_directory_uri() . '/app/app.min.js', null, null, null, true);
 
-
 }
 add_action('wp_enqueue_scripts', 'buscemi_scripts');
 
@@ -89,6 +88,33 @@ if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
 }
 
-
 require_once 'functions--custom-fields.php';
 require_once 'functions--custom-posts.php';
+
+function getNextPostLooped()
+{
+    $post_type = get_post_type();
+    if (get_adjacent_post(false, '', false)) {
+        return get_next_post();
+    } else {
+        $loop = new WP_Query('posts_per_page=1&order=ASC&post_type=' . $post_type);
+        $loop->the_post();
+        $postToReturn = get_post();
+        wp_reset_query();
+        return $postToReturn;
+    }
+}
+
+function getPreviousPostLooped()
+{
+    $post_type = get_post_type();
+    if (get_adjacent_post(false, '', true)) {
+        return get_previous_post();
+    } else {
+        $loop = new WP_Query('posts_per_page=1&order=DESC&post_type=' . $post_type);
+        $loop->the_post();
+        $postToReturn = get_post();
+        wp_reset_query();
+        return $postToReturn;
+    }
+}

@@ -11,6 +11,9 @@
 	{% endblock %}
 
 <main role="main" class="content-wrapper">
+	{% if base.header.title %}
+		{% include 'components/sections/section--base-header.twig' %}
+	{% endif %}
 	{% if title %}<h1>{{title}}</h1>{% endif %}
 		{% block content %}
 			Sorry, no content

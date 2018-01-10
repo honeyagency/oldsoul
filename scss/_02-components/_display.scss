@@ -25,7 +25,6 @@
 .margin--center {
     margin: 0 auto;
     display: block;
-
 }
 
 .center {
@@ -83,18 +82,29 @@
         float: right;
     }
 }
-.border-box{
+
+.border-box {
     box-sizing: border-box;
 }
-.inline-background{
+
+.inline-background {
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 1;
 }
-.z-99{
+
+.z-99 {
     z-index: 99;
 }
-.overflow-no{
+
+.overflow-no {
     overflow: hidden;
+}
+
+.content {
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }

@@ -9,7 +9,8 @@
 
 
     @include media($screen-md) {
-        width: 345px;
+        max-width: 345px;
+        width: 100%;
         margin-top: -5px;
     }
 
@@ -67,5 +68,24 @@
 
     svg {
         width: 100%;
+    }
+}
+
+.icon-phone, .icon-hand, .icon-clock, .icon-envelope, .icon-calendar {
+    width: 15px;
+    display: inline-block;
+    margin-right: 0.5em;
+
+    svg {
+        width: 100%;
+    }
+}
+
+i[class^="icon-map"] {
+    svg {
+        text {
+            font-family: $default-font;
+            font-weight: 700;
+        }
     }
 }

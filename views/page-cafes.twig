@@ -1,0 +1,8 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+		<article class="post-type-{{post.post_type}} spacing--vert-1 spacing--dsk-vert-3" id="post-{{post.ID}}">
+			{% include 'components/sections/section--home-cafe-grid.twig' %}
+		</article>
+{% endblock %}

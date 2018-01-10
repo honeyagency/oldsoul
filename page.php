@@ -28,9 +28,11 @@ $context['woocommerce'] = woocommerce_content();
 global $woocommerce;
 $context['cart'] = $woocommerce->cart->get_cart();
 $context['prefooter'] = prepareGlobalPreFooter();
-
+$context['base'] = prepareBasePageFields();
 if (is_front_page()) {
     $context['home']  = prepareHomepageFields();
     $context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
+}elseif (is_page('cafes')) {
+	$context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
 }
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

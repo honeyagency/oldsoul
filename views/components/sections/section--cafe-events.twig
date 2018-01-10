@@ -1,0 +1,16 @@
+<section class="cafe--events max-wrap flex flex--wrap justify--around margin--center spacing--gutter spacing--dsk-vert-2 margin--bot-3">
+	{% if cafe.events %}
+		
+		<div class="grid--one grid--md-two-fifths">
+			<div class="font--bold">Upcoming Events</div>
+			{% for event in cafe.events %}
+				{% include 'components/blocks/block--cafe-event.twig' %}
+			{% endfor %}
+			
+			
+		</div>
+	{% endif %}
+	<div class="block--map-icon grid--one grid--md-two-fifths">
+		<i class="icon-{{cafe.map}}" data-grunticon-embed></i>
+	</div>
+</section>

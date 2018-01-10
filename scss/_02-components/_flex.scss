@@ -49,6 +49,23 @@
     box-sizing: content-box;
 }
 
+.content-wrap {
+    max-width: $max-wrap / 2;
+    box-sizing: content-box;
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+.cafe-wrap{
+    max-width: 960px;
+
+}
+.sidebar{
+
+}
+
 .margin--center {
     margin: 0 auto;
 }
@@ -102,6 +119,7 @@
 .order--2 {
     order: 2;
 }
-.grow--1{
+
+.grow--1 {
     flex-grow: 1;
 }
