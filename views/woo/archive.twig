@@ -1,0 +1,29 @@
+{% extends 'base.twig' %}
+{% block content %}
+    {% do action('woocommerce_before_main_content') %}
+    <header class="section--shop-header bg--brown-dark spacing--dsk-vert-2">
+        <div class="cafe-wrap margin--center spacing--gutter flex flex--wrap justify--between spacing--vert-2">
+            <a href="{{site.url}}/shop" class="{% if category %}{% else %}current {% endif %}inline-block font--bold font--medium letter--2 text--uppercase">All</a>
+            {% for cat in categories %}
+                <a href="{{cat.link}}" class="{% if cat.id == category.id %}current {% endif %}inline-block font--bold font--medium letter--2 text--uppercase">{{cat.title}}</a>
+            {% endfor %}
+            
+        </div>
+        <h2 class="color--white text--center grid--one spacing--vert-2">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
+    </header>
+{#     <div class="before-shop-loop grid--one">
+        {% do action('woocommerce_before_shop_loop') %}
+    </div> #}
+    <section class="section--shop flex flex--wrap max-wrap margin--center justify--between align--items-start spacing--grid spacing--dsk-vert-5">
+        <aside class="grid--one grid--md-fourth">
+            {{sidebar}}
+        </aside>
+        <section class="section--shop-product-grid grid--one  grid--md-three-fourths flex--double flex--wrap justify--between">
+            {% for post in products %}
+                {% include ["partials/tease-product.twig"] %}
+            {% endfor %}
+        </section>
+    </section>
+    {% do action('woocommerce_after_shop_loop') %}
+    {% do action('woocommerce_after_main_content') %}
+{% endblock  %}

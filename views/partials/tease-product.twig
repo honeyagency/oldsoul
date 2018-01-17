@@ -1,0 +1,34 @@
+<article {{ fn('post_class', ['entry', 'block--product grid--half grid--md-third border--1 margin--bot-2 '], post.ID ) }}{% for term in post.terms('product_cat') if term == 'Featured' %}data-feat="true"{% endfor %}>
+    {{ fn('timber_set_product', post) }}
+    {% if post.thumbnail %}
+        <div class="media-figure">
+            <a href="{{ post.link }}">
+                <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" />
+            </a>
+        </div>
+    {% endif %}
+   
+    {% for term in post.terms('product_cat') if term == 'Featured' %}
+        <div class="notice--featured font--smaller font--bold letter--1 text--uppercase color--green spacing--horiz-1 spacing--vert-1">Featured <i class="icon-beans--two" data-grunticon-embed></i></div>
+    {% endfor %}
+    {% do action('woocommerce_before_shop_loop_item_title') %}
+    {% if post.title %}
+        <h4 class="product-title spacing--horiz-1 font--sans font--smaller font--bold letter--1  text--uppercase"><a class="color--black" href="{{ post.link }}">{{ post.title }}</a></h4>
+    {% else %}
+        <h4 class="product-title spacing--horiz-1 font--sans font--smaller font--bold letter--1  text--uppercase"><a class="color--black" href="{{ post.link }}">{{ fn('the_title') }}</a></h4>
+    {% endif %}
+    <div class="block--product-bottom">
+     {% if post.sell_note_type != 'none' and post.sell_note != null %}
+        <div class="block--product-award table font--small spacing--horiz-1 flex  align--start spacing--vert-half border--top-1 
+        border--bot-1 {% if post.sell_note_type == 'award' %}color--green"><i class="icon-award inline-block" data-grunticon-embed></i>{% else %}">{% endif %}
+
+        <span class="inline-block">{{post.sell_note}}</span>
+    </div>
+{% else %}
+    {# <hr class="pre-cart color--brown-faded grid--one nog" /> #}
+    {%  endif %}
+
+    {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+    {% do action( 'woocommerce_after_shop_loop_item' ) %}
+    </div>
+</article>

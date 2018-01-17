@@ -1,3 +1,9 @@
 .border--bot-1{
-	border-bottom: 1px solid map-get($brown, light);
+	border-bottom: 1px solid;
+}
+.border--1{
+	border: 1px solid map-get($brown, light);
+}
+.border--top-1{
+	border-top: 1px solid;
 }

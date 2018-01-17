@@ -1,3 +1,11 @@
+.font--smaller {
+    font-size: 1rem;
+}
+
+.font--small {
+    font-size: 1.1rem;
+}
+
 .font--medium {
     font-size: 1.2em;
 }
@@ -14,14 +22,6 @@
     @include media($screen-sm) {
         font-size: 1.25em;
     }
-}
-
-.font--small {
-    font-size: 1.1rem;
-}
-
-.font--smaller {
-    font-size: .9rem;
 }
 
 .home {
@@ -92,6 +92,7 @@
 .text--right {
     text-align: right !important;
 }
+
 .text--left {
     text-align: left !important;
 }

@@ -1,0 +1,12 @@
+.section--shop-header {
+
+    a {
+    	border-bottom: 2px solid;
+        &.current {
+            background-color: map-get($brown, main);
+            border:0;
+            color: map-get($brown, dark);
+            padding:0 .5em;
+        }
+    }
+}

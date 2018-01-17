@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+{% block content %}
+    {% do action('woocommerce_before_single_product') %}
+    <header class="flex flex--wrap">
+        {% for image in gallery %}
+            <div class="grid--third grid--md-sixth nog">
+                <img data-original="{{image|resize(475,475)}}" width="100%" alt="">
+            </div>
+        {% endfor %}
+    </header>
+    <article itemscope itemtype="http://schema.org/Product" class="section--single-product-details {{ post.class }} flex flex--wrap justify--center cafe-wrap margin--center">
+       {#  <div class="entry-images">
+           
+        </div> #}
+        <div class="summary entry-summary grid--two-thirds">
+             {# {% do action('woocommerce_before_single_product_summary') %} #}
+            {% if post.thumbnail %}
+                <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" />
+            {% endif %}
+
+<h1 class="product--title">{{post.title}}</h1>
+            {{post.content}}
+        </div>
+        <aside class="grid--third">
+                    {% do action('woocommerce_single_product_summary') %}
+                </aside>
+        {% do action('woocommerce_after_single_product_summary') %}
+        <meta itemprop="url" content="{{ post.link }}" />
+    </article>
+    {% do action('woocommerce_after_single_product') %}
+{% endblock  %}

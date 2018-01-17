@@ -1,3 +1,11 @@
+.icon-arrow-down-black { background-image: url('app/icons/arrow-down-black.png'); background-repeat: no-repeat; }
+
+.icon-arrow-down-green { background-image: url('app/icons/arrow-down-green.png'); background-repeat: no-repeat; }
+
+.icon-arrow-down { background-image: url('app/icons/arrow-down.png'); background-repeat: no-repeat; }
+
+.icon-award { background-image: url('app/icons/award.png'); background-repeat: no-repeat; }
+
 .icon-beans--two { background-image: url('app/icons/beans--two.png'); background-repeat: no-repeat; }
 
 .icon-beans-wide { background-image: url('app/icons/beans-wide.png'); background-repeat: no-repeat; }

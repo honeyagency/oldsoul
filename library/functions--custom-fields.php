@@ -194,7 +194,17 @@ function prepareSiteOptions()
     return $options;
 
 }
-
+// function prepareProductFields()
+// {
+//     $note = array(
+//         'type' => get_field('field_5a57ebfdf9f5c'),
+//         'note' => get_field('field_5a57ebf2f9f5b'),
+//     );
+//     $product = array(
+//         'note' => $note,
+//     );
+//     return $product;
+// }
 function prepareBasePageFields()
 {
     $header = array(

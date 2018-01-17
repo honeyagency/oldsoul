@@ -7,7 +7,6 @@ jQuery(document).ready(function($) {
     });
     // appear({
     //     init: function init() {
-
     //     },
     //     // function to get all elements to track
     //     elements: function elements() {
@@ -23,6 +22,14 @@ jQuery(document).ready(function($) {
     //     },
     //     reappear: true,
     // });
+    $va = $('.product-type-variable');
+    $va.each(function() {
+        if ($(this).hasClass('product_cat-featured')) {
+            $(this).find('select').addClass('icon-arrow-down-green');
+        } else {
+            $(this).find('select').addClass('icon-arrow-down-black');
+        }
+    });
 });
 // Scroll so nice you'll click() it twice
 jQuery(document).ready(function() {

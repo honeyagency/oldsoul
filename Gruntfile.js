@@ -37,10 +37,10 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
-                // autoprefixer: {
-                //     browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
-                //     add: true
-                // }
+                autoprefixer: {
+                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                    add: true
+                }
             },
             dist: {
                 files: {
@@ -117,7 +117,11 @@ module.exports = function(grunt) {
                 options: {
                     enhanceSVG: true,
                     pngpath: '<%= conf.appIcons %>',
-                    compressPNG: true
+                    compressPNG: true,
+                    colors: {
+                        green: "#898f65",
+                        black: "#232111"
+                    }
                 }
             }
         },

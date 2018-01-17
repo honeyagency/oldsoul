@@ -1,0 +1,337 @@
+$doublegutter: $grid * 3;
+
+// this variable is in variables
+.flex--double {
+    display: flex;
+
+    .grid--one {
+        flex-basis: 100%;
+        width: 100%;
+    }
+
+    .grid--four-fifths {
+        flex-basis: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+        width: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+    }
+
+    .grid--three-fourths {
+        flex-basis: calc(75% - (.25em * #{$doublegutter}));
+        width: calc(75% - (.25em * #{$doublegutter}));
+    }
+
+    .grid--two-thirds {
+        flex-basis: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+        width: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+    }
+
+    .grid--half {
+        flex-basis: calc(100% / 2 - (.5em * #{$doublegutter}));
+        width: calc(100% / 2 - (.5em * #{$doublegutter}));
+    }
+
+    .grid--two-fifths {
+        flex-basis: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+        width: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+    }
+
+    .grid--three-fifths {
+        flex-basis: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+        width: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+    }
+
+    .grid--third {
+        flex-basis: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+        width: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+    }
+
+    .grid--fourth {
+        flex-basis: calc(100% / 4 - (.75em * #{$doublegutter}));
+        width: calc(100% / 4 - (.75em * #{$doublegutter}));
+    }
+
+    .grid--fifth {
+        flex-basis: calc(100% / 5 - (.8em * #{$doublegutter}));
+        width: calc(100% / 5 - (.8em * #{$doublegutter}));
+    }
+
+    .grid--sixth {
+        flex-basis: calc(100% / 6 - (.85em * #{$doublegutter}));
+        width: calc(100% / 6 - (.85em * #{$doublegutter}));
+    }
+
+    .grid--ninth {
+        flex-basis: calc(100% / 9 - (.55em * #{$doublegutter}));
+        width: calc(100% / 9 - (.55em * #{$doublegutter}));
+    }
+
+    .grid--tenth {
+        flex-basis: calc(100% / 10 - (.55em * #{$doublegutter}));
+        width: calc(100% / 10 - (.55em * #{$doublegutter}));
+    }
+
+    @include media($screen-xs) {
+        .grid--xs-one {
+            flex-basis: 100%;
+            width: 100%;
+        }
+
+        .grid--xs-four-fifths {
+            flex-basis: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+            width: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+        }
+
+        .grid--xs-three-fourths {
+            flex-basis: calc(75% - (.25em * #{$doublegutter}));
+            width: calc(75% - (.25em * #{$doublegutter}));
+        }
+
+        .grid--xs-two-thirds {
+            flex-basis: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+            width: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+        }
+
+        .grid--xs-half {
+            flex-basis: calc(100% / 2 - (.5em * #{$doublegutter}));
+            width: calc(100% / 2 - (.5em * #{$doublegutter}));
+        }
+
+        .grid--xs-two-fifths {
+            flex-basis: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+            width: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+        }
+
+        .grid--xs-third {
+            flex-basis: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+            width: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+        }
+
+        .grid--xs-fourth {
+            flex-basis: calc(100% / 4 - (.75em * #{$doublegutter}));
+            width: calc(100% / 4 - (.75em * #{$doublegutter}));
+        }
+
+        .grid--xs-fifth {
+            flex-basis: calc(100% / 5 - (.8em * #{$doublegutter}));
+            width: calc(100% / 5 - (.8em * #{$doublegutter}));
+        }
+
+        .grid--xs-sixth {
+            flex-basis: calc(100% / 6 - (.85em * #{$doublegutter}));
+            width: calc(100% / 6 - (.85em * #{$doublegutter}));
+        }
+
+        .grid--xs-ninth {
+            flex-basis: calc(100% / 9 - (.55em * #{$doublegutter}));
+            width: calc(100% / 9 - (.55em * #{$doublegutter}));
+        }
+
+        .grid--xs-tenth {
+            flex-basis: calc(100% / 10 - (.55em * #{$doublegutter}));
+            width: calc(100% / 10 - (.55em * #{$doublegutter}));
+        }
+    }
+
+
+    @include media($screen-sm) {
+        .grid--sm-one {
+            flex-basis: 100%;
+            width: 100%;
+        }
+
+        .grid--sm-four-fifths {
+            flex-basis: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+            width: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+        }
+
+        .grid--sm-three-fourths {
+            flex-basis: calc(75% - (.25em * #{$doublegutter}));
+            width: calc(75% - (.25em * #{$doublegutter}));
+        }
+
+        .grid--sm-two-thirds {
+            flex-basis: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+            width: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+        }
+
+        .grid--sm-half {
+            flex-basis: calc(100% / 2 - (.5em * #{$doublegutter}));
+            width: calc(100% / 2 - (.5em * #{$doublegutter}));
+        }
+
+        .grid--sm-three-fifths {
+            flex-basis: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+            width: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+        }
+
+        .grid--sm-two-fifths {
+            flex-basis: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+            width: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+        }
+
+        .grid--sm-third {
+            flex-basis: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+            width: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+        }
+
+        .grid--sm-fourth {
+            flex-basis: calc(100% / 4 - (.75em * #{$doublegutter}));
+            width: calc(100% / 4 - (.75em * #{$doublegutter}));
+        }
+
+        .grid--sm-fifth {
+            flex-basis: calc(100% / 5 - (.8em * #{$doublegutter}));
+            width: calc(100% / 5 - (.8em * #{$doublegutter}));
+        }
+
+        .grid--sm-sixth {
+            flex-basis: calc(100% / 6 - (.85em * #{$doublegutter}));
+            width: calc(100% / 6 - (.85em * #{$doublegutter}));
+        }
+
+        .grid--sm-seventh {
+            flex-basis: calc(100% / 7 - (.8em * #{$doublegutter}));
+            width: calc(100% / 7- (.8em * #{$doublegutter}));
+        }
+
+        .grid--sm-ninth {
+            flex-basis: calc(100% / 9 - (.55em * #{$doublegutter}));
+            width: calc(100% / 9 - (.55em * #{$doublegutter}));
+        }
+
+        .grid--sm-tenth {
+            flex-basis: calc(100% / 10 - (.55em * #{$doublegutter}));
+            width: calc(100% / 10 - (.55em * #{$doublegutter}));
+        }
+    }
+
+
+    @include media($screen-md) {
+        .grid--md-one {
+            flex-basis: 100%;
+            width: 100%;
+        }
+
+        .grid--md-four-fifths {
+            flex-basis: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+            width: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+        }
+
+        .grid--md-three-fourths {
+            flex-basis: calc(75% - (.25em * #{$doublegutter}));
+            width: calc(75% - (.25em * #{$doublegutter}));
+        }
+
+        .grid--md-two-thirds {
+            flex-basis: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+            width: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+        }
+
+        .grid--md-three-fifths {
+            flex-basis: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+            width: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+        }
+
+        .grid--md-half {
+            flex-basis: calc(100% / 2 - (.5em * #{$doublegutter}));
+            width: calc(100% / 2 - (.5em * #{$doublegutter}));
+        }
+
+        .grid--md-two-fifths {
+            flex-basis: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+            width: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+        }
+
+        .grid--md-third {
+            flex-basis: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+            width: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+        }
+
+        .grid--md-fourth {
+            flex-basis: calc(100% / 4 - (.75em * #{$doublegutter}));
+            width: calc(100% / 4 - (.75em * #{$doublegutter}));
+        }
+
+        .grid--md-fifth {
+            flex-basis: calc(100% / 5 - (.8em * #{$doublegutter}));
+            width: calc(100% / 5 - (.8em * #{$doublegutter}));
+        }
+
+        .grid--md-sixth {
+            flex-basis: calc(100% / 6 - (.85em * #{$doublegutter}));
+            width: calc(100% / 6 - (.85em * #{$doublegutter}));
+        }
+
+        .grid--md-ninth {
+            flex-basis: calc(100% / 9 - (.55em * #{$doublegutter}));
+            width: calc(100% / 9 - (.55em * #{$doublegutter}));
+        }
+
+        .grid--md-tenth {
+            flex-basis: calc(100% / 10 - (.55em * #{$doublegutter}));
+            width: calc(100% / 10 - (.55em * #{$doublegutter}));
+        }
+    }
+
+
+    @include media($screen-lg) {
+        .grid--lg-one {
+            flex-basis: 100%;
+            width: 100%;
+        }
+
+        .grid--lg-four-fifths {
+            flex-basis: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+            width: calc(100% / 1.25 - (.2em * #{$doublegutter}));
+        }
+
+        .grid--lg-three-fourths {
+            flex-basis: calc(75% - (.25em * #{$doublegutter}));
+            width: calc(75% - (.25em * #{$doublegutter}));
+        }
+
+        .grid--lg-two-thirds {
+            flex-basis: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+            width: calc(100% / 1.5 - (.3333333em * #{$doublegutter}));
+        }
+
+        .grid--lg-three-fifths {
+            flex-basis: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+            width: calc(100% / 1.666666 - (.4em * #{$doublegutter}));
+        }
+
+        .grid--lg-half {
+            flex-basis: calc(100% / 2 - (.5em * #{$doublegutter}));
+            width: calc(100% / 2 - (.5em * #{$doublegutter}));
+        }
+
+        .grid--lg-two-fifths {
+            flex-basis: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+            width: calc(100% / 2.5 - (.6em * #{$doublegutter}));
+        }
+
+        .grid--lg-third {
+            flex-basis: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+            width: calc(100% / 3 - (.6666666em * #{$doublegutter}));
+        }
+
+        .grid--lg-fourth {
+            flex-basis: calc(100% / 4 - (.75em * #{$doublegutter}));
+            width: calc(100% / 4 - (.75em * #{$doublegutter}));
+        }
+
+        .grid--lg-fifth {
+            flex-basis: calc(100% / 5 - (.8em * #{$doublegutter}));
+            width: calc(100% / 5 - (.8em * #{$doublegutter}));
+        }
+
+        .grid--lg-sixth {
+            flex-basis: calc(100% / 6 - (.85em * #{$doublegutter}));
+            width: calc(100% / 6 - (.85em * #{$doublegutter}));
+        }
+
+        .grid--lg-ninth {
+            flex-basis: calc(100% / 9 - (.55em * #{$doublegutter}));
+            width: calc(100% / 9 - (.55em * #{$doublegutter}));
+        }
+    }
+}

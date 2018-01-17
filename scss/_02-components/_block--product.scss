@@ -1,0 +1,167 @@
+.block--product {
+    min-height: 320px;
+    position: relative;
+
+    label[for^="pa_bag-size"], .reset_variations, label[for^="pa_size"] {
+        @extend .screenreader;
+    }
+
+    select {
+        appearance: none;
+    }
+
+    &.product-type-variable {
+        .woocommerce-variation-description {
+            // if it's a variable product, we need to hide the price range displayed
+            @extend .screenreader;
+        }
+    }
+
+    > .price {
+        position: absolute;
+        bottom: 0;
+        width: 30%;
+        text-align: center;
+        border-right: 1px solid;
+        padding: 5px 0;
+    }
+
+    &.product_cat-coffee {
+        &.product-type-variable {
+            .product-title + .price, .block--product-award + .price, .pre-cart + .price, {
+                @extend .screenreader;
+            }
+        }
+    }
+
+    &.product_cat-featured {
+        // featured products have a different look
+        background-color: map-get($brown, lightfade);
+    }
+
+    .icon-beans--two {
+        width: 50px;
+        float: right;
+    }
+
+    .notice--featured {
+        .icon-beans--two {
+            svg {
+                path {
+                    fill: $green;
+                }
+            }
+        }
+    }
+
+    .icon-award {
+        width: 20px;
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+    form {
+        position: relative;
+
+        padding-bottom: 10px;
+
+        .variations {
+            display: block;
+            text-align: center;
+            width: 25%;
+            margin: 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-60%);
+            border-right: 1px solid;
+            padding: 3px 5px 4px 0;
+
+            tbody {
+                tr {
+                    td.value {
+                        // variation drop-down
+
+                        select {
+                            width: 100%;
+                            text-align: center;
+                            font-weight: 400;
+                            padding: 0;
+                            border: 0;
+                            background-size: 12px;
+                            background-position: 80% center;
+                        }
+                    }
+                }
+            }
+        }
+
+        .single_variation_wrap {
+            display: flex;
+            justify-content: space-between;
+
+            .woocommerce-variation {
+                flex-basis: 30%;
+                text-align: center;
+                border-right: 1px solid;
+                padding: 5px 0;
+
+                .woocommerce-variation-price {
+                    .price {
+                        .woocommerce-Price-amount {
+                            // the number is here
+                            .woocommerce-Price-currencySymbol {}
+                        }
+                    }
+                }
+            }
+
+            .woocommerce-variation-add-to-cart-enabled {
+                flex-basis: 40%;
+                text-align: center;
+
+                .single_add_to_cart_button {
+                    // this is the button
+               
+                }
+            }
+        }
+    }
+
+    button, .add_to_cart_button {
+        text-transform: uppercase !important;
+        border-bottom: 2px solid !important;
+        letter-spacing: 1.5px !important;
+        display: table !important;
+        font-weight: 600 !important;
+        background: transparent !important;
+        display: inline-block !important;
+        padding: 0 !important;
+        font-size: .9rem !important;
+        border-radius: 0 !important;
+        color: $black !important;
+    }
+
+    .price {
+        font-family: $base-serif-font;
+    }
+
+    &.product-type-simple {
+        > .price {
+            &:last-of-type {
+                margin-bottom: 10px;
+            }
+        }
+
+        .button {
+            align-self: flex-end;
+            margin-bottom: 10px;
+            margin-right: 1em;
+            position: relative;
+        }
+    }
+    .block--product-bottom{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
