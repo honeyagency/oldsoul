@@ -1,0 +1,11 @@
+.block--home-header-right {
+    @include media($max-md) {
+        h2 {
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        a {
+            font-size: .85rem;
+        }
+    }
+}

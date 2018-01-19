@@ -1,17 +1,21 @@
 .icon-logo {
     position: relative;
     display: inline-block;
+    width: 175px;
 
-    @include media($screen-xs) {}
+    @include media($screen-ex) {
+        display: block;
+        width: 225px;
+        margin-top: -5px;
+    }
 
 
     @include media($screen-sm) {}
 
 
     @include media($screen-md) {
-        max-width: 345px;
-        width: 100%;
-        margin-top: -5px;
+        width: 345px;
+        margin-top: -3px;
     }
 
 
@@ -19,6 +23,11 @@
 
 
     @include media($screen-xl) {}
+
+
+    @include media($max-sm) {
+        margin-top: -8px;
+    }
 }
 
 .icon-cart {
@@ -72,7 +81,7 @@
 }
 
 .icon-phone, .icon-hand, .icon-clock, .icon-envelope, .icon-calendar {
-    width: 15px;
+    width: 11px;
     display: inline-block;
     margin-right: 0.5em;
 

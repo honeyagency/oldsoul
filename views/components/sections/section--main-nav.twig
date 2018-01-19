@@ -1,5 +1,5 @@
-<nav role="navigation" class="section--main-nav grid--three-fourths">
-	<ul class="flex flex--wrap justify--between ">
+<nav role="navigation" class="section--main-nav grid--sm-three-fourths order--2">
+	<ul class="dsk--flex flex--wrap justify--between ">
 		{% for item in menu.get_items %}
 			<li class="nav-item font--large font--serif {{item.classes | join(' ')}}">
 				<a class="nav-link color--black" href="{{item.get_link}}">{{item.title}}</a>

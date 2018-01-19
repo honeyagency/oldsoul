@@ -1,18 +1,22 @@
-<div class="block--cafe-grid-item grid--one grid--sm-half nog">
-	<img data-original="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1">
-	<div class="">
-	<h3>{{cafe.title}}</h3>
-	<div class="flex flex--wrap justify--between cafe--meta">
-		<div class="grid--one grid--sm-two-fifths">
-			<div><i class="icon-phone" data-grunticon-embed></i>{{cafe.cafe.phone}}</div>
-			<div><i class="icon-clock" data-grunticon-embed></i>{{cafe.cafe.hours}}</div>
-		</div>
-		<div class="grid--one grid--sm-two-fifths">
-			<div class="table"><i class="icon-hand table-cell" data-grunticon-embed></i><div class="table-cell">{{cafe.cafe.address}}</div></div>
-		</div>
-		<div class="grid--one grid--sm-fifth">
-			<a href="{{cafe.link}}" class="button font--smaller float--right-dsk">Explore</a>
+
+<div class="block--cafe-grid-item grid--one grid--sm-half nog margin--mob-bot-1">
+	<img src="{{cafe.image|resize(200,108)}}" data-original="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 hidden--mob">
+	<img src="{{cafe.image|resize(166,90)}}" {% if post.slug == 'home' %}data-flickity-lazyload{% else %}data-original{% endif %}="{{cafe.image|resize(666,360)}}" width="100%" class="margin--bot-1 hidden--dsk">
+	<div>
+
+		<h3>{{cafe.title}}</h3>
+		<div class="flex flex--wrap justify--between cafe--meta">
+			<div class="grid--one grid--sm-two-fifths mob--flex flex--wrap justify--between">
+				<div class="meta hidden--mob"><i class="icon-phone" data-grunticon-embed></i><span>{{cafe.cafe.phone}}</span></div>
+				<div class="meta"><i class="icon-clock" data-grunticon-embed></i><span>{{cafe.cafe.hours}}</span></div>
+			</div>
+			<div class="grid--sm-two-fifths hidden--mob">
+				<div class="table meta"><i class="icon-hand table-cell" data-grunticon-embed></i><div class="table-cell"><span>{{cafe.cafe.address}}</span></div></div>
+			</div>
+			<div class="grid--one grid--sm-fifth">
+				<a href="{{cafe.link}}" class="button inline-block float--right-dsk font--smaller">Explore</a>&nbsp;&nbsp;&nbsp;
+				<a href="tel:{{cafe.phone}}" class="button inline-block hidden--dsk font--smaller">call</a>
+			</div>
 		</div>
 	</div>
-</div>
 </div>

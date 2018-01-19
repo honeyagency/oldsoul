@@ -39,6 +39,20 @@ function jquery_enqueue()
     wp_register_script('jquery', "http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", false, null);
 }
 
+
+function slider_scripts()
+{
+    // wp_register_script('slick', get_template_directory_uri() . '/app/vendors/slick/slick.min.js', null, false, true);
+    // wp_enqueue_script('slick');
+
+    // wp_enqueue_style('slick_style', get_template_directory_uri() . '/app/vendors/slick/slick.min.css', null, null, null);
+
+     wp_register_script('flickity', get_template_directory_uri() . '/app/vendors/flickity/flickity.min.js', null, false, true);
+    wp_enqueue_script('flickity');
+
+    wp_enqueue_style('flickity_style', get_template_directory_uri() . '/app/vendors/flickity/flickity.css', null, null, null);
+}
+
 function localInstall()
 {
     if ('127.0.0.1' == $_SERVER["REMOTE_ADDR"]) {

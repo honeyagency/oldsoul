@@ -32,7 +32,9 @@ $context['base'] = prepareBasePageFields();
 if (is_front_page()) {
     $context['home']  = prepareHomepageFields();
     $context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
+    add_action('wp_enqueue_scripts', 'slider_scripts');
 }elseif (is_page('cafes')) {
 	$context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
+	// add_action('wp_enqueue_scripts', 'slider_scripts');
 }
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

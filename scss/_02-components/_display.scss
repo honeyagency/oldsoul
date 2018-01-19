@@ -51,8 +51,10 @@
 }
 
 .full-height {
-    height: 100vh;
-    max-height: 52vw;
+    @include media($screen-sm) {
+        height: 100vh;
+        max-height: 52vw;
+    }
 }
 
 .cover {

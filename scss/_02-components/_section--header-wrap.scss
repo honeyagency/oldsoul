@@ -1,0 +1,5 @@
+.section--header-wrap {
+    @include media($max-xs) {
+        justify-content: space-around;
+    }
+}

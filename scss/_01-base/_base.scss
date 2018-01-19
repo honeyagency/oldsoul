@@ -1,5 +1,13 @@
 body {
-    border-top: 5px solid map-get($brown, dark);
+    border-top: 3px solid map-get($brown, dark);
+
+    @include media($screen-xs) {}
+
+
+    @include media($screen-sm) {
+        border-top-width: 5px;
+    }
+
 
     .page-title {
         display: none;

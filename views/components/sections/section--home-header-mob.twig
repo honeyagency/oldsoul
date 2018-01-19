@@ -1,0 +1,14 @@
+<section class="section--home-header hidden--dsk flex flex--wrap">
+	<div class="grid--one nog relative">
+
+		<img src="{{home.header.rightimage|resize(180,120)}}" data-original="{{home.header.rightimage|resize(720,480)}}" alt=""/>
+	</div>
+	<div class="grid--one nog bg--brown-dark text--center spacing--vert-2 spacing--horiz-1">
+		<h2 class="color--white transform--no margin--bot-1">
+		{{ home.header.title }}
+		</h2>
+		<a href="{{ home.header.link.url }}" target="{{ home.header.link.target }}" class="button font--smaller center">
+			{{ home.header.link.title }}
+		</a>
+	</div>
+</section>

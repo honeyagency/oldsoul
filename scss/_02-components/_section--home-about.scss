@@ -2,32 +2,100 @@
     position: relative;
     width: 100%;
 
-    .icon-leaves, .icon-beans-wide {
+    .icon-leaves,
+    .icon-beans-wide {
         display: inline-block;
+        top: -30%;
 
         svg {
             width: 100%;
         }
 
-        z-index: 99;
         position: absolute;
+        z-index: 99;
+
+        @include media($max-sm) {
+            z-index: 90;
+            opacity: .3;
+
+            svg {
+                g {
+                    fill: map-get($brown, faded);
+                }
+            }
+        }
     }
 
     .icon-leaves {
-        width: 380px;
-        left: -5em;
-        top: -5em;
+        width: 130px;
+        left: 0;
+
+
+        @include media($screen-xs) {
+            width: 140px;
+            top: -100%;
+        }
+
+
+        @include media($screen-sm) {
+            top: -50%;
+            width: 215px;
+            left: 0.75em;
+        }
+
+
+        @include media($screen-lg) {
+            top: -60%;
+            width: 260px;
+            left: 1em;
+        }
     }
 
     .icon-beans-wide {
-        width: 400px;
-        top: 3em;
         overflow: hidden;
+        width: 150px;
+
         right: 0;
+
+        @include media($screen-xs) {
+            transform: translateY(50%);
+            top: -40%;
+            width: 210px;
+        }
+
+
+        @include media($screen-sm) {
+            top: -40%;
+            width: 235px;
+            right: -3%;
+        }
+
+
+        @include media($screen-md) {
+            top: -50%;
+            width: 275px;
+        }
+
+
+        @include media($screen-lg) {
+            width: 345px;
+            top: -55%;
+        }
+
 
         svg {
             position: relative;
             right: -3em;
+        }
+    }
+
+    @include media($max-sm) {
+        h2 {
+            position: relative;
+
+            br {
+                display: none;
+            }
         }
     }
 }

@@ -42,11 +42,11 @@ h1 {
 
 h2 {
     font-size: $h2;
-    letter-spacing: 1.7px;
+    letter-spacing: 1px;
 }
 
 h3 {
-    font-size: 0.85em;
+    font-size: $h3;
     margin-bottom: .5em;
 }
 
@@ -94,31 +94,32 @@ h6 {
 }
 
 
-// @include media(min-width $screen-md) {
-//     h1 {
-//         font-size: $h1 * 1.5;
-//     }
+@include media(min-width $screen-md) {
+    h1 {
+        font-size: $h1 * 1.5;
+    }
 
-//     h2 {
-//         font-size: $h2 * 1.5;
-//     }
+    h2 {
+        font-size: $h2 * 1.5;
+    }
 
-//     h3 {
-//         font-size: $h3 * 1.5;
-//     }
+    h3 {
+        font-size: $h3 * 1.5;
+    }
 
-//     h4 {
-//         font-size: $h4 * 1.5;
-//     }
+    h4 {
+        font-size: $h4 * 1.5;
+    }
 
-//     h5 {
-//         font-size: $h5 * 1.5;
-//     }
+    h5 {
+        font-size: $h5 * 1.5;
+    }
 
-//     h6 {
-//         font-size: $h6 * 1.5;
-//     }
-// }
+    h6 {
+        font-size: $h6 * 1.5;
+    }
+}
+
 
 // @include media(min-width $screen-lg) {
 //     h1 {
@@ -195,4 +196,11 @@ hr {
     &.small {
         width: 200px;
     }
+}
+
+small {
+    font-size: .6em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    display: block;
 }

@@ -1,3 +1,5 @@
+.icon-Untitled-4 { background-image: url('app/icons/Untitled-4.png'); background-repeat: no-repeat; }
+
 .icon-arrow-down-black { background-image: url('app/icons/arrow-down-black.png'); background-repeat: no-repeat; }
 
 .icon-arrow-down-green { background-image: url('app/icons/arrow-down-green.png'); background-repeat: no-repeat; }
@@ -11,6 +13,12 @@
 .icon-beans-wide { background-image: url('app/icons/beans-wide.png'); background-repeat: no-repeat; }
 
 .icon-calendar { background-image: url('app/icons/calendar.png'); background-repeat: no-repeat; }
+
+.icon-cart-square { background-image: url('app/icons/cart-square.png'); background-repeat: no-repeat; }
+
+.icon-cart-thick { background-image: url('app/icons/cart-thick.png'); background-repeat: no-repeat; }
+
+.icon-cart-thicker { background-image: url('app/icons/cart-thicker.png'); background-repeat: no-repeat; }
 
 .icon-cart { background-image: url('app/icons/cart.png'); background-repeat: no-repeat; }
 

@@ -5,6 +5,11 @@ jQuery(document).ready(function($) {
         throttle: 30,
         show_while_loading: false,
     });
+    $trig = $('.menu--trigger');
+    $trig.on('click touchstart', function(event) {
+        event.preventDefault();
+        $('body').toggleClass('navopen');
+    });
     // appear({
     //     init: function init() {
     //     },
@@ -30,6 +35,27 @@ jQuery(document).ready(function($) {
             $(this).find('select').addClass('icon-arrow-down-black');
         }
     });
+    if (window.matchMedia('(max-width: 767px)').matches) {
+        var mob = true;
+    } else {
+        var mob = false;
+    }
+    if (mob == true) {
+        // $('.section--home-cafe-grid').slick({
+        //     infinite: false,
+        //     speed:300, 
+        //     slidesToShow: 1,
+        //     slidesToScroll: 1
+        // });
+        $('.section--home-cafe-grid').flickity({
+  // options
+  lazyLoad: 2,
+  cellAlign: 'left',
+  contain: true,
+  prevNextButtons: false,
+pageDots: false
+});
+    }
 });
 // Scroll so nice you'll click() it twice
 jQuery(document).ready(function() {

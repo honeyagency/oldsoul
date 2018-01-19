@@ -1,10 +1,15 @@
-
 $gutter: $grid;
+
 // this variable is in variables
 
 .grid--one {
     flex-basis: 100%;
     width: 100%;
+
+    &.nog {
+        flex-basis: 100%;
+        width: 100%;
+    }
 }
 
 .grid--four-fifths {
@@ -131,6 +136,11 @@ $gutter: $grid;
     .grid--xs-one {
         flex-basis: 100%;
         width: 100%;
+
+        &.nog {
+            flex-basis: 100%;
+            width: 100%;
+        }
     }
 
     .grid--xs-four-fifths {
@@ -249,6 +259,11 @@ $gutter: $grid;
     .grid--sm-one {
         flex-basis: 100%;
         width: 100%;
+
+        &.nog {
+            flex-basis: 100%;
+            width: 100%;
+        }
     }
 
     .grid--sm-four-fifths {
@@ -387,6 +402,11 @@ $gutter: $grid;
     .grid--md-one {
         flex-basis: 100%;
         width: 100%;
+
+        &.nog {
+            flex-basis: 100%;
+            width: 100%;
+        }
     }
 
     .grid--md-four-fifths {
@@ -515,6 +535,11 @@ $gutter: $grid;
     .grid--lg-one {
         flex-basis: 100%;
         width: 100%;
+
+        &.nog {
+            flex-basis: 100%;
+            width: 100%;
+        }
     }
 
     .grid--lg-four-fifths {

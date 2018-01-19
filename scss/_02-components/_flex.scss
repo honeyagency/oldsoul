@@ -8,6 +8,12 @@
     }
 }
 
+.mob--flex {
+    @include media($max-sm) {
+        display: flex;
+    }
+}
+
 .flex--wrap {
     flex-wrap: wrap;
 }
