@@ -1,0 +1,12 @@
+<section class="section--content-sections spacing--gutter">
+	{% for section in sections %}
+		{% if section.sidebartype == null %}
+			{% include 'components/blocks/block--sections-sidebar-no.twig' %}
+		{% elseif section.sidebartype == 'image' %}
+			{% include 'components/blocks/block--sections-sidebar-img.twig' %}
+		{% elseif section.sidebartype == 'content' %}
+			{% include 'components/blocks/block--sections-sidebar-content.twig' %}
+		{% endif %}
+		{% if loop.last %}{% else %}<hr class="color--brown-light">{% endif %}
+	{% endfor %}
+</section>

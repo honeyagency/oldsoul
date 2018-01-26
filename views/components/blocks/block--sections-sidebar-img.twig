@@ -1,0 +1,12 @@
+<section class="block--sections-sidebar-img cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
+
+	<div class="grid--sm-three-fifths font--content">
+		<h2>{{section.title}}</h2>
+		{{section.content}}
+	</div>
+	<div class="grid--sm-third ">
+		<br class="hidden--mob"><br class="hidden--mob">
+		<img src="{{section.sidebar.image|resize(100)}}" width="100%" data-original="{{section.sidebar.image|resize(650)}}" alt="{{section.sidebar.image.alt}}">
+		<em class="font--small color--brown-forms spacing--vert-1 block">{{section.sidebar.caption}}</em>
+	</div>
+</section>

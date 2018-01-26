@@ -1,12 +1,19 @@
 {% extends "base.twig" %}
-
 {% block content %}
-	
-		<article class="post-type-{{post.post_type}} content  max-wrap margin--center spacing--gutter spacing--dsk-vert-2" id="post-{{post.ID}}">
-			<section class="article-content grid--half">
-				<h1 class="article-h1">{{post.title}}</h1>
-					{{post.content}}
+	<article class="post-type-{{post.post_type}} content" id="post-{{post.ID}}">
+		
+		{% if base.header.title != true %}
+			<section class="section--base-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-5 spacing--gutter text--center">
+				<i class="icon-logo-monogram" data-grunticon-embed></i>
+				<h1 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-half ">{{post.title}}</h1>
+				<hr class="color--brown small">
 			</section>
-			<aside class="sidebar grid--third">{{post.content}}</aside>
-		</article>
+		{% endif %}
+		{% if post.content %}
+		<section class="content max-wrap margin--center spacing--gutter spacing--dsk-vert-2">{{post.content}}</section>
+	{% endif %}
+	{% if sections %}
+		{% include 'components/sections/section--content-sections.twig' %}
+	{% endif %}
+</article>
 {% endblock %}

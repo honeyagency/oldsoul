@@ -216,7 +216,7 @@ function prepareBasePageFields()
     );
     return $base;
 }
-function prepareAboutPage()
+function prepareAboutPagePartners()
 {
     if (have_rows('field_5a68c95b0295e')) {
         $grid = array();
@@ -235,42 +235,61 @@ function prepareAboutPage()
             );
         }
     }
-    $ownersImageId = get_field('field_5a68d46d9504c');
-    if ($ownersImageId != null) {
-        $ownersImage = new TimberImage($ownersImageId);
-    } else {
-        $ownersImage = null;
-    }
-    $owners = array(
-        'title'   => get_field('field_5a68d4549504a'),
-        'content' => get_field('field_5a68d45e9504b'),
-        'image'   => $ownersImage,
-        'caption' => get_field('field_5a68d4789504d'),
-    );
-    if (have_rows('field_5a68d4ad456ce')) {
-        $team = array();
-        while (have_rows('field_5a68d4ad456ce')) {
-            the_row();
-
-            $team[] = array(
-                'name'    => get_sub_field('field_5a68d4bbd3200'),
-                'members' => get_sub_field('field_5a68d4d9d3201'),
-            );
-        }
-    }
-    $team = array(
-        'title'   => get_field('field_5a68d49d456cc'),
-        'content' => get_field('field_5a68d4a4456cd'),
-        'cafe'    => $team,
-    );
+    
     $partners = array(
         'title' => get_field('field_5a627cb9f3f38'),
         'grid'  => $grid,
     );
-    $about = array(
-        'partners' => $partners,
-        'owners'   => $owners,
-        'team'     => $team,
-    );
-    return $about;
+    
+    return $partners;
+}
+function prepareContentFields()
+{
+
+    if (have_rows('field_5a6b8ac104c9f')) {
+        $pageContentSection = array();
+
+        while (have_rows('field_5a6b8ac104c9f')) {
+            the_row();
+            $sidebarType = get_sub_field('field_5a6b8aea04ca2');
+            $sidebar     = null;
+            if ($sidebarType == 'image') {
+                $sidebarImageId = get_sub_field('field_5a6b8b0d04ca3');
+                if ($sidebarImageId != null) {
+                    $sidebarImage = new TimberImage($sidebarImageId);
+                } else {
+                    $sidebarImage = null;
+                }
+                $sidebar = array(
+                    'image'   => $sidebarImage,
+                    'caption' => get_sub_field('field_5a6b8b1b04ca4'),
+                );
+
+            }
+            if ($sidebarType == 'content') {
+                if (have_rows('field_5a6b8b3204ca5')) {
+                    $sidebarContent = array();
+                    while (have_rows('field_5a6b8b3204ca5')) {
+                        the_row();
+                        $sidebarContent[] = array(
+                            'title'   => get_sub_field('field_5a6b8b3d04ca6'),
+                            'content' => get_sub_field('field_5a6b8b5804ca7'),
+                        );
+                    }
+                    $sidebar = $sidebarContent;
+                }
+
+            }
+
+            $pageContentSection[] = array(
+                'title'       => get_sub_field('field_5a6b8acc04ca0'),
+                'content'     => get_sub_field('field_5a6b8ad504ca1'),
+                'sidebartype' => $sidebarType,
+                'sidebar'     => $sidebar,
+            );
+        }
+
+    }
+
+    return $pageContentSection;
 }

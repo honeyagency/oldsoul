@@ -37,11 +37,13 @@ if (is_front_page()) {
     $context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
     // add_action('wp_enqueue_scripts', 'slider_scripts');
 } elseif (is_page('about')) {
-    $about            = prepareAboutPage();
-    $context['about'] = $about;
-    $aboutsize        = sizeof($about['partners']['grid']);
+    $about               = prepareAboutPagePartners();
+    $context['partners'] = $about;
+    $aboutsize           = sizeof($about['grid']);
     if ($aboutsize > 5) {
         add_action('wp_enqueue_scripts', 'slider_scripts');
     }
 }
+$context['sections'] = prepareContentFields();
+
 Timber::render(array('page-' . $post->post_name . '.twig', 'page.twig'), $context);

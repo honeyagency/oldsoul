@@ -1,8 +1,8 @@
-<section class="section--about-partners {% if about.partners.grid|length > 5 %}slider{% else %}flex flex--wrap justify--around {% endif %} max-wrap margin--center spacing--gutter spacing--vert-1 spacing--dsk-vert-5">
-<div class="grid--one text--center spacing--vert-1"><h2>{{about.partners.title}}</h2></div>
-{% for partner in about.partners.grid %}
+<section class="section--about-partners {% if partners.grid|length > 5 %}slider{% else %}flex flex--wrap justify--around {% endif %} max-wrap margin--center spacing--gutter spacing--vert-1 spacing--dsk-vert-5">
+<div class="grid--one text--center spacing--vert-1"><h2>{{partners.title}}</h2></div>
+{% for partner in partners.grid %}
 	<div class="block--about-partner grid--half grid--sm-fifth text--center">
-		<img src="{{partner.image|resize(90)}}" width="160" {% if about.partners.grid|length > 5 %}data-flickity-lazyload{% else %}data-original{% endif %}="{{partner.image|resize(320)}}" alt="">
+		<img src="{{partner.image|resize(90)}}" width="160" {% if partners.grid|length > 5 %}data-flickity-lazyload{% else %}data-original{% endif %}="{{partner.image|resize(320)}}" alt="">
 		<p class="font--small font--bold">{{partner.name}}</p>
 	</div>
 {% endfor %}

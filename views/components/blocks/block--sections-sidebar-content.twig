@@ -1,0 +1,18 @@
+<section class="block--sections-sidebar-content cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
+
+	<div class="grid--sm-three-fifths font--content">
+		<h2>{{section.title}}</h2>
+		{{section.content}}
+	</div>
+	<div class="grid--one grid--sm-third sidebar">
+		<br class="hidden--mob"><br class="hidden--mob">
+		{% for content in section.sidebar %}
+			<hr class="color--brown-light">
+			<div class="font--small block--sidebar-content"> 
+			<strong class="text--uppercase letter--1">{{content.title}}</strong>
+			<div>{{content.content}}</div>
+		</div>
+		
+		{% endfor %}
+	</div>
+</section>

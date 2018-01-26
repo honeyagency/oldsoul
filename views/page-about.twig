@@ -2,9 +2,9 @@
 {% block content %}
 	<article class="post-type-{{post.post_type}} spacing--gutter" id="post-{{post.ID}}">
 		{% include 'components/sections/section--about-partners.twig' %}
-		<hr class="color--brown-light">
-		{% include 'components/sections/section--about-owners.twig' %}
-		<hr class="color--brown-light">
-		{% include 'components/sections/section--about-team.twig' %}
+		{% if sections %}
+			<hr class="color--brown-light">
+			{% include 'components/sections/section--content-sections.twig' %}
+		{% endif %}
 	</article>
 {% endblock %}
