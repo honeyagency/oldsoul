@@ -1,12 +1,20 @@
 {% extends "base.twig" %}
-
 {% block content %}
+	{% include 'components/sections/section--base-header.twig' %}
+	<article class="post-type-{{post.post_type}} content" id="post-{{post.ID}}">
+		{% if post.content %}
+		<section class="content max-wrap margin--center spacing--gutter spacing--dsk-vert-2">{{post.content}}</section>
+	{% endif %}
 	<section class="cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
 		<div class="grid--sm-three-fifths font--content">
+		{% for post in posts %}
 
-			{% for post in posts %}
-		{% include ['tease-'~post.post_type~'.twig', 'tease.twig'] %}
-	{% endfor %}
+			<time class="font--small">{{post.date|date('M j, Y')}}</time>
+			<h3>{{post.title}}</h3>
+			
+			{{post.excerpt}}
+			<hr>
+		{% endfor %}
 		</div>
 			<div class="grid--one grid--sm-third sidebar">
 		<br class="hidden--mob"><br class="hidden--mob">
@@ -18,6 +26,5 @@
 	</div>
 
 	</section>
-
-
+</article>
 {% endblock %}

@@ -1,14 +1,9 @@
 {% extends "base.twig" %}
 {% block content %}
+	{% include 'components/sections/section--base-header.twig' %}
 	<article class="post-type-{{post.post_type}} content" id="post-{{post.ID}}">
 		
-		{% if base.header.title != true %}
-			<section class="section--base-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-5 spacing--gutter text--center">
-				<i class="icon-logo-monogram" data-grunticon-embed></i>
-				<h1 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-half ">{{post.title}}</h1>
-				<hr class="color--brown small">
-			</section>
-		{% endif %}
+		
 		{% if post.content %}
 		<section class="content max-wrap margin--center spacing--gutter spacing--dsk-vert-2">{{post.content}}</section>
 	{% endif %}

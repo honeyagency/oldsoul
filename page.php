@@ -43,6 +43,14 @@ if (is_front_page()) {
     if ($aboutsize > 5) {
         add_action('wp_enqueue_scripts', 'slider_scripts');
     }
+} elseif (is_page('stories')) {
+      $categories = array(
+        'taxonomy' => 'category',
+        'parent'   => 0,
+    );
+
+    $context['posts'] = getCustomPosts('post', -1, null, 'date', null, null);
+    $context['categories'] = Timber::get_terms($categories);
 }
 $context['sections'] = prepareContentFields();
 

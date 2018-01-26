@@ -1,5 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
+	{% include 'components/sections/section--base-header.twig' %}
 	<article class="post-type-{{post.post_type}} spacing--gutter" id="post-{{post.ID}}">
 		{% include 'components/sections/section--about-partners.twig' %}
 		{% if sections %}

@@ -1,5 +1,10 @@
 <section class="section--base-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-6 spacing--gutter text--center">
 <i class="icon-logo-monogram" data-grunticon-embed></i>
-	<h2 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-2 ">{{base.header.title}}</h2>
+<h1 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-half">
+{% if post.title %}{{post.title}}{% else %}{{page.title}}{% endif %}
+</h1>
+{% if base.header.title %}
+	<h2 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-1">{{base.header.title}}</h2>
+	{% endif %}
 	<hr class="color--brown small">
 </section>

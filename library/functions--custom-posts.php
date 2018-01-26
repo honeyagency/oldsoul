@@ -72,6 +72,7 @@ function getSinglePost($posttype = null)
         'post_type'  => $posttype,
         'image'      => $attachedimage,
         'link'       => get_permalink(),
+        'excerpt'    => get_the_excerpt(),
     );
     if ($posttype == 'cafe') {
         $singlePostArray['cafe'] = prepareGlobalCafeFields();
