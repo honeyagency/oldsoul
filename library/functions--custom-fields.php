@@ -194,17 +194,18 @@ function prepareSiteOptions()
     return $options;
 
 }
-// function prepareProductFields()
-// {
-//     $note = array(
-//         'type' => get_field('field_5a57ebfdf9f5c'),
-//         'note' => get_field('field_5a57ebf2f9f5b'),
-//     );
-//     $product = array(
-//         'note' => $note,
-//     );
-//     return $product;
-// }
+function prepareProductFields()
+{
+
+    $details = array(
+        'process'  => get_field('field_5a67a57d683ae'),
+        'altitude' => get_field('field_5a67a95b683af'),
+        'varietal' => get_field('field_5a67a974683b0'),
+        'producer' => get_field('field_5a67a99f683b1'),
+    );
+
+    return $details;
+}
 function prepareBasePageFields()
 {
     $header = array(
@@ -214,4 +215,62 @@ function prepareBasePageFields()
         'header' => $header,
     );
     return $base;
+}
+function prepareAboutPage()
+{
+    if (have_rows('field_5a68c95b0295e')) {
+        $grid = array();
+        while (have_rows('field_5a68c95b0295e')) {
+            the_row();
+            $partnerImageId = get_sub_field('field_5a68c96f0295f');
+
+            if ($partnerImageId != null) {
+                $partnerImage = new TimberImage($partnerImageId);
+            } else {
+                $partnerImage = null;
+            }
+            $grid[] = array(
+                'image' => $partnerImage,
+                'name'  => get_sub_field('field_5a68c98802960'),
+            );
+        }
+    }
+    $ownersImageId = get_field('field_5a68d46d9504c');
+    if ($ownersImageId != null) {
+        $ownersImage = new TimberImage($ownersImageId);
+    } else {
+        $ownersImage = null;
+    }
+    $owners = array(
+        'title'   => get_field('field_5a68d4549504a'),
+        'content' => get_field('field_5a68d45e9504b'),
+        'image'   => $ownersImage,
+        'caption' => get_field('field_5a68d4789504d'),
+    );
+    if (have_rows('field_5a68d4ad456ce')) {
+        $team = array();
+        while (have_rows('field_5a68d4ad456ce')) {
+            the_row();
+
+            $team[] = array(
+                'name'    => get_sub_field('field_5a68d4bbd3200'),
+                'members' => get_sub_field('field_5a68d4d9d3201'),
+            );
+        }
+    }
+    $team = array(
+        'title'   => get_field('field_5a68d49d456cc'),
+        'content' => get_field('field_5a68d4a4456cd'),
+        'cafe'    => $team,
+    );
+    $partners = array(
+        'title' => get_field('field_5a627cb9f3f38'),
+        'grid'  => $grid,
+    );
+    $about = array(
+        'partners' => $partners,
+        'owners'   => $owners,
+        'team'     => $team,
+    );
+    return $about;
 }

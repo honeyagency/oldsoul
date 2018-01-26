@@ -1,0 +1,20 @@
+.section--header-wrap {
+    @include media($screen-xs) {}
+
+    @include media($screen-sm) {}
+
+    @include media($screen-md) {
+        height: 98px;
+    }
+
+
+    @include media($screen-lg) {}
+}
+
+body {
+    &.grunticon {
+        .sectiion--header-wrap {
+            height: auto;
+        }
+    }
+}

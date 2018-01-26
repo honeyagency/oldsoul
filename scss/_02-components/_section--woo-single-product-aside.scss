@@ -1,0 +1,124 @@
+aside {
+    .posted_in {
+        display: none;
+    }
+
+    .variations {
+        display: block;
+        width: 100%;
+
+        tbody {
+            display: block;
+            width: 100%;
+
+            tr {
+                display: block;
+                width: 100%;
+
+                td {
+                    &.label {
+                        display: none;
+                    }
+
+                    &.value {
+                        display: block;
+                        width: 100%;
+                        position: relative;
+
+                        &:before {
+                            content: 'SIZE';
+                            font-weight: 600;
+                            color: map-get($brown, formtext);
+
+                            @extend .font--small;
+
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            left: 1em;
+                            letter-spacing: 1px;
+                        }
+                    }
+
+                    .reset_variations {
+                        @extend .screenreader;
+                    }
+
+                    select {}
+                }
+            }
+        }
+    }
+
+    .price {
+        font-size: 1.5em;
+        letter-spacing: -2px;
+
+        .amount {
+            letter-spacing: 0px;
+        }
+    }
+
+    .woocommerce-variation-add-to-cart {
+        display: block;
+        width: 100%;
+
+        .quantity_select {
+            display: block;
+            width: 100%;
+            position: relative;
+
+            &:before {
+                content: 'QTY';
+                font-weight: 600;
+                color: map-get($brown, formtext);
+
+                @extend .font--small;
+
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 1em;
+                letter-spacing: 1px;
+            }
+
+            select {}
+        }
+    }
+
+    select {
+        background-position: 95% center;
+
+        // text-indent: 80%;
+        font-size: 1em;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -moz-outline: none;
+        text-align: center;
+        font-weight: 400;
+        padding: 0;
+        border: 0;
+        padding: 10px 30px 10px 10px;
+        background-size: 12px;
+        display: block;
+        margin: 0;
+        border: 1px solid map-get($brown, light);
+        text-align-last: right;
+        -moz-text-align-last: right;
+    }
+
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            select {
+                text-indent: 80%;
+
+                &.qty {
+                    text-indent: 90%;
+                }
+            }
+        }
+    }
+}

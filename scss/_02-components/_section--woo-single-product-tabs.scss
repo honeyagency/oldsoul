@@ -1,0 +1,7 @@
+.woocommerce-tabs{
+	@extend .grid--one;
+	li{
+		display: inline-block;
+		margin:0;
+	}
+}

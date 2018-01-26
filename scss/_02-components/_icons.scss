@@ -6,7 +6,7 @@
     @include media($screen-ex) {
         display: block;
         width: 225px;
-        margin-top: -5px;
+            margin-top: -6px;
     }
 
 
@@ -15,7 +15,7 @@
 
     @include media($screen-md) {
         width: 345px;
-        margin-top: -3px;
+
     }
 
 
@@ -46,6 +46,7 @@
 
 .icon-logo-monogram {
     width: 50px;
+    min-height: 44px;
     display: inline-block;
 
     svg {

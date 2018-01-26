@@ -1,0 +1,11 @@
+<section class="section--about-owners cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
+	<div class="grid--sm-three-fifths font--content">
+		<h2>{{about.owners.title}}</h2>
+		{{about.owners.content}}
+	</div>
+	<div class="grid--sm-third ">
+		<br class="hidden--mob"><br class="hidden--mob">
+		<img src="{{about.owners.image|resize(100)}}" width="100%" data-original="{{about.owners.image|resize(650)}}" alt="{{about.owners.image.alt}}">
+		<em class="font--small color--brown-forms spacing--vert-1 block">{{about.owners.caption}}</em>
+	</div>
+</section>

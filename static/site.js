@@ -27,6 +27,7 @@ jQuery(document).ready(function($) {
     //     },
     //     reappear: true,
     // });
+    // $('select').selectric();
     $va = $('.product-type-variable');
     $va.each(function() {
         if ($(this).hasClass('product_cat-featured')) {
@@ -48,13 +49,37 @@ jQuery(document).ready(function($) {
         //     slidesToScroll: 1
         // });
         $('.section--home-cafe-grid').flickity({
-  // options
-  lazyLoad: 2,
-  cellAlign: 'left',
-  contain: true,
-  prevNextButtons: false,
-pageDots: false
-});
+            // options
+            lazyLoad: 2,
+            cellAlign: 'left',
+            contain: true,
+            prevNextButtons: false,
+            pageDots: false
+        });
+        $('.section--about-partners.slider').flickity({
+            // options
+            lazyLoad: 5,
+            cellAlign: 'left',
+            contain: true,
+            cellSelector: '.block--about-partner',
+            prevNextButtons: false,
+            pageDots: false
+        });
+    } else {
+        if ($('.section--about-partners.slider').length > 0) {
+            $('.section--about-partners').flickity({
+                // options
+                lazyLoad: 5,
+                cellAlign: 'left',
+                contain: true,
+                cellSelector: '.block--about-partner',
+                prevNextButtons: false,
+                pageDots: false
+            });
+        }
+    }
+    if (typeof mediumZoom == 'function') {
+        mediumZoom(document.querySelectorAll('[data-action="zoom"]'));
     }
 });
 // Scroll so nice you'll click() it twice

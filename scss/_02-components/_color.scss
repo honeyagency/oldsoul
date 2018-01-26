@@ -14,6 +14,10 @@
     color: map-get($brown, light);
 }
 
+.color--brown-forms {
+    color: map-get($brown, formtext);
+}
+
 .color--black {
     color: $black;
 }

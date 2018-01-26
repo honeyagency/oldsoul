@@ -1,0 +1,16 @@
+<section class="section--about-team cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5 ">
+	<div class="grid--one grid--sm-three-fifths">
+		<h2>{{about.team.title}}</h2>
+		<div class="font--content">{{about.team.content}}</div>
+	</div>
+	<div class="grid--one grid--sm-third">
+		<br class="hidden--mob"><br class="hidden--mob">
+		{% for cafe in about.team.cafe %}
+			<div class="font--small block--about-team-cafe"> 
+			<strong class="text--uppercase letter--1">{{cafe.name}}</strong>
+			<div>{{cafe.members}}</div>
+		</div>
+		{% if loop.last %}{% else %}<hr class="color--brown-light">{% endif %}
+		{% endfor %}
+	</div>
+</section>

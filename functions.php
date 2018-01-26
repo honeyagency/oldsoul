@@ -117,6 +117,9 @@ function ha_template_loop_add_to_cart() {
  
     woocommerce_template_single_add_to_cart();
 }
+
+
+
 /**
  * Customise variable add to cart button for loop.
  *
@@ -140,6 +143,36 @@ function wc_hide_trailing_zeros( $trim ) {
     
     return true;
     
+}
+// Turn quantity inputs into drop-downs
+function woocommerce_quantity_input() {
+    global $product;
+
+    $defaults = array(
+        'input_name'    => 'quantity',
+        'input_value'   => '1',
+        'max_value'     => apply_filters( 'woocommerce_quantity_input_max', '', $product ),
+        'min_value'     => apply_filters( 'woocommerce_quantity_input_min', '', $product ),
+        'step'      => apply_filters( 'woocommerce_quantity_input_step', '1', $product ),
+        'style'     => apply_filters( 'woocommerce_quantity_style', 'float:left; margin-right:10px;', $product )
+    );
+    if ( ! empty( $defaults['min_value'] ) )
+        $min = $defaults['min_value'];
+    else $min = 1;
+
+    if ( ! empty( $defaults['max_value'] ) )
+        $max = $defaults['max_value'];
+    else $max = 20;
+
+    if ( ! empty( $defaults['step'] ) )
+        $step = $defaults['step'];
+    else $step = 1;
+
+    $options = '';
+    for ( $count = $min; $count <= $max; $count = $count+$step ) {
+        $options .= '<option value="' . $count . '">' . $count . '</option>';
+    }
+    echo '<div class="quantity_select" style="' . $defaults['style'] . '"><select name="' . esc_attr( $defaults['input_name'] ) . '" title="' . _x( 'Qty', 'Product quantity input tooltip', 'woocommerce' ) . '" class="qty">' . $options . '</select></div>';
 }
 
 

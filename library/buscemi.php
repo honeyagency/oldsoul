@@ -42,8 +42,8 @@ function jquery_enqueue()
 
 function slider_scripts()
 {
-    // wp_register_script('slick', get_template_directory_uri() . '/app/vendors/slick/slick.min.js', null, false, true);
-    // wp_enqueue_script('slick');
+    // wp_register_script('selectric', get_template_directory_uri() . '/app/vendors/selectric.js', null, false, true);
+    // wp_enqueue_script('selectric');
 
     // wp_enqueue_style('slick_style', get_template_directory_uri() . '/app/vendors/slick/slick.min.css', null, null, null);
 
@@ -52,7 +52,8 @@ function slider_scripts()
 
     wp_enqueue_style('flickity_style', get_template_directory_uri() . '/app/vendors/flickity/flickity.css', null, null, null);
 }
-
+     wp_register_script('zoom', get_template_directory_uri() . '/app/vendors/zoomzoom/zoom.min.js', null, false, true);
+     
 function localInstall()
 {
     if ('127.0.0.1' == $_SERVER["REMOTE_ADDR"]) {

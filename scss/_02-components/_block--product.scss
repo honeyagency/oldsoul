@@ -1,6 +1,10 @@
 .block--product {
-    min-height: 320px;
     position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
 
     label[for^="pa_bag-size"], .reset_variations, label[for^="pa_size"] {
         @extend .screenreader;
@@ -28,15 +32,70 @@
 
     &.product_cat-coffee {
         &.product-type-variable {
-            .product-title + .price, .block--product-award + .price, .pre-cart + .price, {
+            .product-title + .price, .block--product-award + .price, .pre-cart + .price {
                 @extend .screenreader;
             }
         }
     }
 
+    .block--product-award, .variations, .woocommerce-variation, .product-title, img {
+        border-color: map-get($brown, lightfade) !important;
+    }
+
+    .button {
+        color: map-get($brown, main) !important;
+    }
+
     &.product_cat-featured {
         // featured products have a different look
         background-color: map-get($brown, lightfade);
+
+        .block--product-award, .variations, .woocommerce-variation, .product-title, img {
+            border-color: $green !important;
+        }
+
+        .price {
+            color: $green;
+        }
+
+        select {
+            color: $green;
+        }
+
+        .button {
+            color: $black !important;
+        }
+    }
+
+    .product-title {
+        border-bottom: 1px solid;
+
+        + .block--product-award {
+            border-top: none;
+        }
+
+        + .price {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            padding: 17px 0px;
+            display: block;
+            height: 61px;
+            box-sizing: border-box;
+
+            .amount {
+                text-align: left;
+                display: table;
+                padding-left: 15px;
+            }
+
+            + .add_to_cart_button {
+                position: absolute;
+                right: 0;
+                bottom: calc(30.5px / 2);
+            }
+        }
     }
 
     .icon-beans--two {
@@ -44,11 +103,13 @@
         float: right;
     }
 
-    .notice--featured {
-        .icon-beans--two {
-            svg {
-                path {
-                    fill: $green;
+    .notice--coffee {
+        &.feat {
+            .icon-beans--two {
+                svg {
+                    path {
+                        fill: $green;
+                    }
                 }
             }
         }
@@ -62,8 +123,7 @@
 
     form {
         position: relative;
-
-        padding-bottom: 10px;
+        padding: 10px 0;
 
         .variations {
             display: block;
@@ -77,8 +137,17 @@
             padding: 3px 5px 4px 0;
 
             tbody {
+                display: block;
+                width: 100%;
+
                 tr {
+                    display: block;
+                    width: 100%;
+
                     td.value {
+                        display: block;
+                        width: 100%;
+
                         // variation drop-down
 
                         select {
@@ -96,10 +165,12 @@
         }
 
         .single_variation_wrap {
+            height: 41px;
             display: flex;
             justify-content: space-between;
 
             .woocommerce-variation {
+                display: block !important;
                 flex-basis: 30%;
                 text-align: center;
                 border-right: 1px solid;
@@ -135,14 +206,9 @@
         font-weight: 600 !important;
         background: transparent !important;
         display: inline-block !important;
-        padding: 0 !important;
+        padding: 0 0 2px 0px !important;
         font-size: .9rem !important;
         border-radius: 0 !important;
-        color: $black !important;
-    }
-
-    .price {
-        font-family: $base-serif-font;
     }
 
     &.product-type-simple {
@@ -159,9 +225,37 @@
             position: relative;
         }
     }
-    .block--product-bottom{
+
+    .block--product-bottom {
         position: absolute;
         bottom: 0;
         width: 100%;
     }
+
+    .media-figure {
+        img {
+            border-bottom: 1px solid;
+            display: block;
+        }
+    }
+
+    &.product-type-variable {
+        .media-figure {
+            + .block--product-bottom {
+                > .price {
+                    position: absolute;
+                }
+
+                form {
+                    position: relative;
+                    height: 61px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}
+
+.price {
+    font-family: $base-serif-font;
 }

@@ -11,10 +11,10 @@
         </div>
         <h2 class="color--white text--center grid--one spacing--vert-2">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
     </header>
-{#     <div class="before-shop-loop grid--one">
-        {% do action('woocommerce_before_shop_loop') %}
-    </div> #}
-    <section class="section--shop flex flex--wrap max-wrap margin--center justify--between align--items-start spacing--grid spacing--dsk-vert-5">
+    <section class="section--shop flex flex--wrap  justify--between align--items-start max-wrap margin--center spacing--grid spacing--dsk-vert-5">
+        <div class="before-shop-loop grid--one">
+            {% do action('woocommerce_before_shop_loop') %}
+        </div>
         <aside class="grid--one grid--md-fourth">
             {{sidebar}}
         </aside>

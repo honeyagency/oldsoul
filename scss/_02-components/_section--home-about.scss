@@ -11,31 +11,14 @@
             width: 100%;
         }
 
-        position: absolute;
-        z-index: 99;
-
-        @include media($max-sm) {
-            z-index: 90;
-            opacity: .3;
-
-            svg {
-                g {
-                    fill: map-get($brown, faded);
-                }
-            }
+        @include media($screen-sm) {
+            position: absolute;
+            z-index: 99;
         }
     }
 
     .icon-leaves {
-        width: 130px;
         left: 0;
-
-
-        @include media($screen-xs) {
-            width: 140px;
-            top: -100%;
-        }
-
 
         @include media($screen-sm) {
             top: -50%;
@@ -49,12 +32,19 @@
             width: 260px;
             left: 1em;
         }
+
+
+        @include media($max-sm) {
+            transform: rotate(55deg);
+            width: 130px;
+            margin: -2em auto;
+            display: block;
+        }
     }
 
     .icon-beans-wide {
         overflow: hidden;
         width: 150px;
-
         right: 0;
 
         @include media($screen-xs) {

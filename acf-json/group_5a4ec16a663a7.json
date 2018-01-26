@@ -42,11 +42,6 @@
             {
                 "param": "page",
                 "operator": "!=",
-                "value": "128"
-            },
-            {
-                "param": "page",
-                "operator": "!=",
                 "value": "130"
             },
             {
@@ -69,5 +64,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1515110856
+    "modified": 1516837091
 }

@@ -6,6 +6,18 @@
     font-weight: 600;
     background: transparent;
     padding: 0;
-    font-size: inherit;
+
+    // font-size: inherit;
     border-radius: 0;
+}
+
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    $thebg: $green;
+
+    background-color: $thebg;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($thebg, 10%);
+    }
 }
