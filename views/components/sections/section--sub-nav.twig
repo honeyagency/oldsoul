@@ -16,7 +16,7 @@
 				{% endif %}
 			</li>
 		{% endfor %}
-		<i class="icon-cart" data-grunticon-embed></i>
+		{% do action('cart_count') %}
 	</ul>
 
 </nav>

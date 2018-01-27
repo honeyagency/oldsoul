@@ -18,8 +18,11 @@
             <h1 class="product--title">{{post.title}}</h1>
             <div class="font--content">{{post.content}}</div>
         </div>
-        <aside class="grid--third font--small spacing--horiz-1">
+        <aside class="block--product-aside grid--third font--small spacing--horiz-1">
+
+
             {% do action('woocommerce_single_product_summary') %}
+
             {% if details.altitude %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Altitude</strong> <p>{{details.altitude}}</p></div>{% endif %}
             {% if details.varietal %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Varietal</strong> <p>{{details.varietal}}</p></div>{% endif %}
             {% if details.process %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Process</strong> <p>{{details.process}}</p></div>{% endif %}

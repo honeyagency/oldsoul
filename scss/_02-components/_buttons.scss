@@ -12,12 +12,35 @@
 }
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    $thebg: $green;
+    display: inline-block;
+    color: map-get($brown, main);
+    border-bottom: 2px solid;
+    background-color: transparent;
+    padding: 0;
+    padding-bottom: 2px;
+    text-align: right;
+    border-radius: 0;
 
-    background-color: $thebg;
-    cursor: pointer;
+    @extend .font--small;
+     &:hover {
+            background: transparent ;
+            color: darken(map-get($brown, main), 5%) ;
+        }
+}
 
-    &:hover {
-        background-color: darken($thebg, 10%);
+.ha-addtocart {
+    text-align: right;
+    margin-bottom: 2em;
+    margin-top: 1em;
+
+    .icon-cart {
+        width: 16px;
+        margin-right: .5em;
+    }
+
+    button {
+        top: -5px;
+
+
     }
 }

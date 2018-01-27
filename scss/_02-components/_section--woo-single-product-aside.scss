@@ -1,6 +1,43 @@
-aside {
+.block--product-aside {
+    border-left: 1px solid map-get($brown, light);
+    position: relative;
+
     .posted_in {
         display: none;
+    }
+
+    .single_variation_wrap {
+        .quantity_select {
+            float: none !important;
+            margin-right: 0 !important;
+            margin-bottom: 1em;
+            display: block;
+            width: 100%;
+            position: relative;
+
+            &:before {
+                content: 'QTY';
+                font-weight: 600;
+                color: map-get($brown, formtext);
+
+                @extend .font--small;
+
+                display: block;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 1em;
+                letter-spacing: 1px;
+            }
+
+            select {}
+        }
+    }
+
+    .product_meta {
+        text-align: right;
+        position: absolute;
+        right: 1em;
     }
 
     .variations {
@@ -63,29 +100,6 @@ aside {
     .woocommerce-variation-add-to-cart {
         display: block;
         width: 100%;
-
-        .quantity_select {
-            display: block;
-            width: 100%;
-            position: relative;
-
-            &:before {
-                content: 'QTY';
-                font-weight: 600;
-                color: map-get($brown, formtext);
-
-                @extend .font--small;
-
-                display: block;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 1em;
-                letter-spacing: 1px;
-            }
-
-            select {}
-        }
     }
 
     select {

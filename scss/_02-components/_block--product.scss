@@ -195,6 +195,14 @@
                
                 }
             }
+
+            .quantity_select {
+                display: none;
+            }
+
+            + .woocommerce-variation-add-to-cart {
+                display: none;
+            }
         }
     }
 

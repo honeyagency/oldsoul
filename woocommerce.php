@@ -20,8 +20,8 @@ remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_pro
 // remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
 // add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 6 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 6);
 // add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
 // add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
 //
@@ -30,7 +30,9 @@ add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_m
 // add_action( 'woocommerce_variable_add_to_cart', 'woocommerce_variable_add_to_cart', 30 );
 // add_action( 'woocommerce_external_add_to_cart', 'woocommerce_external_add_to_cart', 30 );
 // add_action( 'woocommerce_single_variation', 'woocommerce_single_variation', 10 );
-// add_action( 'woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20 );
+remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_to_cart_button', 20);
+add_action('ha_variation_add_to_cart', 'woocommerce_single_variation_add_to_cart_button', 20);
+
 //
 // add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 // add_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
@@ -61,6 +63,9 @@ if (is_singular('product')) {
     }
     wp_enqueue_script('zoom');
     $context['gallery'] = $gallery;
+    if ($product->is_type('variable')) {
+        remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+    }
 
     Timber::render('views/woo/single-product.twig', $context);
 } else {

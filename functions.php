@@ -144,6 +144,17 @@ function wc_hide_trailing_zeros( $trim ) {
     return true;
     
 }
+function ha_cart(){
+$cartCount =  WC()->cart->get_cart_contents_count();
+$cartItems = $cartCount;
+if ($cartCount > 9) {
+    $cartItems = '9+';
+}
+    ?>
+<a class="cart-contents <?php if ($cartCount == 0) {echo 'empty';}else{echo 'has-items';}?>" data-cart-items="<?php echo $cartItems; ?>" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><i class="icon-cart" data-grunticon-embed></i></a>
+<?php 
+}
+add_action( 'cart_count', 'ha_cart', 10 );
 // Turn quantity inputs into drop-downs
 function woocommerce_quantity_input() {
     global $product;
