@@ -144,6 +144,9 @@ function wc_hide_trailing_zeros( $trim ) {
     return true;
     
 }
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+
 function ha_cart(){
 $cartCount =  WC()->cart->get_cart_contents_count();
 $cartItems = $cartCount;
