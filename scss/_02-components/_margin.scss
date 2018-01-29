@@ -31,6 +31,11 @@
     .margin--dsk-horiz-6{margin-left:6em * $grid; margin-right: 6em * $grid;}
 }
 
+.margin--dsk-bot-1{@include media($screen-sm){margin-bottom: 1em * $grid;}}
+.margin--dsk-bot-2{@include media($screen-sm){margin-bottom: 2em * $grid;}}
+.margin--dsk-bot-3{@include media($screen-sm){margin-bottom: 3em * $grid;}}
+.margin--dsk-bot-4{@include media($screen-sm){margin-bottom: 4em * $grid;}}
+
 .margin--mob-bot-1{@include media($max-sm){margin-bottom: 1em * $grid;}}
 .margin--mob-bot-2{@include media($max-sm){margin-bottom: 2em * $grid;}}
 .margin--mob-bot-3{@include media($max-sm){margin-bottom: 3em * $grid;}}

@@ -48,23 +48,27 @@ jQuery(document).ready(function($) {
         //     slidesToShow: 1,
         //     slidesToScroll: 1
         // });
-        $('.section--home-cafe-grid').flickity({
-            // options
-            lazyLoad: 2,
-            cellAlign: 'left',
-            contain: true,
-            prevNextButtons: false,
-            pageDots: false
-        });
-        $('.section--about-partners.slider').flickity({
-            // options
-            lazyLoad: 5,
-            cellAlign: 'left',
-            contain: true,
-            cellSelector: '.block--about-partner',
-            prevNextButtons: false,
-            pageDots: false
-        });
+        if ($('.section--home-cafe-grid').length > 0) {
+            $('.section--home-cafe-grid').flickity({
+                // options
+                lazyLoad: 2,
+                cellAlign: 'left',
+                contain: true,
+                prevNextButtons: false,
+                pageDots: false
+            });
+        }
+        if ($('.section--about-partners.slider').length > 0) {
+            $('.section--about-partners.slider').flickity({
+                // options
+                lazyLoad: 5,
+                cellAlign: 'left',
+                contain: true,
+                cellSelector: '.block--about-partner',
+                prevNextButtons: false,
+                pageDots: false
+            });
+        }
     } else {
         if ($('.section--about-partners.slider').length > 0) {
             $('.section--about-partners').flickity({
