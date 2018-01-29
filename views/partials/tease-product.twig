@@ -1,4 +1,4 @@
-<article {{ fn('post_class', ['entry', 'block--product grid--half grid--md-third border--1 margin--bot-1 margin--dsk-bot-2 '], post.ID ) }}{% for term in post.terms('product_cat') if term == 'Featured' %}data-feat="true"{% endfor %}>
+<article {{ fn('post_class', ['entry', 'block--product grid--half grid--sm-third grid--md-third border--1 margin--bot-1 margin--dsk-bot-2 '], post.ID ) }}{% for term in post.terms('product_cat') if term == 'Featured' %}data-feat="true"{% endfor %}>
 {{ fn('timber_set_product', post) }}
 {% if post.thumbnail %}
 <div class="media-figure">
