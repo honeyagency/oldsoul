@@ -57,7 +57,7 @@
         @include media($screen-sm) {
             top: -40%;
             width: 235px;
-            right: -3%;
+            // right: -3%;
         }
 
 
@@ -75,7 +75,7 @@
 
         svg {
             position: relative;
-            right: -3em;
+            right: -4em;
         }
     }
 

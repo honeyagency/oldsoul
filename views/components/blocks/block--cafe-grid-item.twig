@@ -1,7 +1,7 @@
 
 <div class="block--cafe-grid-item grid--one grid--sm-half nog margin--mob-bot-1">
-	<a href="{{cafe.link}}" ><img src="{{cafe.image|resize(200,108)}}" data-original="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 hidden--mob"></a>
-	<a href="{{cafe.link}}" c<img src="{{cafe.image|resize(166,90)}}" {% if post.slug == 'home' %}data-flickity-lazyload{% else %}data-original{% endif %}="{{cafe.image|resize(666,360)}}" width="100%" class="margin--bot-1 hidden--dsk"></a>
+	<a href="{{cafe.link}}" class="hidden--mob" ><img src="{{cafe.image|resize(200,108)}}" data-original="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 "></a>
+	<a href="{{cafe.link}}" class="hidden--dsk"><img src="{{cafe.image|resize(166,90)}}" {% if post.slug == 'home' %}data-flickity-lazyload{% else %}data-original{% endif %}="{{cafe.image|resize(666,360)}}" width="100%" class="margin--bot-1"></a>
 	<div>
 
 		<h3><a  class="color--black" href="{{cafe.link}}">{{cafe.title}}</a></h3>

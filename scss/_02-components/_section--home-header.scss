@@ -1,5 +1,8 @@
 .section--home-header {
     @include media($max-sm) {
+    	img{
+    		display: block;
+    	}
         .inline-background {
             top: -50%;
         }

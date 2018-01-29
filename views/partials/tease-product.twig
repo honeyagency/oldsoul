@@ -9,7 +9,7 @@
 {% endif %}
 
 {% for term in post.terms('product_cat') if term == 'Coffee' %}
-<div class="notice--coffee {% for term in post.terms('product_cat') if term == 'Featured' %}feat{% endfor %} font--smaller font--bold letter--1 text--uppercase color--green spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1">{% for term in post.terms('product_cat') if term == 'Featured' %}Featured {% endfor %}<i class="icon-beans--two" data-grunticon-embed></i></div>
+<div class="notice--coffee {% for term in post.terms('product_cat') if term == 'Featured' %}feat{% endfor %} font--smaller font--bold letter--1 text--uppercase color--green spacing--horiz-half spacing--dsk-horiz-1  spacing--vert-half spacing--dsk-vert-1">{% for term in post.terms('product_cat') if term == 'Featured' %}Featured {% endfor %}<i class="icon-beans--two" data-grunticon-embed></i></div>
 {% endfor %}
 {% do action('woocommerce_before_shop_loop_item_title') %}
 
@@ -29,6 +29,6 @@
     {%  endif %}
     {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
     {% do action( 'woocommerce_after_shop_loop_item' ) %}
-        <a href="{{ post.link }}" class="hidden--dsk text--uppercase bg--green color--white text--center block spacing--vert-half">View</a>
+        <a href="{{ post.link }}" class="mobile--view hidden--dsk text--uppercase bg--brown letter--2 font--bold color--white text--center block">View</a>
 </div>
 </article>
