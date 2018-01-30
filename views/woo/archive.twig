@@ -5,7 +5,9 @@
         <div class="cafe-wrap margin--center spacing--gutter flex flex--wrap justify--between spacing--vert-2">
             <a href="{{site.url}}/shop" class="{% if category %}{% else %}current {% endif %}inline-block font--bold font--medium letter--2 text--uppercase">All</a>
             {% for cat in categories %}
-                <a href="{{cat.link}}" class="{% if cat.id == category.id %}current {% endif %}inline-block font--bold font--medium letter--2 text--uppercase">{{cat.title}}</a>
+                {% if cat.count != 0 %}
+                    <a href="{{cat.link}}" class="{% if cat.id == category.id %}current {% endif %}inline-block font--bold font--medium letter--2 text--uppercase">{{cat.title}}</a>
+                {% endif %}
             {% endfor %}
             
         </div>
