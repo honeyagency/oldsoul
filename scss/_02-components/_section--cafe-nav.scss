@@ -1,0 +1,38 @@
+.section--cafe-nav {
+    position: absolute;
+    transform: translateY(-150%);
+    top: 6em;
+    width: 100%;
+    z-index: 97;
+    left: 0;
+    text-align: left;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: transform 0.3s $base-animation;
+    transition-delay: .7s;
+
+    .nextprev {
+        i {
+            right: -5.25em;
+            position: absolute;
+            top: 0em;
+
+            svg {
+                path {
+                    fill: $black;
+                }
+            }
+        }
+    }
+}
+
+.menu-item-32 {
+    cursor: pointer;
+
+    &:hover {
+        .section--cafe-nav {
+            transition: transform 0.3s $base-animation;
+            transform: translateY(0);
+        }
+    }
+}

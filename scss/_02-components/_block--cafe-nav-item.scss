@@ -1,0 +1,9 @@
+.block--cafe-nav-item {
+    padding: 0 1.7em;
+    box-sizing: border-box;
+    border-right: 1px solid map-get($brown, light);
+
+    &:last-of-type {
+        border: 0;
+    }
+}

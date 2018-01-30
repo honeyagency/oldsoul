@@ -1,8 +1,9 @@
 <nav role="navigation" class="section--main-nav grid--sm-three-fourths order--2">
 	<ul class="dsk--flex flex--wrap justify--between ">
 		{% for item in menu.get_items %}
-			<li class="nav-item font--large font--serif {{item.classes | join(' ')}}">
-				<a class="nav-link color--black" href="{{item.get_link}}">{{item.title}}</a>
+			<li class="nav-item  {{item.classes | join(' ')}}">
+				<a class="nav-link color--black font--large font--serif" href="{{item.get_link}}">{{item.title}}</a>
+				{% if item.title == 'Cafes' %}{% include 'components/sections/section--cafe-nav.twig' %}{% endif %}
 				{% if item.get_children %}
 					<ul class="nav nav-drop">
 						{% for child in item.get_children %}
