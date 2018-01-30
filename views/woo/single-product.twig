@@ -1,5 +1,6 @@
 {% extends "base.twig" %}
 {% block content %}
+    {{ fn('timber_set_product', post) }}
     {% do action('woocommerce_before_single_product') %}
     <header class="flex flex--wrap">
         {% for image in gallery %}
@@ -14,7 +15,7 @@
         <div class="summary entry-summary grid--sm-three-fifths">
             {% do action('woocommerce_before_single_product_summary') %}
             {% if post.thumbnail %}
-                <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" />
+                {# <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" /> #}
             {% endif %}
             <h1 class="product--title">{{post.title}}</h1>
             <div class="font--content">{{post.content}}</div>
@@ -29,7 +30,7 @@
             {% if details.process %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Process</strong> <p>{{details.process}}</p></div>{% endif %}
             {% if details.producer %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Producer</strong> <p>{{details.producer}}</p></div>{% endif %}
         </aside>
-        {# {% do action('woocommerce_after_single_product_summary') %} #}
+        {% do action('woocommerce_after_single_product_summary') %}
         <meta itemprop="url" content="{{ post.link }}" />
     </article>
     {% do action('woocommerce_after_single_product') %}

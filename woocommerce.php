@@ -56,7 +56,7 @@ if (is_singular('product')) {
     $context['product'] = $product;
     $context['details'] = prepareProductFields();
 
-    $attachment_ids = $product->get_gallery_attachment_ids();
+    $attachment_ids = $product->get_gallery_image_ids();
     $gallery        = array();
     foreach ($attachment_ids as $attachment_id) {
         $gallery[] = new TimberImage($attachment_id);

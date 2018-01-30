@@ -1,10 +1,15 @@
-<section class="section--base-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-6 spacing--gutter text--center">
-<i class="icon-logo-monogram" data-grunticon-embed></i>
-<h1 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-half">
-{% if post.title %}{{post.title}}{% else %}{{page.title}}{% endif %}
-</h1>
-{% if base.header.title %}
-	<h2 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-1">{{base.header.title}}</h2>
-	{% endif %}
-	<hr class="color--brown small">
+<section class="section--image-header relative {% if post.thumbnail %}has-image{% else %}bg--brown-dark spacing--dsk-vert-5{% endif %}">
+	{% if post.thumbnail %}
+	<img src="{{post.thumbnail|resize(320,156)}}" data-original="{{post.thumbnail|resize(1280, 624)}}" alt="{{post.thumbnail.caption}}" class="" data-original-set="{{post.thumbnail|resize(640, 312)}}  640w,{{post.thumbnail|resize(750, 365)}}  750w,{{post.thumbnail|resize(1080,526)}} 1080w,{{post.thumbnail|resize(1280, 624)}} 1280w,{{post.thumbnail|resize(1360,663)}} 1366w,{{post.thumbnail|resize(1440,702)}} 1440w,{{post.thumbnail|resize(1920,936)}} 1920w, {{post.thumbnail|resize(2880,1404)}} 2880w" sizes="100vw">
+{% endif %}
+	<section class="section--base-header spacing--gutter text--center">
+		<i class="icon-logo-monogram" data-grunticon-embed></i>
+		<h1 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-half">
+		{% if post.title %}{{post.title}}{% else %}{{page.title}}{% endif %}
+		</h1>
+		{% if base.header.title %}
+			<h2 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-1">{{base.header.title}}</h2>
+		{% endif %}
+		<hr class="color--brown small">
+	</section>
 </section>
