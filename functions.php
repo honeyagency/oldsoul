@@ -51,7 +51,9 @@ class StarterSite extends TimberSite
 
         /* this is where you can add your own fuctions to twig */
         $twig->addExtension(new Twig_Extension_StringLoader());
-        $twig->addFilter('myfoo', new Twig_Filter_Function('myfoo'));
+        $twig->addFunction( new Timber\Twig_Function( 'getChildExcerpt', 'getChildExcerpt' ) );
+        $twig->addFunction( new Timber\Twig_Function( 'getParentTitle', 'getParentTitle' ) );
+        
         return $twig;
     }
 }

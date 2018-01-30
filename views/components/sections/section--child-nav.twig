@@ -1,0 +1,20 @@
+<div class="section--child-nav spacing--gutter bg--brown-faded">
+	<ul class="nav nav-drop flex--double flex--wrap justify--between margin--bot-2 max-wrap margin--center">
+		<hr class="color--brown-light grid--one">
+		<div class="text--center grid--one font--bold letter--1 spacing--vert-2">{{ function('getParentTitle', item.object_id)}}</div>
+		{% set size = item.get_children|length %}
+		{% for child in item.get_children %}
+			<li class="nav-drop-item flex flex--wrap justify--between {% if size == 2 %}grid--sm-half{% elseif size == 3 %}grid--sm-third{% endif %}">
+			<div class="grid--half">
+				<a href="{{child.get_link}}"><img src="{{child.thumbnail.src|resize(320,210)}}" /></a>
+			</div>
+			<div class="grid--half spacing--horiz-half border-box">
+				<h5 class="font--medium"><a class="nav-link color--black" href="{{child.get_link}}">{{child.title}}</a></h5>
+				{# this function is set in buscemi and added to twig w/in functions #}
+				<p>{{ function('getChildExcerpt', child.object_id) }}</p>
+				<a href="{{child.get_link}}" class="button color--brown text--uppercase font--bold">Explore</a>
+			</div>
+		</li>
+	{% endfor %}
+</ul>
+</div>

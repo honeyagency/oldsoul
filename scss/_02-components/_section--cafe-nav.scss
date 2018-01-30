@@ -1,6 +1,5 @@
-.section--cafe-nav, .section--craft-nav {
+.section--cafe-nav, .section--child-nav {
     position: absolute;
-    transform: translateY(-150%);
     top: 6em;
     width: 100%;
     z-index: 97;
@@ -8,8 +7,11 @@
     text-align: left;
     font-size: 1rem;
     box-sizing: border-box;
-    transition: transform 0.3s $base-animation;
-    transition-delay: .7s;
+
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
+    transition-delay: .5s;
 
     .nextprev {
         i {
@@ -24,15 +26,39 @@
             }
         }
     }
+
+    .nav-drop-item {
+        &:first-of-type {
+            border-right: 1px solid map-get($brown, light);
+        }
+    }
 }
 
-.menu-item-32 {
+.section--cafe-nav {
+    opacity: 0;
+    transform: translateY(-150%);
+}
+
+.menu-item-32, .menu-item-has-children {
     cursor: pointer;
 
     &:hover {
-        .section--cafe-nav {
-            transition: transform 0.3s $base-animation;
+        .section--cafe-nav, .section--child-nav {
+            opacity: 1;
+            transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
             transform: translateY(0);
+        }
+    }
+}
+
+body.logged-in {
+    .section--cafe-nav, .section--child-nav {
+        top: calc(6em + 32px);
+    }
+
+    .section--header-wrap {
+        &:before {
+            top: 32px;
         }
     }
 }

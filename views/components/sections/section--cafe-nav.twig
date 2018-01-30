@@ -1,12 +1,14 @@
 <section class="section--cafe-nav spacing--gutter bg--brown-faded hidden--mob">
 	<div class="flex flex--wrap justify--between margin--bot-2 max-wrap margin--center">
 		<hr class="color--brown-light grid--one">
-		<div class="text--center grid--one font--bold letter--1 spacing--vert-1">Find your cafe</div>
+		<div class="text--center grid--one font--bold letter--1 spacing--vert-2">{{ function('getParentTitle', item.object_id)}}</div>
 		{% for cafe in cafes %}
 			<a href="{{cafe.link}}" class="grid--fourth block--cafe-nav-item"><img src="{{cafe.image|resize(120,65)}}" data-original="{{cafe.image|resize(480,260)}}" width="100%"><h5 class="color--black font--medium">{{cafe.title}}</h5></a>
 		{% endfor %}
+		{% if cafes|length > 4 %}
 		<div class="relative">
-			<a class="text--uppercase font--smaller letter--1 font--bold nextprev" href="{{site.url}}/cafes"><span>More</span><i class="icon-hand" data-grunticon-embed></i></a>
+			<a class="text--uppercase font--smaller letter--1 font--bold nextprev" href="{{item.link}}"><span>More</span><i class="icon-hand" data-grunticon-embed></i></a>
 		</div>
+	{% endif %}
 	</div>
 </section>

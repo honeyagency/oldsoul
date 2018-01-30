@@ -3,17 +3,11 @@
 		{% for item in menu.get_items %}
 			<li class="nav-item  {{item.classes | join(' ')}}">
 				<a class="nav-link color--black font--large font--serif" href="{{item.get_link}}">{{item.title}}</a>
-				{% if item.title == 'Cafes' %}{% include 'components/sections/section--cafe-nav.twig' %}{% endif %}
+				{% if item.title == 'Cafes' and item.current != true %}{% include 'components/sections/section--cafe-nav.twig' %}{% endif %}
 				{% if item.get_children %}
-					<ul class="nav nav-drop">
-						{% for child in item.get_children %}
-							<li class="nav-drop-item">
-								<a class="nav-link" href="{{child.get_link}}">{{child.title}}</a>
-							</li>
-						{% endfor %}
-					</ul>
+					{% include 'components/sections/section--child-nav.twig' %}
 				{% endif %}
 			</li>
 		{% endfor %}
 	</ul>
-</nav><!-- #nav -->
+	</nav><!-- #nav -->

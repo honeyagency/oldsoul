@@ -45,7 +45,7 @@ add_action('ha_variation_add_to_cart', 'woocommerce_single_variation_add_to_cart
 
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shopbar');
-$context['cafes'] = getCustomPosts('cafe', -1, null, 'date', null, null);
+$context['cafes'] = getCustomPosts('cafe', 4 , null, 'date', null, null);
 // WooCommerce Notices
 $context['wc_notices'] = wc_get_notices();
 wc_clear_notices();

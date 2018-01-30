@@ -20,6 +20,7 @@ if ($post->post_type == 'cafe') {
 	$context['next'] = getNextPostLooped();
   $context['previous'] = getPreviousPostLooped();
 }
+$context['cafes'] = getCustomPosts('cafe', 4 , null, 'date', null, null);
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'single-password.twig', $context );
 } else {
