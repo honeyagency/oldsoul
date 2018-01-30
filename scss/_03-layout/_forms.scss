@@ -126,6 +126,17 @@ select {
     overflow: hidden;
 }
 
+.screenreader-dsk {
+    @include media($screen-sm) {
+        position: absolute;
+        left: -10000px;
+        top: auto;
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+    }
+}
+
 .wpcf7-form-control-wrap {
     width: 100%;
     margin-bottom: 1em;

@@ -2,9 +2,9 @@
 {{ fn('timber_set_product', post) }}
 {% if post.thumbnail %}
 <div class="media-figure">
-    <a href="{{ post.link }}">
-        <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" />
-    </a>
+    {# <a href="{{ post.link }}"> #}
+        <img src="{{ post.thumbnail.src|resize(100,67)}}" width="100%" data-original="{{ post.thumbnail.src|resize(562,373) }}"/>
+    {# </a> #}
 </div>
 {% endif %}
 
@@ -29,6 +29,6 @@
     {%  endif %}
     {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
     {% do action( 'woocommerce_after_shop_loop_item' ) %}
-        <a href="{{ post.link }}" class="mobile--view hidden--dsk text--uppercase bg--brown letter--2 font--bold color--white text--center block">View</a>
+        {# <a href="{{ post.link }}" class="mobile--view hidden--dsk text--uppercase bg--black letter--2 font--bold color--white text--center block">View</a> #}
 </div>
 </article>
