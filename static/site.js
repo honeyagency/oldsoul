@@ -58,6 +58,17 @@ jQuery(document).ready(function($) {
                 pageDots: false
             });
         }
+        if ($('.section--single-product-header').length > 0) {
+            $('.section--single-product-header').flickity({
+                // options
+                lazyLoad: 2,
+                cellAlign: 'left',
+                contain: true,
+                cellSelector: '.block--single-image',
+                prevNextButtons: true,
+                pageDots: false
+            });
+        }
         if ($('.section--about-partners.slider').length > 0) {
             $('.section--about-partners.slider').flickity({
                 // options

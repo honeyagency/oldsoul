@@ -2,40 +2,42 @@
 {% block content %}
     {{ fn('timber_set_product', post) }}
     {% do action('woocommerce_before_single_product') %}
-    <header class="flex flex--wrap">
+    <header class="section--single-product-header dsk--flex flex--wrap">
         {% for image in gallery %}
             
-            <div class="grid--third grid--md-sixth nog">
-                <img data-original="{{image|resize(475,475)}}" width="100%" data-action="zoom" data-zoom-target="{{image|resize(1280)}}" alt="">
+            <div class="block--single-image grid--one grid--md-sixth nog">
+                <img class="hidden--mob" data-original="{{image|resize(475,475)}}" width="100%" data-action="zoom" data-zoom-target="{{image|resize(2560)}}" alt="">
+                <img class="hidden--dsk" src="{{image|resize(150,150)}}" data-flickity-lazyload="{{image|resize(750,750)}}" alt="{{image.caption}}" width="100%" data-original-set="{{image|resize(640,640)}}  640w,{{image|resize(750,750)}}  750w,{{image|resize(1080,1080)}} 1080w,{{image|resize(1280,1280)}} 1280w,{{image|resize(1366,1366)}} 1366w,{{image|resize(1440,1440)}} 1440w,{{image|resize(1500,1500)}} 1536w,{{image|resize(1920,1920)}} 1920w, {{image|resize(2880,2880)}} 2880w" sizes="100vw" data-action="zoom" data-zoom-target="{{image|resize(1300)}}">
             </div>
         {% endfor %}
     </header>
-    <article itemscope itemtype="http://schema.org/Product" class="section--single-product-details {{ post.class }} flex flex--wrap justify--between cafe-wrap margin--center spacing--vert-1 spacing--dsk-vert-5">
+    <article itemscope itemtype="http://schema.org/Product" class="section--single-product-details {{ post.class }} dsk--flex flex--wrap justify--between cafe-wrap margin--center spacing--vert-1 spacing--dsk-vert-5">
         {# {{related|print_r}} #}
-        <div class="summary entry-summary grid--sm-three-fifths">
-            {% do action('woocommerce_before_single_product_summary') %}
-            {% if post.thumbnail %}
-                {# <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" /> #}
-            {% endif %}
-            <h1 class="product--title">{{post.title}}</h1>
-            <div class="font--content">{{post.content}}</div>
-        </div>
-        <aside class="block--product-aside grid--third font--small spacing--horiz-1">
+        <aside class="block--product-aside grid--one grid--sm-third font--small spacing--dsk-horiz-1 spacing--gutter-mob order--2">
+            <h1 class="product--title hidden--dsk">{{post.title}}</h1>
             {% do action('woocommerce_single_product_summary') %}
             {% if details.altitude %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Altitude</strong> <p>{{details.altitude}}</p></div>{% endif %}
             {% if details.varietal %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Varietal</strong> <p>{{details.varietal}}</p></div>{% endif %}
             {% if details.process %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Process</strong> <p>{{details.process}}</p></div>{% endif %}
             {% if details.producer %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Producer</strong> <p>{{details.producer}}</p></div>{% endif %}
         </aside>
+        <div class="summary entry-summary grid--sm-three-fifths spacing--gutter-mob">
+            {% do action('woocommerce_before_single_product_summary') %}
+            {% if post.thumbnail %}
+                {# <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" /> #}
+            {% endif %}
+            <h1 class="product--title hidden--mob">{{post.title}}</h1>
+            <div class="font--content">{{post.content}}</div>
+        </div>
+
         {% do action('woocommerce_after_single_product_summary') %}
         <meta itemprop="url" content="{{ post.link }}" />
     </article>
     {% do action('woocommerce_after_single_product') %}
     <section class="section--shop-product-grid grid--one  grid--md-three-fourths flex--double flex--wrap justify--between">
-{# 
+        {#
         {% for post in related %}
             {% include ["partials/related-product.twig"] %}
-
         {% endfor %} #}
     </section>
     
