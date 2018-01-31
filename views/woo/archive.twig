@@ -13,6 +13,7 @@
         </div>
         <h2 class="color--white text--center grid--one spacing--vert-2">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
     </header>
+  
     <section class="section--shop flex flex--wrap  justify--between align--items-start max-wrap margin--center spacing--grid spacing--dsk-vert-5 spacing--gutter-mob">
         <div class="before-shop-loop grid--one">
             {% do action('woocommerce_before_shop_loop') %}

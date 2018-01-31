@@ -366,6 +366,60 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5a7208603b195",
+            "label": "Shop Messages",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5a72086c3b196",
+            "label": "Added to cart",
+            "name": "added_to_cart",
+            "type": "text",
+            "instructions": "The text that follows the product name when someone adds an item to their cart. I.e. Costa Rica Reserve “Carlos Montero” <strong>has been added to your cart.<\/strong>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a7208983b197",
+            "label": "View Cart Button",
+            "name": "view_cart_button",
+            "type": "text",
+            "instructions": "Text of the button that follows the above message",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -385,5 +439,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1515096377
+    "modified": 1517422769
 }

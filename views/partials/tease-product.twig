@@ -2,33 +2,25 @@
 {{ fn('timber_set_product', post) }}
 {% if post.thumbnail %}
 <div class="media-figure">
-    {# <a href="{{ post.link }}"> #}
+    <a href="{{ post.link }}">
         <img src="{{ post.thumbnail.src|resize(100,67)}}" width="100%" data-original="{{ post.thumbnail.src|resize(562,373) }}"/>
-    {# </a> #}
+    </a>
 </div>
 {% endif %}
-
-{% for term in post.terms('product_cat') if term == 'Coffee' %}
-<div class="notice--coffee {% for term in post.terms('product_cat') if term == 'Featured' %}feat{% endfor %} font--smaller font--bold letter--1 text--uppercase color--green spacing--horiz-half spacing--dsk-horiz-1  spacing--vert-half spacing--dsk-vert-1">{% for term in post.terms('product_cat') if term == 'Featured' %}Featured {% endfor %}<i class="icon-beans--two" data-grunticon-embed></i></div>
-{% endfor %}
+    {% for term in post.terms('product_cat') if term == 'Coffee' %}
+        <div class="notice--coffee {% for term in post.terms('product_cat') if term == 'Featured' %}feat{% endfor %} font--smaller font--bold letter--1 text--uppercase color--green spacing--horiz-half spacing--dsk-horiz-1  spacing--vert-half spacing--dsk-vert-1">{% for term in post.terms('product_cat') if term == 'Featured' %}Featured {% endfor %}<i class="icon-beans--two" data-grunticon-embed></i></div>
+    {% endfor %}
 {% do action('woocommerce_before_shop_loop_item_title') %}
-
-<div class="block--product-bottom">
-{% if post.title %}
-    <h4 class="product-title spacing--horiz-half spacing--dsk-horiz-1 font--sans spacing--vert-1 font--smaller font--bold letter--1  text--uppercase"><a class="color--black" href="{{ post.link }}">{{ post.title }}</a></h4>
-{% else %}
-    <h4 class="product-title spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1 font--sans font--smaller font--bold letter--1  text--uppercase"><a class="color--black" href="{{ post.link }}">{{ fn('the_title') }}</a></h4>
-{% endif %}
-{% if post.sell_note_type != 'none' and post.sell_note != null %}
-    <div class="block--product-award table font--small spacing--horiz-half spacing--dsk-horiz-1 flex  align--start spacing--vert-half border--top-1
-        border--bot-1 {% if post.sell_note_type == 'award' %}color--green"><i class="icon-award inline-block" data-grunticon-embed></i>{% else %}">{% endif %}
-        <span class="inline-block">{{post.sell_note}}</span>
+<div class="block--product-bottom ">
+    <div class="title-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1 {% if post.sell_note_type == 'award' %}flex flex--wrap justify--between{% endif %}">
+    {% if post.sell_note_type == 'award' %}<i class="icon-award inline-block" title="{{post.sell_note}}" data-grunticon-embed></i>{% endif %}
+        <h4 class="product-title  font--sans  font--smaller font--bold letter--1 inline-block text--uppercase"><a class="color--black" href="{{ post.link }}">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</a></h4>
     </div>
-{% else %}
-    {# <hr class="pre-cart color--brown-faded grid--one nog" /> #}
-    {%  endif %}
-    {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
-    {% do action( 'woocommerce_after_shop_loop_item' ) %}
-        {# <a href="{{ post.link }}" class="mobile--view hidden--dsk text--uppercase bg--black letter--2 font--bold color--white text--center block">View</a> #}
+
+    <div class="block--price-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-half flex flex--wrap justify--between">
+        {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+        {# {% do action( 'woocommerce_after_shop_loop_item' ) %} #}
+        <a href="{{ post.link }}" class="text--uppercase ha-button font--small letter--2 font--bold text--center inline-block">View</a>
+    </div>
 </div>
 </article>

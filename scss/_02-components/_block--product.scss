@@ -1,8 +1,6 @@
 .block--product {
     position: relative;
 
-    // min-height: 230px;
-
     @include media($screen-sm) {
         min-height: 300px;
     }
@@ -13,44 +11,19 @@
     flex-direction: column;
     justify-content: space-between;
 
-    label[for^="pa_bag-size"], .reset_variations, label[for^="pa_size"] {
-        @extend .screenreader;
-    }
-
     select {
         appearance: none;
     }
 
-    &.product-type-variable {
-        .woocommerce-variation-description {
-            // if it's a variable product, we need to hide the price range displayed
-            @extend .screenreader-dsk;
-        }
-    }
-
-    @include media($screen-sm) {
-        > .price {
-            position: absolute;
-            bottom: 0;
-            width: 30%;
-            text-align: center;
-            border-right: 1px solid;
-            padding: 5px 0;
-        }
-    }
-
-
     &.product_cat-coffee {
         &.product-type-variable {
             .product-title + .price, .block--product-award + .price, .pre-cart + .price {
-                @extend .screenreader-dsk;
-
                 @extend .spacing--horiz-half;
             }
         }
     }
 
-    .block--product-award, .variations, .woocommerce-variation, .product-title, img {
+    .block--product-award, .variations, .woocommerce-variation, .product-title, img, .block--price-wrap {
         border-color: map-get($brown, lightfade) !important;
     }
 
@@ -63,7 +36,7 @@
         background-color: map-get($brown, lightfade);
         border-color: $green !important;
 
-        .block--product-award, .variations, .woocommerce-variation, .product-title, img {
+        .block--product-award, .variations, .woocommerce-variation, .product-title, img, .block--price-wrap {
             border-color: $green !important;
         }
 
@@ -88,6 +61,14 @@
         }
     }
 
+    .title-wrap {
+        &.flex {
+            .product-title {
+                flex-basis: calc(100% - 35px);
+            }
+        }
+    }
+
     .block--product-award, .notice--coffee {
         @include media($max-sm) {
             font-size: 0.7em;
@@ -98,78 +79,6 @@
     h4 {
         @include media($max-sm) {
             font-size: .7em;
-        }
-    }
-
-    .product-title {
-        border-bottom: 1px solid;
-
-        + .block--product-award {
-            border-top: none;
-
-            + .price {
-                @include media($screen-sm) {
-                    position: relative;
-                    bottom: 0;
-                    width: 100%;
-                    text-align: center;
-                    display: block;
-                    height: 61px;
-                    padding: 17px 0px;
-                    box-sizing: border-box;
-                }
-
-
-                .amount {
-                    @include media($screen-sm) {
-                        text-align: left;
-                        display: table;
-                        padding-left: 15px;
-                    }
-                }
-
-                + .add_to_cart_button {
-                    position: absolute;
-                    right: 0;
-                    bottom: calc(30.5px / 2);
-                }
-            }
-        }
-
-        + .price {
-            @extend .spacing--horiz-half;
-
-            @include media($screen-sm) {
-                position: relative;
-                bottom: 0;
-                width: 100%;
-                text-align: center;
-                display: block;
-                height: 61px;
-                padding: 17px 0px;
-                box-sizing: border-box;
-            }
-
-
-            .amount {
-                @include media($screen-sm) {
-                    text-align: left;
-                    display: table;
-                    padding-left: 15px;
-                }
-            }
-
-            + .add_to_cart_button {
-                position: absolute;
-                right: 0;
-                bottom: calc(30.5px / 2);
-            }
-        }
-
-        @include media($max-sm) {
-            font-weight: 300 !important;
-            text-transform: none !important;
-            line-height: 1.4;
         }
     }
 
@@ -202,119 +111,6 @@
         margin-top: 5px;
     }
 
-    form {
-        position: relative;
-        padding: 10px 0;
-
-        .variations {
-            display: block;
-            text-align: center;
-            width: 25%;
-            margin: 0 auto;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-60%);
-            border-right: 1px solid;
-            padding: 3px 5px 4px 0;
-
-            tbody {
-                display: block;
-                width: 100%;
-
-                tr {
-                    display: block;
-                    width: 100%;
-
-                    td.value {
-                        display: block;
-                        width: 100%;
-
-                        // variation drop-down
-
-                        select {
-                            width: 100%;
-                            text-align: center;
-                            font-weight: 400;
-                            padding: 0;
-                            border: 0;
-                            background-size: 12px;
-                            background-position: 80% center;
-                        }
-                    }
-                }
-            }
-        }
-
-        .single_variation_wrap {
-            height: 41px;
-            display: flex;
-            justify-content: space-between;
-
-            .woocommerce-variation {
-                display: block !important;
-                flex-basis: 30%;
-                text-align: center;
-                border-right: 1px solid;
-                padding: 5px 0;
-
-                .woocommerce-variation-price {
-                    .price {
-                        .woocommerce-Price-amount {
-                            // the number is here
-                            .woocommerce-Price-currencySymbol {}
-                        }
-                    }
-                }
-            }
-
-            .woocommerce-variation-add-to-cart-enabled {
-                flex-basis: 40%;
-                text-align: center;
-
-                .single_add_to_cart_button {
-                    // this is the button
-               
-                }
-            }
-
-            .quantity_select {
-                display: none;
-            }
-
-            + .woocommerce-variation-add-to-cart {
-                display: none;
-            }
-        }
-    }
-
-    button, .add_to_cart_button {
-        text-transform: uppercase !important;
-        border-bottom: 2px solid !important;
-        letter-spacing: 1.5px !important;
-        display: table !important;
-        font-weight: 600 !important;
-        background: transparent !important;
-        display: inline-block !important;
-        padding: 0 0 2px 0px !important;
-        font-size: .9rem !important;
-        border-radius: 0 !important;
-    }
-
-    &.product-type-simple {
-        > .price {
-            &:last-of-type {
-                margin-bottom: 10px;
-            }
-        }
-
-        .button {
-            align-self: flex-end;
-            margin-bottom: 10px;
-            margin-right: 1em;
-            position: relative;
-        }
-    }
-
     .media-figure {
         z-index: 1;
         position: relative;
@@ -329,10 +125,8 @@
     }
 
     .block--product-bottom {
-        @include media($screen-sm) {
-            // position: absolute;
-            bottom: 0;
-            width: 100%;
+        .block--price-wrap {
+            border-top: 1px solid;
         }
     }
 
@@ -343,45 +137,14 @@
         }
     }
 
-    &.product-type-variable {
-        .media-figure {
-            + .block--product-bottom {
-                > .price {
-                    position: absolute;
-                }
-
-                form {
-                    position: relative;
-
-                    @include media($screen-sm) {
-                        height: 61px;
-                        box-sizing: border-box;
-                    }
-                }
-            }
-        }
-    }
-
     .single_variation_wrap, .add_to_cart_button, .variations_form {
-        @include media($max-sm) {
-            display: none !important;
-        }
+        display: none !important;
     }
 
-    .price {
-        @include media($max-sm) {
-            position: relative !important;
-            display: block !important;
-            width: auto !important;
-            line-height: 1.9;
-        }
-    }
+    order: 2;
 
-    .mobile--view {
-        padding: 3px 0;
-        display: inline-block;
-        width: 50%;
-        float: right;
+    &.product_cat-featured {
+        order: 1;
     }
 }
 

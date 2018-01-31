@@ -9,5 +9,14 @@
 		<i class="icon-cart hidden--dsk" data-grunticon-embed></i>
 		{# {% do action('cart_count') %} #}
 	</section>
-
 </header>
+{% if wc_notices %}
+	<section class="section--cart-notice bg--green color--white text--center spacing--gutter spacing--vert-1">
+		
+		{% for item in wc_notices.success %}
+			<div><strong>{{item.product.get_title}}</strong> {{item.message}} <a href="{{item.url}}" class="ha-button color--white font--small inline-block">{{item.cart}}</a></div>
+			
+		{% endfor %}
+		
+	</section>
+{% endif %}

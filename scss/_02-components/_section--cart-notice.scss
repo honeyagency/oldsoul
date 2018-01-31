@@ -1,0 +1,74 @@
+@keyframes addToCartNotice {
+    0% {
+        transform: translatey(-150%);
+    }
+
+    10% {
+        transform: translatey(0);
+    }
+
+    90% {
+        transform: translatey(0);
+    }
+
+    100% {
+        transform: translatey(-150%);
+    }
+}
+
+@keyframes addToCartNoticeStick {
+    0% {
+        transform: translatey(0);
+    }
+
+    10% {
+        transform: translatey(0);
+    }
+
+    90% {
+        transform: translatey(0);
+    }
+
+    100% {
+        transform: translatey(0);
+    }
+}
+
+.section--cart-notice {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    z-index: 99999;
+    right: 0;
+    display: block;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: $base-animation;
+    transition: transform 0.3s $base-animation;
+    transform: translatey(-150%);
+}
+
+.wf-active {
+    .section--cart-notice {
+        animation-name: addToCartNotice;
+
+        &:hover {
+            -webkit-animation-play-state: paused;
+            -moz-animation-play-state: paused;
+            -o-animation-play-state: paused;
+            animation-play-state: paused;
+
+            // animation-name: addToCartNoticeStick;
+            // transform:translateY(0);
+            // transition: transform .3s $base-animation;
+       
+        }
+    }
+}
+
+body.admin-bar {
+    .section--cart-notice {
+        top: 32px;
+    }
+}
