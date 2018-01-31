@@ -1,10 +1,7 @@
 body {
     border-top: 3px solid map-get($brown, dark);
 
-    @include media($screen-xs) {}
-
-
-    @include media($screen-sm) {
+    @include media($screen-xs) {
         border-top-width: 5px;
     }
 

@@ -1,23 +1,20 @@
 .section--header-wrap {
-    &:before {
-        content: ' ';
-        top: 0;
-        display: block;
-        position: absolute;
-        background-color: map-get($brown, faded);
-        border-top: 3px solid map-get($brown, dark);
-
-        @include media($screen-sm) {
+    @include media($screen-sm) {
+        &:before {
+            content: ' ';
+            top: 0;
+            display: block;
+            position: absolute;
+            background-color: map-get($brown, faded);
+            width: 100%;
+            left: 0;
+            height: 98px;
+            right: 0;
             border-top: 5px solid map-get($brown, dark);
+            z-index: 99;
         }
-
-
-        width: 100%;
-        left: 0;
-        height: 98px;
-        right: 0;
-        z-index: 99;
     }
+
 
     @include media($max-xs) {
         justify-content: space-around;

@@ -1,19 +1,11 @@
 .block--product {
     position: relative;
 
-    @include media($screen-sm) {
-        min-height: 300px;
-    }
-
 
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-between;
-
-    select {
-        appearance: none;
-    }
 
     &.product_cat-coffee {
         &.product-type-variable {
@@ -111,10 +103,7 @@
         margin-top: 5px;
     }
 
-    .media-figure {
-        z-index: 1;
-        position: relative;
-
+    img {
         + .notice--coffee {
             z-index: 2;
             position: absolute;

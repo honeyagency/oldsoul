@@ -1,64 +1,70 @@
 .section--cafe-nav, .section--child-nav {
-    position: absolute;
-    top: 6em;
-    width: 100%;
-    z-index: 97;
-    left: 0;
-    text-align: left;
-    font-size: 1rem;
-    box-sizing: border-box;
+    @include media($screen-sm) {
+        position: absolute;
+        top: 6em;
+        width: 100%;
+        z-index: 97;
+        left: 0;
+        text-align: left;
+        font-size: 1rem;
+        box-sizing: border-box;
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
+        transition-delay: .5s;
 
-    transform: translateY(-150%);
-    opacity: 0;
-    transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
-    transition-delay: .5s;
+        .nextprev {
+            i {
+                right: -5.25em;
+                position: absolute;
+                top: 0em;
 
-    .nextprev {
-        i {
-            right: -5.25em;
-            position: absolute;
-            top: 0em;
-
-            svg {
-                path {
-                    fill: $black;
+                svg {
+                    path {
+                        fill: $black;
+                    }
                 }
             }
         }
-    }
 
-    .nav-drop-item {
-        &:first-of-type {
-            border-right: 1px solid map-get($brown, light);
+        .nav-drop-item {
+            &:first-of-type {
+                border-right: 1px solid map-get($brown, light);
+            }
         }
     }
 }
 
 .section--cafe-nav {
-    opacity: 0;
-    transform: translateY(-150%);
+    @include media($screen-sm) {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
 }
 
 .menu-item-32, .menu-item-has-children {
     // cursor: pointer;
-
-    &:hover {
-        .section--cafe-nav, .section--child-nav {
-            opacity: 1;
-            transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
-            transform: translateY(0);
+    @include media($screen-sm) {
+        &:hover {
+            .section--cafe-nav, .section--child-nav {
+                opacity: 1;
+                transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
+                transform: translateY(0);
+            }
         }
     }
 }
 
 body.logged-in {
-    .section--cafe-nav, .section--child-nav {
-        top: calc(6em + 32px);
-    }
+    @include media($screen-sm) {
+        .section--cafe-nav, .section--child-nav {
+            top: calc(6em + 32px);
+        }
 
-    .section--header-wrap {
-        &:before {
-            top: 32px;
+        .section--header-wrap {
+            &:before {
+                top: 32px;
+            }
         }
     }
 }

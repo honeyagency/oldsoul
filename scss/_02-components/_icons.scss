@@ -1,33 +1,74 @@
 .icon-logo {
     position: relative;
     display: inline-block;
-    width: 175px;
+
+    @include media($screen-lg) {}
+
+
+    @include media($screen-xl) {}
+}
+
+.hdr-logo-link {
+    margin-top: -10px;
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
 
     @include media($screen-ex) {
-        display: block;
-        width: 225px;
-            margin-top: 10px;
+        margin-top: -8px;
+        margin-bottom: 8px;
     }
+
+
+    @include media($screen-xs) {}
 
 
     @include media($screen-sm) {}
 
 
     @include media($screen-md) {
-        width: 345px;
-
+        margin-top: -12px;
+        margin-bottom: 0;
     }
 
 
-    @include media($screen-lg) {}
+    @include media($screen-lg) {
+        margin-top: -7px;
+    }
 
 
     @include media($screen-xl) {}
+}
 
+.hdr-logo-link, .icon-logo {
+    width: 175px;
+    height: 46px;
 
-    @include media($max-sm) {
-        margin-top: -8px;
+    @include media($screen-ex) {
+        width: 225px;
+        height: 56px;
     }
+
+
+    @include media($screen-xs) {
+        width: 315px;
+        height: 78px;
+    }
+
+
+    @include media($screen-sm) {}
+
+
+    @include media($screen-md) {}
+
+
+    @include media($screen-lg) {
+        width: 345px;
+        height: 85px;
+    }
+
+
+    @include media($screen-xl) {}
 }
 
 .icon-cart {
