@@ -118,6 +118,21 @@
                     padding: 17px 0px;
                     box-sizing: border-box;
                 }
+
+
+                .amount {
+                    @include media($screen-sm) {
+                        text-align: left;
+                        display: table;
+                        padding-left: 15px;
+                    }
+                }
+
+                + .add_to_cart_button {
+                    position: absolute;
+                    right: 0;
+                    bottom: calc(30.5px / 2);
+                }
             }
         }
 

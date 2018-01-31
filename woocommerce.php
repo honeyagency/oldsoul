@@ -5,10 +5,11 @@ if (!class_exists('Timber')) {
 
     return;
 }
+// remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 
-// add_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
+add_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
 //
-// add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_sale_flash', 10 );
+add_action( 'wc_add_to_cart_message', 'wc_add_to_cart_message', 10 );
 // add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 //
 // add_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
@@ -34,9 +35,9 @@ remove_action('woocommerce_single_variation', 'woocommerce_single_variation_add_
 add_action('ha_variation_add_to_cart', 'woocommerce_single_variation_add_to_cart_button', 20);
 
 //
-// add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
-// add_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
-// add_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 //
 // add_action( 'woocommerce_review_before', 'woocommerce_review_display_gravatar', 10 );
 // add_action( 'woocommerce_review_before_comment_meta', 'woocommerce_review_display_rating', 10 );
@@ -45,7 +46,7 @@ add_action('ha_variation_add_to_cart', 'woocommerce_single_variation_add_to_cart
 
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shopbar');
-$context['cafes'] = getCustomPosts('cafe', 4 , null, 'date', null, null);
+$context['cafes']   = getCustomPosts('cafe', 4, null, 'date', null, null);
 // WooCommerce Notices
 $context['wc_notices'] = wc_get_notices();
 wc_clear_notices();
@@ -54,7 +55,14 @@ if (is_singular('product')) {
     $context['post']    = Timber::get_post();
     $product            = wc_get_product($context['post']->ID);
     $context['product'] = $product;
+    // print_r(expression)
     $context['details'] = prepareProductFields();
+    $relatedProductIds  = wc_get_related_products($product->get_id(), 4, array());
+    $related            = array();
+    foreach ($relatedProductIds as $relatedProductId) {
+        $related[] = wc_get_product($relatedProductId);
+    }
+    $context['related'] = $related;
 
     $attachment_ids = $product->get_gallery_image_ids();
     $gallery        = array();

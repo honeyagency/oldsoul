@@ -11,7 +11,7 @@
         {% endfor %}
     </header>
     <article itemscope itemtype="http://schema.org/Product" class="section--single-product-details {{ post.class }} flex flex--wrap justify--between cafe-wrap margin--center spacing--vert-1 spacing--dsk-vert-5">
-
+        {# {{related|print_r}} #}
         <div class="summary entry-summary grid--sm-three-fifths">
             {% do action('woocommerce_before_single_product_summary') %}
             {% if post.thumbnail %}
@@ -21,10 +21,7 @@
             <div class="font--content">{{post.content}}</div>
         </div>
         <aside class="block--product-aside grid--third font--small spacing--horiz-1">
-
-
             {% do action('woocommerce_single_product_summary') %}
-
             {% if details.altitude %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Altitude</strong> <p>{{details.altitude}}</p></div>{% endif %}
             {% if details.varietal %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Varietal</strong> <p>{{details.varietal}}</p></div>{% endif %}
             {% if details.process %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Process</strong> <p>{{details.process}}</p></div>{% endif %}
@@ -34,4 +31,12 @@
         <meta itemprop="url" content="{{ post.link }}" />
     </article>
     {% do action('woocommerce_after_single_product') %}
+    <section class="section--shop-product-grid grid--one  grid--md-three-fourths flex--double flex--wrap justify--between">
+{# 
+        {% for post in related %}
+            {% include ["partials/related-product.twig"] %}
+
+        {% endfor %} #}
+    </section>
+    
 {% endblock  %}
