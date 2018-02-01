@@ -167,7 +167,7 @@
 
                 @extend .font--bold;
 
-                @extend .font--medium;
+                font-size: 1.1rem;
 
                 @extend .margin--bot-1;
             }
@@ -184,6 +184,10 @@
                 h2.woocommerce-order-details__title {}
 
                 table.woocommerce-table--order-details {
+                    @extend .spacing--horiz-1;
+
+                    @extend .spacing--vert-1;
+
                     thead {
                         padding: 5px 12px;
                     }
@@ -197,6 +201,7 @@
                     }
 
                     border: 0;
+                    border: 1px solid map-get($brown, light);
                     border-radius: 0;
 
                     td {
@@ -221,11 +226,24 @@
 
                 @extend .grid--sm-third;
 
+                @extend .flex;
+
+                @extend .flex--wrap;
+
+                @extend .justify--between;
+
                 section.woocommerce-columns {
                     .woocommerce-column {
+                        float: none !important;
+
+                        @extend .grid--one;
+
                         h2.woocommerce-column__title {
                             // both are wrapped in address, billing has the icons
                             address {
+                                border-radius: 0;
+                                border: 1px solid map-get($brown, light);
+
                                 p.woocommerce-customer-details--phone {}
 
                                 p.woocommerce-customer-details--email {}
