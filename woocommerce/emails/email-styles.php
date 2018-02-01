@@ -77,6 +77,13 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	padding: 0;
 	-webkit-border-radius: 6px;
 }
+#template_header_image > p{
+	margin-bottom: 0;	
+}
+#template_header_image > p > img{
+	width:600px;
+}
+
 
 #template_footer #credit {
 	border:0;
