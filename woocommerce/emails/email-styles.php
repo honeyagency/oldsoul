@@ -53,8 +53,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 #template_container {
 	box-shadow: 0 !important;
 	background-color: <?php echo esc_attr( $body ); ?>;
-	border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-	border-top:0px;
+	border: 0px !important;
 	margin-top:0px;
 	border-radius: 0 !important;
 }
