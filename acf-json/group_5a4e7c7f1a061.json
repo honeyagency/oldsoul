@@ -420,6 +420,25 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5a7250b9f8f44",
+            "label": "Order Summary",
+            "name": "order_summary",
+            "type": "text",
+            "instructions": "This displays above the order summary on the right-hand side of the checkout page",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -439,5 +458,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517422769
+    "modified": 1517441236
 }

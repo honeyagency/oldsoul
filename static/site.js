@@ -80,6 +80,10 @@ jQuery(document).ready(function($) {
                 pageDots: false
             });
         }
+        $('.product-quantity').remove();
+        $(document.body).on('updated_cart_totals', function() {
+            $('.product-quantity').remove();
+        });
     } else {
         if ($('.section--about-partners.slider').length > 0) {
             $('.section--about-partners').flickity({
@@ -92,6 +96,10 @@ jQuery(document).ready(function($) {
                 pageDots: false
             });
         }
+        $('.mob-quant').remove();
+        $(document.body).on('updated_cart_totals', function() {
+            $('.mob-quant').remove();
+        });
     }
     if (typeof mediumZoom == 'function') {
         mediumZoom(document.querySelectorAll('[data-action="zoom"]'));

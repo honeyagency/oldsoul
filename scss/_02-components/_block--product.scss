@@ -104,6 +104,8 @@
     }
 
     img {
+        width: 100%;
+        display: block;
         + .notice--coffee {
             z-index: 2;
             position: absolute;

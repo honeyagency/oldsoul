@@ -1,8 +1,15 @@
-.woocommerce-breadcrumb{
-	display: none;
+.woocommerce-breadcrumb {
+    display: none;
 }
-.woocommerce-message{
-	    z-index: 9999;
+
+.woocommerce-message {
+    z-index: 9999;
     position: relative;
     width: 100%;
+}
+
+.woocommerce a.remove {
+    line-height: .8;
+
+    &:hover {}
 }

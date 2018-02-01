@@ -1,8 +1,11 @@
 {% extends "base.twig" %}
 {% block content %}
+	{% include 'components/sections/section--base-header.twig' %}
 	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-		<section class="article-content max-wrap margin--center bg--brown- margin--vert-4">
+		<section class="article-content section--cart-wrap max-wrap margin--center bg--brown- margin--vert-4 spacing--gutter">
 			{# <h1 class="article-h1">{{post.title}}</h1> #}
+			<div class="hidden--dsk spacing--vert-half text--center "><strong class="text--center text--uppercase block font--goldilocks font--sans letter--1 font--bold">{{cartcount}} Item{% if cartcount > 1 %}s{% endif %}</strong></div>
+
 			{{ function('do_shortcode', '[woocommerce_cart]') }}
 		</section>
 	</article>

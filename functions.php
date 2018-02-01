@@ -42,6 +42,7 @@ class StarterSite extends TimberSite
         $context['site']    = $this;
         $context['options'] = prepareSiteOptions();
         $context['assets']  = get_template_directory_uri() . '/app';
+        $context['cartcount'] = WC()->cart->get_cart_contents_count();
 
         return $context;
     }
@@ -169,47 +170,49 @@ function ha_cart()
         $cartItems = '9+';
     }
     ?>
+
 <a class="cart-contents <?php if ($cartCount == 0) {echo 'empty';} else {echo 'has-items';}?>" data-cart-items="<?php echo $cartItems; ?>" href="<?php echo wc_get_cart_url(); ?>" title="<?php _e('View your shopping cart');?>"><i class="icon-cart" data-grunticon-embed></i></a>
 <?php
 }
 add_action('cart_count', 'ha_cart', 10);
+
 // Turn quantity inputs into drop-downs
-function woocommerce_quantity_input()
-{
-    global $product;
+// function woocommerce_quantity_input()
+// {
+//     global $product;
 
-    $defaults = array(
-        'input_name'  => 'quantity',
-        'input_value' => '1',
-        'max_value'   => apply_filters('woocommerce_quantity_input_max', '', $product),
-        'min_value'   => apply_filters('woocommerce_quantity_input_min', '', $product),
-        'step'        => apply_filters('woocommerce_quantity_input_step', '1', $product),
-        'style'       => apply_filters('woocommerce_quantity_style', 'float:left; margin-right:10px;', $product),
-    );
-    if (!empty($defaults['min_value'])) {
-        $min = $defaults['min_value'];
-    } else {
-        $min = 1;
-    }
+//     $defaults = array(
+//         'input_name'  => 'quantity',
+//         'input_value' => '1',
+//         'max_value'   => apply_filters('woocommerce_quantity_input_max', '', $product),
+//         'min_value'   => apply_filters('woocommerce_quantity_input_min', '', $product),
+//         'step'        => apply_filters('woocommerce_quantity_input_step', '1', $product),
+//         'style'       => apply_filters('woocommerce_quantity_style', 'float:left; margin-right:10px;', $product),
+//     );
+//     if (!empty($defaults['min_value'])) {
+//         $min = $defaults['min_value'];
+//     } else {
+//         $min = 1;
+//     }
 
-    if (!empty($defaults['max_value'])) {
-        $max = $defaults['max_value'];
-    } else {
-        $max = 20;
-    }
+//     if (!empty($defaults['max_value'])) {
+//         $max = $defaults['max_value'];
+//     } else {
+//         $max = 20;
+//     }
 
-    if (!empty($defaults['step'])) {
-        $step = $defaults['step'];
-    } else {
-        $step = 1;
-    }
+//     if (!empty($defaults['step'])) {
+//         $step = $defaults['step'];
+//     } else {
+//         $step = 1;
+//     }
 
-    $options = '';
-    for ($count = $min; $count <= $max; $count = $count + $step) {
-        $options .= '<option value="' . $count . '">' . $count . '</option>';
-    }
-    echo '<div class="quantity_select" style="' . $defaults['style'] . '"><select name="' . esc_attr($defaults['input_name']) . '" title="' . _x('Qty', 'Product quantity input tooltip', 'woocommerce') . '" class="qty">' . $options . '</select></div>';
-}
+//     $options = '';
+//     for ($count = $min; $count <= $max; $count = $count + $step) {
+//         $options .= '<option value="' . $count . '">' . $count . '</option>';
+//     }
+//     echo '<div class="quantity_select" style="' . $defaults['style'] . '"><select name="' . esc_attr($defaults['input_name']) . '" title="' . _x('Qty', 'Product quantity input tooltip', 'woocommerce') . '" class="qty">' . $options . '</select></div>';
+// }
 add_filter('wc_add_to_cart_message', 'ha_woo_cart_notice', 10, 2);
 function ha_woo_cart_notice($message, $product_id)
 {
