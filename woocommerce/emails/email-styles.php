@@ -54,12 +54,14 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	box-shadow: 0 1px 4px rgba(0,0,0,0.1) !important;
 	background-color: <?php echo esc_attr( $body ); ?>;
 	border: 1px solid <?php echo esc_attr( $bg_darker_10 ); ?>;
-	border-radius: 3px !important;
+	border-top:0px;
+	margin-top:0px;
+	border-radius: 0 !important;
 }
 
 #template_header {
 	background-color: <?php echo esc_attr( $base ); ?>;
-	border-radius: 3px 3px 0 0 !important;
+	border-radius: 0 0 0 0 !important;
 	color: <?php echo esc_attr( $base_text ); ?>;
 	border-bottom: 0;
 	font-weight: bold;
