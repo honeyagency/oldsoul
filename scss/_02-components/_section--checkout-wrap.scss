@@ -240,14 +240,17 @@
 
                         h2.woocommerce-column__title {
                             // both are wrapped in address, billing has the icons
-                            address {
-                                border-radius: 0;
-                                border: 1px solid map-get($brown, light);
+                       
+                        }
 
-                                p.woocommerce-customer-details--phone {}
+                        address {
+                            margin-bottom: 1em;
+                            border-radius: 0;
+                            border: 1px solid map-get($brown, light);
 
-                                p.woocommerce-customer-details--email {}
-                            }
+                            p.woocommerce-customer-details--phone {}
+
+                            p.woocommerce-customer-details--email {}
                         }
                     }
                 }
