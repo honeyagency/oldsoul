@@ -47,6 +47,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	padding: 70px 0 70px 0;
 	-webkit-text-size-adjust: none !important;
 	width: 100%;
+
 	-webkit-font-smoothing:antialiased;
 }
 
@@ -56,6 +57,46 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	border: 0px !important;
 	margin-top:0px;
 	border-radius: 0 !important;
+}
+@media only screen and (max-width: 600px) {
+    #template_container {
+        display: block;
+        width: 100%;
+    }
+    table, table>tbody, tr {
+        display: block;
+        width: 100%;
+    }
+    td {
+        box-sizing: border-box;
+    }
+    #body_content>table>tbody>tr>td {
+        padding: 28px 28px 0;
+    }
+    #template_container>tbody>tr>td {
+        display: block;
+        width: 100%;
+    }
+    table>tbody>tr {
+        display: block;
+        width: 100%;
+    }
+    #wrapper>table {
+        display: block;
+        width: 100%;
+    }
+    #wrapper>table>tbody>tr>td {
+        display: block;
+        width: 100%;
+    }
+    #template_header>tbody>tr {
+        display: block;
+        width: 100%;
+    }
+    #template_header>tbody>tr>td {
+        display: block;
+        width: 100%;
+    }
 }
 
 #template_header {
@@ -83,6 +124,9 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 }
 #template_header_image > p > img{
 	width:600px;
+	max-width:100%;
+	    margin: 0;
+    display: block;
 }
 
 
