@@ -202,3 +202,7 @@ button, [type="submit"] {
     border: 0;
     border-bottom: 2px solid;
 }
+
+input[type=checkbox] {
+    appearance: checkbox;
+}

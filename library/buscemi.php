@@ -74,7 +74,7 @@ function buscemi_scripts()
         wp_enqueue_script('livereload');
     }
 
-    $version = '0.2.4';
+    $version = '0.2.5';
 
     wp_register_script('lazyload', get_template_directory_uri() . '/app/vendors/lazyload.min.js', null, false, true);
     wp_enqueue_script('lazyload');

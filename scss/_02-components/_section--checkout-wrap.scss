@@ -1,0 +1,140 @@
+.section--checkout-wrap {
+    .overview-wrap {
+        width: 100%;
+        border: 1px solid map-get($brown, light);
+
+        h2 {
+            @extend .font--sans;
+
+            @extend h4;
+        }
+
+        table.shop_table {
+            thead {
+                padding: 5px 12px;
+            }
+
+            .product-name {
+                text-align: left;
+            }
+
+            .product-total {
+                text-align: right;
+            }
+
+            border: 0;
+            border-radius: 0;
+
+            td {
+                text-align: right;
+            }
+        }
+
+        p.wc-terms-and-conditions {
+            float: none;
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+
+        .wc-proceed-to-checkout {
+            padding: 0;
+            text-align: center;
+
+            .checkout-button {
+                margin: 0;
+            }
+        }
+    }
+
+    .woocommerce-billing-fields, .shipping_address {
+        h3 {
+            @extend .font--sans;
+
+            @extend .text--uppercase;
+
+            @extend .letter--1;
+
+            @extend .font--bold;
+        }
+
+        label {
+            font-size: .7rem;
+            color: map-get($brown, formtext);
+
+            @extend .text--uppercase;
+
+            @extend .letter--1;
+
+            @extend .font--bold;
+
+            abbr {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .input-checkbox {
+        appearance: checkbox;
+        padding: 0;
+        margin: 0;
+    }
+
+    .input-text {
+        margin-bottom: 1em !important;
+    }
+
+    #ship-to-different-address, .create-account {
+        font-size: 1.1rem;
+
+        @extend .font--sans;
+
+        @extend .text--uppercase;
+
+        @extend .letter--1;
+
+        @extend .font--bold;
+    }
+}
+
+.form-row, .input-checkbox {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.select2-container--default .select2-selection--single {
+    height: auto;
+    background-color: transparent;
+    color: map-get($brown, formtext);
+    border: 1px solid map-get($brown, light);
+    border-radius: 0;
+    padding: 12px 14px !important;
+}
+
+.select2-dropdown {
+    background-color: map-get($brown, faded);
+    border: 1px solid map-get($brown, light);
+    border-radius: 0;
+
+    li {
+        margin: 0;
+        padding: 12px 14px !important;
+    }
+}
+
+.select2-search__field {
+    background-color: $white;
+    color: $black;
+    border: 1px solid map-get($brown, light);
+}
+
+.select2-results__option--highlighted {
+    background-color: $green;
+    color: $white;
+}
+
+.validate-state {
+    margin-bottom: 1em !important;
+}

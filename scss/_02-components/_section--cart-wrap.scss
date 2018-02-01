@@ -1,4 +1,4 @@
-.section--cart-wrap {
+.section--cart-wrap,.section--checkout-wrap {
     .woocommerce {
         .woocommerce-info, .woocommerce-error {
             @extend .grid--one;
@@ -204,7 +204,7 @@
             }
         }
 
-        .cart-collaterals {
+        .cart-collaterals, .overview-wrap {
             @extend .grid--one;
 
             @extend .grid--sm-third;
