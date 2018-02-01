@@ -184,6 +184,7 @@
                 h2.woocommerce-order-details__title {}
 
                 table.woocommerce-table--order-details {
+                    font-size: 1rem;
                     @extend .spacing--horiz-1;
 
                     @extend .spacing--vert-1;
@@ -244,6 +245,7 @@
                         }
 
                         address {
+                            font-size: 1rem;
                             margin-bottom: 1em;
                             border-radius: 0;
                             border: 1px solid map-get($brown, light);
