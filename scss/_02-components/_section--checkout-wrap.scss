@@ -49,6 +49,8 @@
         }
     }
 
+    .woocommerce-checkout-review-order-table {}
+
     .woocommerce-billing-fields, .shipping_address {
         h3 {
             @extend .font--sans;
@@ -137,4 +139,10 @@
 
 .validate-state {
     margin-bottom: 1em !important;
+}
+
+.woocommerce-NoticeGroup {
+    @extend .grid--one;
+
+    box-sizing: border-box;
 }
