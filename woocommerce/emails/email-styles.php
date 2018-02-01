@@ -71,7 +71,7 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
         box-sizing: border-box;
     }
     #body_content>table>tbody>tr>td {
-        padding: 28px 28px 0;
+        padding: 28px 28px 0 !important;
     }
     #template_container>tbody>tr>td {
         display: block;
@@ -221,7 +221,7 @@ h1 {
 }
 
 h2 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #232111;
 	display: block;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 	font-size: 18px;
@@ -232,7 +232,7 @@ h2 {
 }
 
 h3 {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #232111;
 	display: block;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 	font-size: 16px;
@@ -255,6 +255,7 @@ img {
 	font-weight: bold;
 	height: auto;
 	line-height: 100%;
+	max-width:100%;
 	outline: none;
 	text-decoration: none;
 	text-transform: capitalize;
