@@ -97,6 +97,10 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
         display: block;
         width: 100%;
     }
+    #addresses > tr > td {
+display:block;
+width:100% !important;
+}
 }
 
 #template_header {
