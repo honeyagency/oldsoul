@@ -58,51 +58,11 @@ $text_lighter_20 = wc_hex_lighter( $text, 20 );
 	margin-top:0px;
 	border-radius: 0 !important;
 }
-@media only screen and (max-width: 600px) {
-    #template_container {
-        display: block;
-        width: 100%;
-    }
-    table, table>tbody, tr {
-        display: block;
-        width: 100%;
-    }
-    td {
-        box-sizing: border-box;
-    }
-    #body_content>table>tbody>tr>td {
-        padding: 28px 28px 0 !important;
-    }
-    #template_container>tbody>tr>td {
-        display: block;
-        width: 100%;
-    }
-    table>tbody>tr {
-        display: block;
-        width: 100%;
-    }
-    #wrapper>table {
-        display: block;
-        width: 100%;
-    }
-    #wrapper>table>tbody>tr>td {
-        display: block;
-        width: 100%;
-    }
-    #template_header>tbody>tr {
-        display: block;
-        width: 100%;
-    }
-    #template_header>tbody>tr>td {
-        display: block;
-        width: 100%;
-    }
-    #addresses > tr, #addresses > tr > td {
-display:block !important;
-width:100% !important;
-}
-}
 
+#addresses > tbody >  tr > td {
+
+	    border-right: 20px solid white;
+}
 #template_header {
 	background-color: <?php echo esc_attr( $base ); ?>;
 	border-radius: 0 0 0 0 !important;
@@ -191,6 +151,10 @@ width:100% !important;
 .td {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
 	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
+    border-collapse: collapse;
+}
+td[style]{
+	 font-family:-apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !important;
 }
 
 .address {
@@ -203,14 +167,29 @@ width:100% !important;
 	color: <?php echo esc_attr( $text ); ?>;
 	font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 }
+#addresses > tbody > tr{   display: block;
+        width: 100%;
+    }
+#addresses > tr{   display: block;
 
+        width: 100%;}
+#addresses > tbody > tr > td{   display: block;
+        width: 100%;}
+#addresses > tr > td {   display: block;
+       margin-bottom:10px; width: 100%;}
+       address{
+       padding:10px 12px !important;
+   }
 .link {
-	color: <?php echo esc_attr( $base ); ?>;
+	color: #202020;
 }
 
 #header_wrapper {
 	padding: 36px 48px;
 	display: block;
+}
+a{
+	color:#202020;
 }
 
 h1 {
@@ -263,5 +242,56 @@ img {
 	outline: none;
 	text-decoration: none;
 	text-transform: capitalize;
+}
+address{
+	    font-size: 15px;
+    font-style: normal;
+    line-height: 1.5;
+
+}
+@media only screen and (max-width: 600px) {
+    #template_container {
+        display: block;
+        width: 100%;
+    }
+    table, table>tbody, tr {
+        display: block;
+        width: 100%;
+    }
+    td {
+        box-sizing: border-box;
+    }
+    #body_content>table>tbody>tr>td {
+        padding: 28px 28px 0 !important;
+    }
+    #template_container>tbody>tr>td {
+        display: block;
+        width: 100%;
+    }
+    table>tbody>tr {
+        display: block;
+        width: 100%;
+    }
+    #wrapper>table {
+        display: block;
+        width: 100%;
+    }
+    #wrapper>table>tbody>tr>td {
+        display: block;
+        width: 100%;
+    }
+    #template_header>tbody>tr {
+        display: block;
+        width: 100%;
+    }
+    #template_header>tbody>tr>td {
+        display: block;
+        width: 100%;
+    }
+     #addresses > tbody >  tr > td[style] {
+display:block !important;
+width:100% !important;
+border:0 !important;
+}
 }
 <?php
