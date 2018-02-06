@@ -17,6 +17,8 @@
         -webkit-tap-highlight-color: transparent !important;
 
         span {
+            @include accelerate;
+
             height: 1px;
             width: 100%;
             border-bottom: 3px solid;
@@ -30,6 +32,8 @@
         }
 
         &:after, &:before {
+            @include accelerate;
+
             display: block;
             border-color: map-get($brown, dark);
             position: absolute;
@@ -56,6 +60,8 @@
         padding: 5px 0 9px 0;
 
         .navs {
+            @include accelerate;
+
             transform: translateX(-110%);
             transition: transform 0.3s $base-animation;
             box-shadow: 0px 0px 10px transparentize(map-get($brown, dark), 0.4);
@@ -65,7 +71,7 @@
             background-color: map-get($brown, faded);
             z-index: 9999;
             bottom: 0;
-            width: 50%;
+            width: 70%;
             text-align: left !important;
 
             ul {
@@ -102,232 +108,97 @@
                     display: none;
                 }
             }
+
+            .nav-item {
+                &.menu-item-has-children {
+                    position: relative;
+
+                    > .nav-link {
+                        z-index: 9;
+                        position: relative;
+                    }
+
+                    .nav-drop-item {
+                        @include accelerate;
+
+                        z-index: 8;
+                        position: relative;
+
+                        .nav-link {
+                            border-top: 0;
+                            font-family: $base-sans-font;
+                            padding-top: 0;
+                            padding-bottom: .2em;
+                        }
+
+                        margin: -3em 0;
+                        opacity: 0;
+                        transition: margin 0.4s $base-animation, opacity 0.3s $base-animation;
+                    }
+
+                    .trigger--children {
+                        text-align: right;
+                        cursor: pointer;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        width: 42%;
+                        height: 55px;
+                        line-height: 1.2;
+                        z-index: 9998;
+                        font-size: 26px;
+                        transform-origin: center;
+
+                        span {
+                            @include accelerate;
+
+                            transform-origin: center;
+                            color: map-get($brown, dark);
+                            position: relative;
+                            transition: transform 0.4s $base-animation, background 0.4s $base-animation, color 0.4s $base-animation;
+                            width: 30px;
+                            height: 30px;
+                            margin-top: 12px;
+                            margin-right: 5px;
+                            display: inline-block;
+                            text-align: center;
+                            font-weight: 100;
+                            background: transparent;
+                            line-height: 0.9;
+                            border-radius: 100%;
+                        }
+                    }
+
+                    &.children--visible {
+                        .trigger--children {
+                            span {
+                                background: map-get($brown, main);
+                                color: $white;
+                                transition: transform 0.4s $base-animation, background 0.4s $base-animation, color 0.4s $base-animation;
+                                transform: rotate(-45deg);
+                            }
+                        }
+
+                        .nav-drop-item {
+                            .nav-link {}
+
+                            margin: 0em 0;
+                            opacity: 1;
+                            transition: margin 0.4s $base-animation, opacity 0.3s $base-animation;
+
+                            &:last-of-type {
+                                margin: 0 0 0.7em;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         .icon-cart {
             width: 24px;
         }
     }
-
-    // .main--header {
-    //     margin-bottom: -1em;
-    //     min-height: 120px;
-    //     position: relative;
-
-    //     // Below is navigation after it's displayed
-    //     .main-nav {
-    //         text-align: left !important;
-    //         position: absolute;
-    //         width: 100%;
-    //         height: 0;
-    //         -webkit-transform: translate3d(0, 0, 0);
-    //         opacity: 0;
-    //         transition: height 0.3s $base-animation, top 0.3s $base-animation, opacity 0.3s $base-animation;
-    //         left: 0;
-    //         right: 0;
-    //         top: -7.5em;
-    //         background-color: map-get($brown, light);
-    //         z-index: 999;
-
-    //         ul {
-    //             margin: 0;
-    //             padding: 0;
-
-    //             li {
-    //                 margin: 0;
-    //                 padding: 0;
-    //                 position: relative;
-    //                 display: block;
-
-    //                 &.nav-item {
-    //                     min-height: 35px;
-    //                     margin: 0;
-    //                     padding: 0.3em 0;
-    //                     transform: translateY(-1.5em);
-    //                     transition: transform 0.3s $base-animation;
-
-    //                     &:nth-of-type(1) {
-    //                         transition-delay: .125s;
-    //                     }
-
-    //                     &:nth-of-type(2) {
-    //                         transition-delay: .1s;
-    //                     }
-
-    //                     &:nth-of-type(3) {
-    //                         transition-delay: .075s;
-    //                     }
-
-    //                     &:nth-of-type(1) {
-    //                         z-index: 999;
-
-    //                         .top-level {
-    //                             z-index: 999;
-    //                         }
-    //                     }
-
-    //                     &:nth-of-type(2) {
-    //                         z-index: 998;
-
-    //                         .top-level {
-    //                             z-index: 998;
-    //                         }
-    //                     }
-
-    //                     &:nth-of-type(3) {
-    //                         z-index: 997;
-
-    //                         .top-level {
-    //                             z-index: 997;
-    //                         }
-    //                     }
-
-    //                     &:nth-of-type(3) {
-    //                         z-index: 996;
-
-    //                         .top-level {
-    //                             z-index: 996;
-    //                         }
-    //                     }
-    //                 }
-
-    //                 .trigger--children {
-    //                     text-align: right;
-    //                     cursor: pointer;
-    //                     position: absolute;
-    //                     right: 0;
-    //                     top: 0;
-    //                     width: 42%;
-    //                     height: 30px;
-    //                     line-height: 1.2;
-    //                     z-index: 9998;
-    //                     font-size: 1.6em;
-    //                     color: map-get($brown, dark);
-
-    //                     span {
-    //                         position: relative;
-    //                         transition: transform 0.2s $base-animation, background 0.2s $base-animation;
-    //                         width: 30px;
-    //                         height: 30px;
-    //                         display: inline-block;
-    //                         text-align: center;
-    //                         background: transparent;
-    //                         line-height: 0.9;
-    //                         border-radius: 100%;
-    //                     }
-    //                 }
-
-    //                 &.children--visible {
-    //                     .trigger--children {
-    //                         span {
-    //                             background: transparentize(white, 0.2);
-    //                             transition: transform 0.2s $base-animation, background 0.2s $base-animation;
-    //                             transform: rotate(-45deg);
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-
-    //         .top-level,
-    //         .trigger--children {
-    //             font-size: 1.3em;
-    //         }
-
-    //         .top-level {
-    //             display: block;
-    //             background-color: map-get($brown, light);
-    //             position: relative;
-    //             font-weight: 400 !important;
-    //         }
-
-    //         .trigger--children {
-    //             font-weight: 100 !important;
-    //         }
-
-    //         .nav-drop {
-    //             margin-top: 4px !important;
-    //             position: relative;
-
-    //             .nav-drop-item {
-    //                 z-index: 10;
-    //                 opacity: 0;
-    //                 position: relative;
-
-    //                 .nav-link {
-    //                     font-weight: 400 !important;
-    //                     margin-left: 5px;
-    //                     display: block;
-    //                     padding: 0.2em 0;
-    //                 }
-
-    //                 -webkit-transform: translate3d(0, 0, 0);
-    //                 margin-top: -35px;
-
-    //                 &:nth-of-type(1) {
-    //                     transition: opacity 0.25s $base-animation, margin 0.25s $base-animation;
-    //                 }
-
-    //                 &:nth-of-type(2) {
-    //                     transition: opacity 0.3s $base-animation, margin 0.3s $base-animation;
-    //                 }
-
-    //                 &:nth-of-type(3) {
-    //                     transition: opacity 0.35s $base-animation, margin 0.35s $base-animation;
-    //                 }
-
-    //                 &:nth-of-type(4) {
-    //                     transition: opacity 0.4s $base-animation, margin 0.4s $base-animation;
-    //                 }
-
-    //                 &:nth-of-type(5) {
-    //                     transition: opacity 0.45s $base-animation, margin 0.45s $base-animation;
-    //                 }
-
-    //                 &:nth-of-type(6) {
-    //                     transition: opacity 0.5s $base-animation, margin 0.5s $base-animation;
-    //                 }
-
-    //                 &:nth-of-type(7) {
-    //                     transition: opacity 0.55s $base-animation, margin 0.55s $base-animation;
-    //                 }
-    //             }
-
-    //             &.open {
-    //                 .nav-drop-item {
-    //                     opacity: 1;
-    //                     transition: opacity 0.3s $base-animation, margin-top 0.3s $base-animation;
-    //                     margin-top: 0;
-
-    //                     &:nth-of-type(1) {
-    //                         transition: opacity 0.25s $base-animation, margin 0.25s $base-animation;
-    //                     }
-
-    //                     &:nth-of-type(2) {
-    //                         transition: opacity 0.3s $base-animation, margin 0.3s $base-animation;
-    //                     }
-
-    //                     &:nth-of-type(3) {
-    //                         transition: opacity 0.35s $base-animation, margin 0.35s $base-animation;
-    //                     }
-
-    //                     &:nth-of-type(4) {
-    //                         transition: opacity 0.4s $base-animation, margin 0.4s $base-animation;
-    //                     }
-
-    //                     &:nth-of-type(5) {
-    //                         transition: opacity 0.45s $base-animation, margin 0.45s $base-animation;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-
-    //     .search-field {
-    //         width: 100%;
-    //         margin-top: 1em;
-    //     }
-    // }
 
     body {
         &.navopen {
@@ -365,22 +236,6 @@
                     transition: transform 0.3s $base-animation;
                 }
             }
-
-            // .main-nav {
-            //     top: 6.6em;
-            //     height: 100vh;
-            //     opacity: 1;
-            //     transition: height 0.3s $base-animation, top 0.3s $base-animation, opacity 0.3s $base-animation;
-            //     padding-top: 2.3em;
-
-            //     ul {
-            //         .nav-item {
-            //             transform: translateY(0);
-            //             transition: transform 0.3s $base-animation;
-            //         }
-            //     }
-            // }
-       
         }
     }
 }

@@ -48,6 +48,21 @@ jQuery(document).ready(function($) {
         //     slidesToShow: 1,
         //     slidesToScroll: 1
         // });
+        $('.trigger--children').on('click touchstart', function(event) {
+            event.preventDefault();
+            $parent = $(this).parent();
+            $child = $parent.find('.section--child-nav');
+            $openChild = $('.section--child-nav.open');
+            if ($parent.hasClass('children--visible')) {
+                $parent.removeClass('children--visible');
+                $child.removeClass('open');
+            } else {
+                $('.children--visible').removeClass('children--visible');
+                $openChild.removeClass('open');
+                $parent.addClass('children--visible');
+                $child.addClass('open');
+            }
+        });
         if ($('.section--home-cafe-grid').length > 0) {
             $('.section--home-cafe-grid').flickity({
                 // options
