@@ -58,10 +58,19 @@ function getCustomPosts($posttype = '', $limit = '', $category = '', $order = 't
 function getSinglePost($posttype = null)
 {
     $postId = get_the_id();
-
-    $attachedimage = new TimberImage(get_post_thumbnail_id());
+    $attachedimageId =get_post_thumbnail_id();
+    if (!empty($attachedimageId)) {
+        $attachedimage = new TimberImage($attachedimageId);
+    }else{
+        $attachedimage = null;
+    }
+    
     $categories    = get_the_category();
 
+    $author = array(
+        'first_name' => get_the_author_firstname(),
+        'last_name'  => get_the_author_lastname(),
+    );
     // setup an array to change the post data returned
     $singlePostArray = array(
         'date'       => strtotime(get_the_date()),
@@ -73,6 +82,7 @@ function getSinglePost($posttype = null)
         'image'      => $attachedimage,
         'link'       => get_permalink(),
         'excerpt'    => get_the_excerpt(),
+        'author'     => $author,
     );
     if ($posttype == 'cafe') {
         $singlePostArray['cafe'] = prepareGlobalCafeFields();

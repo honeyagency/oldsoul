@@ -7,12 +7,16 @@
     }
 
     .single_variation_wrap {
-        .quantity_select {
+        .input-text.qty {
             float: none !important;
             margin-right: 0 !important;
             margin-bottom: 1em;
             display: block;
             width: 100%;
+            position: relative;
+        }
+
+        .quantity {
             position: relative;
 
             &:before {
@@ -31,6 +35,10 @@
             }
 
             select {}
+        }
+
+       #wc-stripe-payment-request-wrapper {
+            padding: 0 !important;
         }
     }
 
@@ -102,7 +110,7 @@
         width: 100%;
     }
 
-    select {
+    select, input[type="number"] {
         background-position: 95% center;
 
         // text-indent: 80%;
@@ -126,7 +134,7 @@
 
     @media not all and (min-resolution: 0.001dpcm) {
         @supports (-webkit-appearance: none) and (stroke-color: transparent) {
-            select {
+            select, input[type="number"] {
                 text-indent: 80%;
 
                 &.qty {

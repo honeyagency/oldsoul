@@ -5,26 +5,30 @@
 		{% if post.content %}
 		<section class="content max-wrap margin--center spacing--gutter spacing--dsk-vert-2">{{post.content}}</section>
 	{% endif %}
-	<section class="cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
-		<div class="grid--sm-three-fifths font--content">
-		{% for post in posts %}
-
-			<time class="font--small">{{post.date|date('M j, Y')}}</time>
-			<h3>{{post.title}}</h3>
-			
-			{{post.excerpt}}
-			<hr>
-		{% endfor %}
+	<section class="cafe-wrap margin--center flex flex--wrap justify--between align--items-start spacing--vert-2 spacing--dsk-vert-5">
+		<div class="grid--sm-three-fifths spacing--gutter-mob font--content">
+			{% for post in posts %}
+				<div>
+	
+					{# <time class="font--small">{{post.date|date('M j, Y')}}</time> #}
+					<strong class="block">{{post.author.first_name}} {{post.author.last_name}}</strong>
+					<h3 class="mar--no">{{post.title}}</h3>
+									{% if post.image %}<img align="right" width="170" src="{{post.image|resize(50,50)}}" data-original="{{post.image|resize(340, 340)}}" alt="{{post.image.caption}}">{% endif %}{{post.excerpt}}
+					<a href="{{post.link}}">Read</a>
+					<hr class="color--brown-light">
+				</div>
+			{% endfor %}
 		</div>
-			<div class="grid--one grid--sm-third sidebar">
-		<br class="hidden--mob"><br class="hidden--mob">
-		<h4 class="text--uppercase font--sans letter--1">Subjects</h4>
-		{% for category in categories %}
-
-			<a class="spacing--vert-half spacing--horiz-1 bg--brown color--white text--uppercase letter--1 flex flex--wrap justify--between"><span>{{category.title}}</span> <span class="spacing--horiz-half bg--black color--white text--center">{{category.count}}</span></a>
-		{% endfor %}
-	</div>
-
+		<div class="grid--one grid--sm-third font--small spacing--dsk-horiz-1 spacing--gutter-mob sidebar">
+			<hr class="color--brown-light">
+			<div class="font--small block--sidebar-content">
+				<strong class="text--uppercase letter--1">Categories</strong>
+				{% for category in categories %}
+					<a class="block">{{category.title}}</a>
+				{% endfor %}
+			</div>
+			
+		</div>
 	</section>
 </article>
 {% endblock %}
