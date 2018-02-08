@@ -68,13 +68,13 @@ function localInstall()
 function buscemi_scripts()
 {
     wp_enqueue_script('jquery');
-    if (localInstall() == true) {
-        $reloadScript = 'http://localhost:35729/livereload.js';
-        wp_register_script('livereload', $reloadScript, null, false, true);
-        wp_enqueue_script('livereload');
-    }
+    // if (localInstall() == true) {
+    //     $reloadScript = 'http://localhost:35729/livereload.js';
+    //     wp_register_script('livereload', $reloadScript, null, false, true);
+    //     wp_enqueue_script('livereload');
+    // }
 
-    $version = '0.2.76';
+    $version = '0.2.78';
 
     wp_register_script('lazyload', get_template_directory_uri() . '/app/vendors/lazyload.min.js', null, false, true);
     wp_enqueue_script('lazyload');
