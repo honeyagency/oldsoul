@@ -28,7 +28,7 @@
     "grunt-contrib-uglify": "*",
     "grunt-contrib-watch": "*",
     "grunt-cssnano": "*",
-    "grunt-grunticon": "*",
+    "grunt-grunticon": "2.3.2",
     "grunt-notify": "*",
     "grunt-postcss": "^0.9.0",
     "grunt-svgmin": "*",
