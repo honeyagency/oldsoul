@@ -160,7 +160,9 @@ function prepareSiteOptions()
         'phone'     => get_field('field_5a4e7dbdebbaa', 'options'),
         'email'     => get_field('field_5a4e7de4ebbae', 'options'),
     );
-
+    $search = array(
+        'form' => get_search_form(false),
+    );
     $shop = array(
         'title' => get_field('field_5a4e7e1eebbb1', 'options'),
         'link'  => get_field('field_5a4e7e2bebbb2', 'options'),
@@ -187,6 +189,7 @@ function prepareSiteOptions()
         'email'   => $email,
         'contact' => $contact,
         'shop'    => $shop,
+        'search'  => $search,
         'footer'  => $subfooter,
         'misc'    => $misc,
     );
@@ -235,12 +238,12 @@ function prepareAboutPagePartners()
             );
         }
     }
-    
+
     $partners = array(
         'title' => get_field('field_5a627cb9f3f38'),
         'grid'  => $grid,
     );
-    
+
     return $partners;
 }
 function prepareContentFields()

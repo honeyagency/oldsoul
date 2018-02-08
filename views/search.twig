@@ -1,0 +1,31 @@
+{% extends "base.twig" %}
+{% block content %}
+	{# {% include 'components/sections/section--thumbnail-header.twig' %} #}
+	<section class="section--thumbnail-header relative bg--brown-dark spacing--dsk-vert-5 ">
+	
+	<section class="section--base-header spacing--gutter text--center">
+		<i class="icon-logo-monogram" data-grunticon-embed></i>
+		<h2 class="color--white grid--one grid--sm-two-thirds margin--center spacing--vert-half">
+		{{title}}
+		</h2>
+		
+		<hr class="color--brown small">
+	</section>
+</section>
+	<article class="post-type-{{post.post_type}} content" id="post-{{post.ID}}">
+		<section class="cafe-wrap margin--center flex flex--wrap justify--between align--items-start spacing--vert-2 spacing--dsk-vert-5">
+		<div class="grid--sm-three-fifths spacing--gutter-mob font--content">
+	
+		
+		{% for post in posts %}
+			<div>
+				<strong class="font--tiny text--uppercase letter--1">{{post.post_type}}</strong>
+					<h3 class="mar--no">{{post.title}}</h3>
+							{{post.preview}}
+					<a href="{{post.link}}">Read</a>
+					<hr class="color--brown-light">
+				</div>
+		{% endfor %}
+	</div></section>
+</article>
+{% endblock %}
