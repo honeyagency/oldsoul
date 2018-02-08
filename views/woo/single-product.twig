@@ -28,7 +28,7 @@
         <div class="summary entry-summary grid--sm-three-fifths spacing--gutter-mob">
             {% do action('woocommerce_before_single_product_summary') %}
             {% if post.thumbnail %}
-                <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" />
+                <img src="{{ post.thumbnail.src|resize(shop_thumbnail_image_size) }}" class="margin--bot-1" />
             {% endif %}
             <h1 class="product--title hidden--mob">{{post.title}}</h1>
             <div class="font--content">{{post.content}}</div>
