@@ -119,6 +119,46 @@ jQuery(document).ready(function($) {
     if (typeof mediumZoom == 'function') {
         mediumZoom(document.querySelectorAll('[data-action="zoom"]'));
     }
+    $search = $('.trigger--search');
+    $search.on('click touchstart', function(event) {
+        event.preventDefault();
+
+        function openSearch(scrollPosition) {
+            var scrollPosition = [
+                self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+                self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            ];
+            $('body').addClass('letssearch');
+            $('.search-field').focus();
+            var html = jQuery('html'); // it would make more sense to apply this to body, but IE7 won't have that
+            html.data('scroll-position', scrollPosition);
+            html.data('previous-overflow', html.css('overflow'));
+            html.css('overflow', 'hidden');
+            window.scrollTo(scrollPosition[0], scrollPosition[1]);
+        }
+
+        function closeSearch(scrollPosition) {
+            var scrollPosition = [
+                self.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft,
+                self.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+            ];
+            $('body').removeClass('letssearch');
+            var html = jQuery('html');
+            var scrollPosition = html.data('scroll-position');
+            html.css('overflow', html.data('previous-overflow'));
+            window.scrollTo(scrollPosition[0], scrollPosition[1])
+        }
+        if ($('body').hasClass('letssearch')) {
+            closeSearch();
+        } else {
+            openSearch();
+        }
+        $(document).keydown(function(event) {
+            if (event.keyCode == 27) {
+                closeSearch();
+            }
+        });
+    });
 });
 // Scroll so nice you'll click() it twice
 jQuery(document).ready(function() {

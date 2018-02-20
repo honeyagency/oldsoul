@@ -368,8 +368,8 @@
             "mime_types": ""
         },
         {
-            "key": "field_5a7208603b195",
-            "label": "Shop Messages",
+            "key": "field_5a8c7e2fb05c4",
+            "label": "Search",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -384,11 +384,11 @@
             "endpoint": 0
         },
         {
-            "key": "field_5a72086c3b196",
-            "label": "Added to cart",
-            "name": "added_to_cart",
+            "key": "field_5a8c7e37b05c5",
+            "label": "Search Placeholder",
+            "name": "search_placeholder",
             "type": "text",
-            "instructions": "The text that follows the product name when someone adds an item to their cart. I.e. Costa Rica Reserve “Carlos Montero” <strong>has been added to your cart.<\/strong>",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -403,11 +403,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a7208983b197",
-            "label": "View Cart Button",
-            "name": "view_cart_button",
+            "key": "field_5a8c7e3db05c6",
+            "label": "Button Text",
+            "name": "button_text",
             "type": "text",
-            "instructions": "Text of the button that follows the above message",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -422,11 +422,11 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a7250b9f8f44",
-            "label": "Order Summary",
-            "name": "order_summary",
+            "key": "field_5a8c7e45b05c7",
+            "label": "Prompt",
+            "name": "prompt",
             "type": "text",
-            "instructions": "This displays above the order summary on the right-hand side of the checkout page",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -458,5 +458,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1517441236
+    "modified": 1519156813
 }
