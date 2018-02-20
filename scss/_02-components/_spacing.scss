@@ -8,7 +8,8 @@
 .spacing--vert-6{padding-top:6em * $grid; padding-bottom: 6em * $grid;}
 
 @include media($screen-sm) {
-	.spacing--dsk-vert-1{padding-top:1em * $grid; padding-bottom: 1em * $grid;}
+	.spacing--dsk-vert-0{padding-top:0; padding-bottom:0;}
+    .spacing--dsk-vert-1{padding-top:1em * $grid; padding-bottom: 1em * $grid;}
 	.spacing--dsk-vert-2{padding-top:2em * $grid; padding-bottom: 2em * $grid;}
 	.spacing--dsk-vert-3{padding-top:3em * $grid; padding-bottom: 3em * $grid;}
 	.spacing--dsk-vert-4{padding-top:4em * $grid; padding-bottom: 4em * $grid;}
