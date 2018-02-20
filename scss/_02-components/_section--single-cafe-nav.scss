@@ -1,0 +1,150 @@
+.section--single-cafe-nav {
+    .nextprev {
+        display: inline-block;
+
+        @include media($screen-lg) {
+            position: absolute;
+            top: 5em;
+        }
+
+
+        span {
+            display: inline-block;
+
+            @include media($screen-lg) {
+                transform: rotateZ(180deg);
+            }
+        }
+
+        i {
+            width: 20px;
+
+            svg {
+                path {
+                    fill: map-get($brown, main);
+                }
+            }
+        }
+
+        span {
+            border-bottom: 2px solid;
+        }
+
+        &:first-of-type {
+            transform-origin: left;
+
+            @include media($screen-lg) {
+                transform: rotateZ(90deg);
+            }
+
+
+            i {
+                transform: rotateY(-180deg);
+
+                @include media($screen-lg) {
+                    transform: rotateZ(270deg) rotateY(180deg);
+                }
+            }
+
+            left: 0;
+
+            @include media($screen-lg) {
+                margin-left: 2em;
+            }
+        }
+
+        &:last-of-type {
+            i {
+                @include media($screen-lg) {
+                    transform: rotateZ(90deg);
+                }
+
+
+                margin-right: 0;
+                margin-left: .5em;
+            }
+
+            right: 0;
+            transform-origin: right;
+
+            @include media($screen-lg) {
+                transform: rotate(-90deg);
+                margin-right: 2em;
+            }
+        }
+    }
+
+    @include media($max-lg) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-top: 0.5em * $grid;
+        padding-bottom: 0.5em * $grid;
+    }
+
+
+    @include media($max-md) {
+        font-size: 0.8em;
+    }
+
+
+    padding-right: 0.7em * $grid;
+    padding-left: 0.7em * $grid;
+
+    @include media($screen-xs) {
+        padding-right: 1.7em * $grid;
+        padding-left: 1.7em * $grid;
+    }
+
+
+    @include media($screen-lg) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+    @include media($max-sm) {
+        color: $white;
+        position: absolute;
+        width: 100%;
+        margin-top: -42px;
+        background: linear-gradient(transparentize($black, 0.6), $black);
+        // mix-blend-mode: hard-light;
+
+        a {
+            color: white;
+
+            i {
+                width: 14px !important;
+
+                svg {
+                    path {
+                        fill: $white !important;
+                    }
+                }
+            }
+
+            span {
+                border: 0 !important;
+                color: $white !important;
+                font-weight: 400 !important;
+            }
+        }
+    }
+}
+
+.section--cafe-content {
+    padding-right: 0.7em * $grid;
+    padding-left: 0.7em * $grid;
+
+    @include media($screen-xs) {
+        padding-right: 1.7em * $grid;
+        padding-left: 1.7em * $grid;
+    }
+
+
+    @include media($screen-lg) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

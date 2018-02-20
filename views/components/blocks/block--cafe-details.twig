@@ -1,0 +1,18 @@
+<div class="block--cafe-details grid--one grid--sm-third letter--1 order--2 font--bold">
+	<div class="piece--detail grid--one spacing--vert-half flex justify--between">
+		<i class="icon-phone " data-grunticon-embed></i>
+		<div class="content">{{cafe.info.phone}}</div>
+	</div>
+	<div class="piece--detail grid--one spacing--vert-half flex justify--between">
+		<i class="icon-clock " data-grunticon-embed></i>
+		<div class="content">{{cafe.info.hours}}</div>
+	</div>
+	<div class="piece--detail grid--one  spacing--vert-half flex justify--between">
+		<i class="icon-hand " data-grunticon-embed></i>
+		<div class="content">{{cafe.info.address}} <a href="https://www.google.com/maps/search/{{cafe.info.address}}" class="font--smaller text--uppercase block" target="_blank">Map It</a></div>
+	</div>
+	<div class="piece--detail grid--one spacing--vert-half flex justify--between">
+		<i class="icon-envelope " data-grunticon-embed></i>
+		<div class="content"><a href="{{site.url}}/contact">Contact</a></div>
+	</div>
+</div>

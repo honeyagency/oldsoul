@@ -1,11 +1,19 @@
-.nextprev {
+.section--single-cafe-nav{
+    .nextprev {
     display: inline-block;
-    position: absolute;
+
+    @include media($screen-lg) {
+        position: absolute;
         top: 5em;
-    // top: 50%;
+    }
+
+
     span {
         display: inline-block;
-        transform: rotateZ(180deg);
+
+        @include media($screen-lg) {
+            transform: rotateZ(180deg);
+        }
     }
 
     i {
@@ -24,25 +32,42 @@
 
     &:first-of-type {
         transform-origin: left;
-        transform: rotateZ(90deg);
+
+        @include media($screen-lg) {
+            transform: rotateZ(90deg);
+        }
+
 
         i {
-            transform: rotateZ(270deg) rotateY(180deg);
+            transform: rotateY(-180deg);
+
+            @include media($screen-lg) {
+                transform: rotateZ(270deg) rotateY(180deg);
+            }
         }
 
         left: 0;
-        margin-left: 2em;
+
+        @include media($screen-lg) {
+            margin-left: 2em;
+        }
     }
 
     &:last-of-type {
-        i {
-            transform: rotateZ(90deg);
+        @include media($screen-lg) {
+            i {
+                transform: rotateZ(90deg);
+            }
         }
 
 
         right: 0;
         transform-origin: right;
-        transform: rotate(-90deg);
-        margin-right: 2em;
+
+        @include media($screen-lg) {
+            transform: rotate(-90deg);
+            margin-right: 2em;
+        }
     }
+}
 }
