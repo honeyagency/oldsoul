@@ -1,11 +1,13 @@
 .block--product {
     position: relative;
 
+    @include media($screen-sm) {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
 
     &.product_cat-coffee {
         &.product-type-variable {
@@ -106,6 +108,7 @@
     img {
         width: 100%;
         display: block;
+
         + .notice--coffee {
             z-index: 2;
             position: absolute;
@@ -120,6 +123,20 @@
             border-top: 1px solid;
         }
     }
+
+    @include media($max-sm) {
+        .block--product-bottom {
+            position: absolute;
+            bottom: 0;
+        }
+
+        &.has-post-thumbnail {
+            .block--product-bottom {
+                position: relative;
+            }
+        }
+    }
+
 
     .media-figure {
         img {
