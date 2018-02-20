@@ -4,7 +4,7 @@
         padding-left: 2em;
 
         .piece--detail {
-            border-bottom: 1px solid;
+            border-bottom: 1px solid map-get($brown, light);
 
             &:last-of-type {
                 border: 0;
@@ -13,37 +13,56 @@
     }
 
 
-    @include media($max-sm) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-
-
-    .piece--detail {
-        .content {
-            flex-basis: calc(100% - 34px);
+    .block--cafe-detail-content {
+        @include media($max-sm) {
+            display: flex;
+            flex-wrap: wrap;
         }
 
 
-        i {
-            margin: 0;
-        }
+        .piece--detail {
+            .content {
+                @include media($max-sm) {
+                    font-size: .8em;
+                    line-height: 1.9;
+                    font-weight: 400 !important;
+                }
 
-        .icon-phone {
-            flex-basis: 14px;
-        }
 
-        .icon-hand {
-            flex-basis: 22px;
-        }
+                flex-basis: calc(100% - 25px);
 
-        .icon-clock {
-            flex-basis: 14px;
-        }
+                @include media($screen-sm) {
+                    flex-basis: calc(100% - 35px);
+                }
+            }
 
-        .icon-envelope {
-            flex-basis: 14px;
+            &:nth-of-type(3) {
+               
+            }
+
+            i {
+                margin: 0;
+                flex-basis: 15px;
+            }
+
+            .icon-hand, .icon-hand-short {
+                flex-basis: 18px;
+
+                
+            }
+
+            @include media($max-sm) {
+                &:nth-of-type(1) {
+                    border-right: 1px solid map-get($brown, light);
+                }
+
+                &:nth-of-type(2) {}
+
+                &:nth-of-type(3) {
+                    border-top: 1px solid map-get($brown, light);
+                    border-bottom: 1px solid map-get($brown, light);
+                }
+            }
         }
     }
 }

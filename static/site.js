@@ -28,6 +28,7 @@ jQuery(document).ready(function($) {
     //     reappear: true,
     // });
     // $('select').selectric();
+    
     $va = $('.product-type-variable');
     $va.each(function() {
         if ($(this).hasClass('product_cat-featured')) {

@@ -109,6 +109,7 @@
         width: 100%;
         margin-top: -42px;
         background: linear-gradient(transparentize($black, 0.6), $black);
+
         // mix-blend-mode: hard-light;
 
         a {
@@ -134,17 +135,19 @@
 }
 
 .section--cafe-content {
-    padding-right: 0.7em * $grid;
-    padding-left: 0.7em * $grid;
+    .block--the-content {
+        padding-right: 0.7em * $grid;
+        padding-left: 0.7em * $grid;
 
-    @include media($screen-xs) {
-        padding-right: 1.7em * $grid;
-        padding-left: 1.7em * $grid;
-    }
+        @include media($screen-xs) {
+            padding-right: 1.7em * $grid;
+            padding-left: 1.7em * $grid;
+        }
 
 
-    @include media($screen-lg) {
-        padding-left: 0;
-        padding-right: 0;
+        @include media($screen-lg) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 }
