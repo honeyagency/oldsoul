@@ -112,6 +112,11 @@
     }
 }
 
+.hidden--lgup {
+    @include media($screen-lg) {
+        display: none !important;
+    }
+}
 .hidden--dsk {
     @include media($screen-sm) {
         display: none !important;

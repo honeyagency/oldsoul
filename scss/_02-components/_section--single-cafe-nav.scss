@@ -74,20 +74,6 @@
         }
     }
 
-    @include media($max-lg) {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding-top: 0.5em * $grid;
-        padding-bottom: 0.5em * $grid;
-    }
-
-
-    @include media($max-md) {
-        font-size: 0.8em;
-    }
-
-
     padding-right: 0.7em * $grid;
     padding-left: 0.7em * $grid;
 
@@ -100,37 +86,6 @@
     @include media($screen-lg) {
         padding-left: 0;
         padding-right: 0;
-    }
-
-
-    @include media($max-sm) {
-        color: $white;
-        position: absolute;
-        width: 100%;
-        margin-top: -42px;
-        background: linear-gradient(transparentize($black, 0.6), $black);
-
-        // mix-blend-mode: hard-light;
-
-        a {
-            color: white;
-
-            i {
-                width: 14px !important;
-
-                svg {
-                    path {
-                        fill: $white !important;
-                    }
-                }
-            }
-
-            span {
-                border: 0 !important;
-                color: $white !important;
-                font-weight: 400 !important;
-            }
-        }
     }
 }
 
