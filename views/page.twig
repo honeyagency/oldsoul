@@ -4,12 +4,14 @@
 	{% include 'components/sections/section--base-header.twig' %}
 	<article class="post-type-{{post.post_type}} content" id="post-{{post.ID}}">
 		
-		
 		{% if post.content %}
-		<section class="content max-wrap margin--center spacing--gutter spacing--dsk-vert-2">{{post.content}}</section>
-	{% endif %}
-	{% if sections %}
-		{% include 'components/sections/section--content-sections.twig' %}
-	{% endif %}
-</article>
-{% endblock %}
+			<section class="cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
+				<div class="grid--sm-three-fifths font--content">
+					{{post.content}}
+				</div></section>
+			{% endif %}
+			{% if sections %}
+				{% include 'components/sections/section--content-sections.twig' %}
+			{% endif %}
+		</article>
+	{% endblock %}
