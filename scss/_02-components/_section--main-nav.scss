@@ -10,4 +10,13 @@
             }
         }
     }
+
+    @include media($screen-sm) {
+        font-size: .8em;
+    }
+
+
+    @include media($screen-md) {
+        font-size: 1em;
+    }
 }
