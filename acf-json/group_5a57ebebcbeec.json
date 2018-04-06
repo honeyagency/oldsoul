@@ -17,8 +17,7 @@
             },
             "choices": {
                 "none": "None",
-                "award": "Award",
-                "text": "Text"
+                "award": "Award"
             },
             "default_value": [],
             "allow_null": 0,
@@ -122,6 +121,44 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_5a8e04004655b",
+            "label": "Origin(s)",
+            "name": "varietal_origin",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a8e028dca29a",
+            "label": "Flavors",
+            "name": "coffe_flavors",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -141,5 +178,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1516750419
+    "modified": 1519256594
 }

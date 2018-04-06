@@ -204,6 +204,7 @@ function prepareProductFields()
         'process'  => get_field('field_5a67a57d683ae'),
         'altitude' => get_field('field_5a67a95b683af'),
         'varietal' => get_field('field_5a67a974683b0'),
+        'flavors'  => get_field('field_5a8e028dca29a'),
         'producer' => get_field('field_5a67a99f683b1'),
     );
 

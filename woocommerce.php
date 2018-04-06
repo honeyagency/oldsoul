@@ -58,9 +58,10 @@ if (is_singular('product')) {
     // print_r(expression)
     $context['details'] = prepareProductFields();
     $relatedProductIds  = wc_get_related_products($product->get_id(), 4, array());
+
     $related            = array();
     foreach ($relatedProductIds as $relatedProductId) {
-        $related[] = wc_get_product($relatedProductId);
+        $related[] = get_product($relatedProductId);
     }
     $context['related'] = $related;
 

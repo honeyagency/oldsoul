@@ -5,9 +5,11 @@
 .font--small {
     font-size: .9em;
 }
-.font--goldilocks{
+
+.font--goldilocks {
     font-size: 1rem;
 }
+
 .font--medium {
     font-size: 1.1em;
 }
@@ -138,4 +140,21 @@
 .font--content {
     line-height: 2.15;
     font-size: 1.1rem;
+
+    h3, h4, h5, h6 {
+        @extend .font--sans;
+    }
+
+    h3 {
+        font-size: 1.6em;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        font-size: 1em;
+        letter-spacing: 1px;
+        font-weight: 600;
+
+        @extend .color--green;
+    }
 }
