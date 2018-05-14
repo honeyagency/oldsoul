@@ -6,12 +6,19 @@
 		
 		{% if post.content %}
 			<section class="cafe-wrap margin--center flex flex--wrap justify--between spacing--vert-2 spacing--dsk-vert-5">
-				<div class="grid--sm-three-fifths font--content">
-					{{post.content}}
-				</div></section>
-			{% endif %}
-			{% if sections %}
-				{% include 'components/sections/section--content-sections.twig' %}
-			{% endif %}
-		</article>
-	{% endblock %}
+				{% if fn('is_account_page') %}
+					<div class="grid--one font--content">
+						{{post.content}}
+					</div>
+				{% else  %}
+					<div class="grid--sm-three-fifths font--content">
+						{{post.content}}
+					</div>
+				{% endif %}
+			</section>
+		{% endif %}
+		{% if sections %}
+			{% include 'components/sections/section--content-sections.twig' %}
+		{% endif %}
+	</article>
+{% endblock %}

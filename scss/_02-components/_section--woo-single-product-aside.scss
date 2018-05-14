@@ -37,7 +37,7 @@
             select {}
         }
 
-       #wc-stripe-payment-request-wrapper {
+        #wc-stripe-payment-request-wrapper {
             padding: 0 !important;
         }
     }
@@ -141,6 +141,19 @@
                     text-indent: 90%;
                 }
             }
+        }
+    }
+}
+
+.entry-summary {
+    img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1em;
+
+        &.size-medium {
+            width: 300px;
         }
     }
 }
