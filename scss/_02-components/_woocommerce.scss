@@ -59,6 +59,8 @@
             display: flex;
             flex-wrap: wrap;
 
+            @extend .spacing--gutter-mob;
+
             &:before, &:after {
                 display: none;
             }
