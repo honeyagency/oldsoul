@@ -18,4 +18,7 @@
 	{% endif %}
 		</time>
 	</div>
+	{% if event.link %}
+		<a href="{{event.link.url}}" target="{{event.link.target}}" title="{{event.link.title}}">{{event.link.title}}</a>
+{% endif %}
 </div>

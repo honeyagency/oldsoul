@@ -1,16 +1,19 @@
-<section class="cafe--events max-wrap flex flex--wrap justify--around margin--center spacing--gutter spacing--vert-2 spacing--dsk-vert-2 margin--bot-3">
-	{% if cafe.events %}
+
+	<section class="cafe--events max-wrap flex flex--wrap justify--around margin--center spacing--gutter spacing--vert-2 spacing--dsk-vert-2 margin--bot-3">
 		
 		<div class="grid--one grid--md-two-fifths">
+		{% if cafe.events %}	
 			<div class="font--bold">Upcoming Events</div>
 			{% for event in cafe.events %}
-				{% include 'components/blocks/block--cafe-event.twig' %}
+				{% if "now"|date('Y-m-d') > event.expire|date('Y-m-d') %}
+				{% else %}
+					{% include 'components/blocks/block--cafe-event.twig' %}
+				{% endif %}
 			{% endfor %}
-			
-			
+		{% endif %}
 		</div>
-	{% endif %}
-	<div class="block--map-icon grid--four-fifths grid--md-two-fifths margin--top-2">
-		<i class="icon-{{cafe.map}}" data-grunticon-embed></i>
-	</div>
-</section>
+		
+		<div class="block--map-icon grid--four-fifths grid--md-two-fifths margin--top-2">
+			<i class="icon-{{cafe.map}}" data-grunticon-embed></i>
+		</div>
+	</section>

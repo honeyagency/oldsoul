@@ -1,5 +1,9 @@
-.section--single-product-details{
-	.product--title{
-		font-size: 2.2rem;
-	}
+.section--single-product-details {
+    .product--title {
+        font-size: 2.2rem;
+    }
+
+    .sku_wrapper {
+        display: none !important;
+    }
 }

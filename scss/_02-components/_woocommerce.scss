@@ -17,4 +17,32 @@
 .woocommerce-pagination {
     margin-bottom: 4em;
     margin-top: -3em;
+
+    @include media($max-xs) {}
+
+
+    @include media($max-sm) {
+        margin-bottom: 4em;
+        margin-top: 2em;
+    }
+
+
+    @include media($max-md) {}
+
+
+    @include media($max-lg) {}
+
+
+    .page-numbers {
+        border-color: map-get($brown, lightfade) !important;
+
+        .page-numbers {
+            border-color: map-get($brown, lightfade) !important;
+
+            &.current {
+                background-color: map-get($brown, lightfade) !important;
+                color: $white;
+            }
+        }
+    }
 }

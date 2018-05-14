@@ -256,6 +256,23 @@
                     "maxlength": ""
                 },
                 {
+                    "key": "field_5aecdaea3d196",
+                    "label": "Event Expiration Date",
+                    "name": "event_expiration_date",
+                    "type": "date_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "display_format": "d\/m\/Y",
+                    "return_format": "Ymd",
+                    "first_day": 1
+                },
+                {
                     "key": "field_5a540efb365b5",
                     "label": "Date",
                     "name": "event_date",
@@ -399,5 +416,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1515537009
+    "modified": 1526309516
 }

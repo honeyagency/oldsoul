@@ -72,31 +72,41 @@ function prepareCafeFields()
         $events = array();
         while (have_rows('field_5a540e5f365b2')) {
             the_row();
-            $eventImageId = get_sub_field('field_5a540e6b365b3');
-            if ($eventImageId != null) {
-                $eventImage = new TimberImage($eventImageId);
-            } else {
-                $eventImage = null;
-            }
-            $dateFormat = get_sub_field('field_5a540efb365b5');
-            if ($dateFormat == 'date') {
-                $date = get_sub_field('field_5a540fc3365b6');
+
+            $eventExpireDate = get_sub_field('field_5aecdaea3d196');
+            $date_now        = date("Ymd");
+
+            if ($date_now > $eventExpireDate) {
 
             } else {
-                $date = get_sub_field('field_5a540fdc365b7');
+
+                $eventImageId = get_sub_field('field_5a540e6b365b3');
+                if ($eventImageId != null) {
+                    $eventImage = new TimberImage($eventImageId);
+                } else {
+                    $eventImage = null;
+                }
+                $dateFormat = get_sub_field('field_5a540efb365b5');
+                if ($dateFormat == 'date') {
+                    $date = get_sub_field('field_5a540fc3365b6');
+
+                } else {
+                    $date = get_sub_field('field_5a540fdc365b7');
+                }
+                $time = array(
+                    'start' => get_sub_field('field_5a540ff0365b8'),
+                    'end'   => get_sub_field('field_5a5521c88e8eb'),
+                );
+                $events[] = array(
+                    'image'  => $eventImage,
+                    'expire' => get_sub_field('field_5aecdaea3d196'),
+                    'title'  => get_sub_field('field_5a540eed365b4'),
+                    'format' => $dateFormat,
+                    'date'   => $date,
+                    'time'   => $time,
+                    'link'   => get_sub_field('field_5a541008365b9'),
+                );
             }
-            $time = array(
-                'start' => get_sub_field('field_5a540ff0365b8'),
-                'end'   => get_sub_field('field_5a5521c88e8eb'),
-            );
-            $events[] = array(
-                'image'  => $eventImage,
-                'title'  => get_sub_field('field_5a540eed365b4'),
-                'format' => $dateFormat,
-                'date'   => $date,
-                'time'   => $time,
-                'link'   => get_sub_field('field_5a541008365b9'),
-            );
         }
     }
     $images = array(
