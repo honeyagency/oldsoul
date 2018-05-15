@@ -6,4 +6,15 @@
     .sku_wrapper {
         display: none !important;
     }
+
+    @include media($screen-xs) {}
+
+    @include media($screen-sm) {}
+
+
+    justify-content: space-around;
+
+    @include media($screen-md) {
+        justify-content: space-between;
+    }
 }

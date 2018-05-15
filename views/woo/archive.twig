@@ -1,9 +1,9 @@
 {% extends 'base.twig' %}
 {% block content %}
     {% do action('woocommerce_before_main_content') %}
-    <header class="section--shop-header bg--brown-dark spacing--dsk-vert-2">
-        
-        <h2 class="color--white text--center grid--one spacing--vert-2">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
+    <header class="section--shop-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-6">
+        <i class="icon-logo-monogram block margin--center" data-grunticon-embed></i>
+        <h2 class="color--white text--center grid--one ">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
     </header>
     
     <section class="section--shop flex flex--wrap  justify--between align--items-start max-wrap margin--center spacing--grid spacing--dsk-vert-5 spacing--gutter-tab spacing--gutter-mob">

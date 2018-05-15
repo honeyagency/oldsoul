@@ -9,7 +9,9 @@
 .bg--brown-faded {
     background-color: map-get($brown, faded);
 }
-
+.bg--brown-lightfade {
+    background-color: map-get($brown, lightfade);
+}
 .bg--brown-light {
     background-color: map-get($brown, light);
 }
