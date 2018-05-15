@@ -1,0 +1,9 @@
+<section class="section--product-review border--1 grid--one margin--bot-1 text--center spacing--vert-1 spacing--horiz-1">
+	{% if options.shop.featured.info.feature.reviewimage %}<img class="reviewimage margin--center" width="110" height="110" src="{{options.shop.featured.info.feature.reviewimage|resize(220,220)}}" alt="">{% endif %}
+	<div class="block--content">
+		<h2 class="">{{options.shop.featured.info.feature.title}}</h2>
+		{% if options.shop.featured.info.feature.subtitle %}<div class="font--sans font--large margin--bot-half">{{options.shop.featured.info.feature.subtitle}}</div>{% endif %}
+		<a class="ha-button center font--small letter--0" href="{{post.feature_link.url}}" target="{{post.feature_link.target}}" title="{{post.feature_link.title}}">{{post.feature_link.title}}</a>
+	</div>
+</section>
+

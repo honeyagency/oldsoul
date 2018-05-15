@@ -56,7 +56,7 @@ if (is_singular('product')) {
     $product            = wc_get_product($context['post']->ID);
     $context['product'] = $product;
     // print_r(expression)
-    $context['details'] = prepareProductFields();
+    $context['info'] = prepareProductFields();
     $relatedProductIds  = wc_get_related_products($product->get_id(), 4, array());
 
     $related            = array();

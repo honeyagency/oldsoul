@@ -173,9 +173,14 @@ function prepareSiteOptions()
     $search = array(
         'form' => get_search_form(false),
     );
+    $featuredPostId = get_field('field_5afb2271440ed', 'options');
+    if (!empty($featuredPostId)) {
+        $featuredPost = getSinglePost('product', $featuredPostId);
+    }
     $shop = array(
-        'title' => get_field('field_5a4e7e1eebbb1', 'options'),
-        'link'  => get_field('field_5a4e7e2bebbb2', 'options'),
+        'title'    => get_field('field_5a4e7e1eebbb1', 'options'),
+        'link'     => get_field('field_5a4e7e2bebbb2', 'options'),
+        'featured' => $featuredPost,
     );
     $subfooter = array(
         'privacy' => get_field('field_5a4e81c8daa78', 'options'),
@@ -207,8 +212,31 @@ function prepareSiteOptions()
     return $options;
 
 }
-function prepareProductFields()
+function prepareProductFields($id = null)
 {
+    if ($id == null) {
+        $id = get_the_ID();
+    }
+    $reviewImageId = get_field('field_5afb18be24c30', $id);
+    if (!empty($reviewImageId)) {
+        $reviewImage = new TimberImage($reviewImageId);
+    } else {
+        $reviewImage = null;
+    }
+    $featImgId = get_field('field_5afb1b010b1fb', $id);
+    if (!empty($featImgId)) {
+        $featImg = new TimberImage($featImgId);
+    } else {
+        $featImg = null;
+    }
+    $feature = array(
+        'type'        => get_field('field_5a57ebfdf9f5c', $id),
+        'title'       => get_field('field_5afb189024c2d', $id),
+        'subtitle'    => get_field('field_5afb18ae24c2f', $id),
+        'reviewimage' => $reviewImage,
+        'featimg'     => $featImg,
+        'link'        => get_field('field_5afb18ce24c31', $id),
+    );
 
     $details = array(
         'process'  => get_field('field_5a67a57d683ae'),
@@ -216,9 +244,13 @@ function prepareProductFields()
         'varietal' => get_field('field_5a67a974683b0'),
         'flavors'  => get_field('field_5a8e028dca29a'),
         'producer' => get_field('field_5a67a99f683b1'),
+        'roast'    => get_field('field_5afb636045138'),
     );
-
-    return $details;
+    $product = array(
+        'feature' => $feature,
+        'details' => $details,
+    );
+    return $product;
 }
 function prepareBasePageFields()
 {

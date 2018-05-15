@@ -100,6 +100,8 @@ add_filter('upload_mimes', 'cc_mime_types');
 // Setting up ACF options page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
+       acf_add_options_sub_page('Site Options');
+    acf_add_options_sub_page('Shop');
 }
 
 require_once 'functions--custom-fields.php';

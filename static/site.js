@@ -28,7 +28,8 @@ jQuery(document).ready(function($) {
     //     reappear: true,
     // });
     // $('select').selectric();
-    
+    $('select.woocommerce-widget-layered-nav-dropdown').addClass('icon-arrow-down-green');
+    $('.before-shop-loop').find('.orderby').addClass('icon-arrow-down-green');
     $va = $('.product-type-variable');
     $va.each(function() {
         if ($(this).hasClass('product_cat-featured')) {

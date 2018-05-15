@@ -104,7 +104,9 @@
 .text--uppercase {
     text-transform: uppercase !important;
 }
-
+.text--underline {
+    border-bottom: 2px solid;
+}
 .text--lowercase {
     text-transform: lowercase !important;
 }

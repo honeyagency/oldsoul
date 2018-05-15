@@ -132,3 +132,46 @@ table.shop_table, .button {
     text-align: center !important;
     line-height: 1.6 !important;
 }
+
+.woocommerce-widget-layered-nav-dropdown {
+    background-size: 15px;
+    background-position: 90% center;
+}
+
+.before-shop-loop {
+    display: flex;
+    flex-direction: column;
+
+    div {
+        &:first-of-type {
+            order: 2;
+        }
+    }
+
+    .woocommerce-result-count {
+        order: 1;
+    }
+
+    .woocommerce-ordering {
+        order: 3;
+    }
+
+    .product-categories {
+        order: 4;
+    }
+
+    .woocommerce-result-count {
+        // display: none;
+   
+    }
+
+    form {
+        float: none !important;
+        margin: 0 !important;
+
+        .orderby {
+            background-size: 15px;
+            background-position: 90% center;
+        }
+    }
+}

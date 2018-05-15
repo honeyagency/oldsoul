@@ -1,0 +1,54 @@
+.block--featured-product {
+    position: relative;
+
+    .reviewimage {
+        z-index: 3;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        width: 110px;
+        height: 110px;
+    }
+
+    &:before {
+        content: ' ';
+        background-color: $black;
+        opacity: 0.5;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        mix-blend-mode: multiply;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .block--content {
+        z-index: 2;
+        position: relative;
+    }
+
+    .icon-tab {
+        position: absolute;
+        top: 0;
+        left: 1em;
+        width: 70px;
+        height: 75px;
+        z-index: 5;
+
+        i {
+            position: relative;
+            width: 70%;
+            top: 50%;
+            transform: translateY(-50%);
+
+            svg {
+                path {
+                    fill: map-get($brown, dark);
+                }
+            }
+        }
+    }
+}
