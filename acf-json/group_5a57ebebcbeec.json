@@ -198,7 +198,7 @@
             "label": "Title",
             "name": "feature_title",
             "type": "text",
-            "instructions": "",
+            "instructions": "If the feature type is an award, this will display below the name of the product on the <strong>Shop<\/strong> page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -217,7 +217,7 @@
             "label": "Subtitle",
             "name": "feature_subtitle",
             "type": "text",
-            "instructions": "",
+            "instructions": "If the feature type is an award, this will only display on  the product page.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -312,5 +312,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526424425
+    "modified": 1526429046
 }

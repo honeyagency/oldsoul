@@ -8,7 +8,12 @@
 			{{options.shop.featured.info.feature.title}}
 		{% endif %}
 		</h2>
-		{% if options.shop.featured.info.feature.subtitle %}<h4 class="font--sans color--white margin--bot-half">{{options.shop.featured.info.feature.subtitle}}</h4>{% endif %}
+		{% if options.shop.featured.info.feature.type == 'award' %}
+				{% if options.shop.featured.info.feature.title %}<h4 class="font--sans color--white margin--bot-half">{{options.shop.featured.info.feature.title}}</h4>{% endif %}
+		{% else %}
+				{% if options.shop.featured.info.feature.subtitle %}<h4 class="font--sans color--white margin--bot-half">{{options.shop.featured.info.feature.subtitle}}</h4>{% endif %}
+		{% endif %}
+
 		<a class="ha-button center font--small letter--0" href="{{options.shop.featured.link}}">Shop Now</a>
 	</div>
 </div>
