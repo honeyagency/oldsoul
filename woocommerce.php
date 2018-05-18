@@ -44,6 +44,20 @@ remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_re
 // add_action( 'woocommerce_review_meta', 'woocommerce_review_display_meta', 10 );
 // add_action( 'woocommerce_review_comment_text', 'woocommerce_review_display_comment_text', 10 );
 
+
+
+function my_hide_shipping_when_free_is_available( $rates ) {
+    $free = array();
+    foreach ( $rates as $rate_id => $rate ) {
+        if ( 'free_shipping' === $rate->method_id ) {
+            $free[ $rate_id ] = $rate;
+            break;
+        }
+    }
+    return ! empty( $free ) ? $free : $rates;
+}
+add_filter( 'woocommerce_package_rates', 'my_hide_shipping_when_free_is_available', 100 );
+
 $context            = Timber::get_context();
 $context['sidebar'] = Timber::get_widgets('shopbar');
 $context['cafes']   = getCustomPosts('cafe', 4, null, 'date', null, null);

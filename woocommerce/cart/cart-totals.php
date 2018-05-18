@@ -20,10 +20,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 $cartTotals = get_field('field_5a7250b9f8f44', 'options');
+ global $woocommerce;
+ $currentTotal = $woocommerce->cart->get_cart_total();
+ $currentTotalNoDollar = preg_replace('/&.*?;/', '', $currentTotal);
+ if ($currentTotalNoDollar < 49.99) {
+$showFreeShipUpsell = true;
+ }
 if (empty($cartTotals)) {
 	$cartTotals = 'Cart Totals';
 }
-?>
+?><?php if ($showFreeShipUpsell == true) {
+Timber::render('views/components/blocks/free-ship-details.twig', $context);
+}?>
+
 <div class="cart_totals spacing--horiz-1 spacing--vert-1 border-box <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
@@ -31,6 +40,8 @@ if (empty($cartTotals)) {
 	<strong class="text--center text--uppercase block font--goldilocks font--sans letter--1 font--bold"><?php _e( $cartTotals, 'woocommerce' ); ?></strong><hr>
 
 	<table cellspacing="0" class="shop_table shop_table_responsive font--goldilocks">
+
+
 
 		<tr class="cart-subtotal">
 			<th><?php _e( 'Subtotal', 'woocommerce' ); ?></th>
@@ -55,6 +66,7 @@ if (empty($cartTotals)) {
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
 
 			<tr class="shipping">
+
 				<th><?php _e( 'Shipping', 'woocommerce' ); ?></th>
 				<td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
 			</tr>
