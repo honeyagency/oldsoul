@@ -1,4 +1,4 @@
-.section--cart-wrap,.section--checkout-wrap {
+.section--cart-wrap, .section--checkout-wrap {
     .woocommerce {
         .woocommerce-info, .woocommerce-error {
             @extend .grid--one;
@@ -186,7 +186,7 @@
                     }
 
                     @include media($max-sm) {
-                        border-top: 2px solid $black !important ;
+                        border-top: 2px solid $black !important;
                     }
                 }
             }
@@ -243,4 +243,11 @@
             }
         }
     }
+}
+
+[type=radio] {
+    appearance: radio;
+}
+.the-cart-count:not(:first-of-type){
+    display: none !important;
 }
