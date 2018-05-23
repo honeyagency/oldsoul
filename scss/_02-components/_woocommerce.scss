@@ -224,3 +224,11 @@ table.shop_table, .button {
     display: block;
     margin-bottom: 1em;
 }
+
+.woocommerce form.checkout_coupon, .woocommerce form.login, .woocommerce form.register {
+    padding: 2em;
+    margin: 2em 0;
+    text-align: left;
+    border-radius: 0 !important;
+    border-color: map-get($brown, formtext);
+}
