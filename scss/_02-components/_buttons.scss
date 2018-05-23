@@ -22,10 +22,11 @@
     border-radius: 0;
 
     @extend .font--small;
-     &:hover {
-            background: transparent ;
-            color: darken(map-get($brown, main), 5%) ;
-        }
+
+    &:hover {
+        background: transparent;
+        color: darken(map-get($brown, main), 5%);
+    }
 }
 
 .ha-addtocart {
@@ -40,7 +41,26 @@
 
     button {
         top: -5px;
-
-
     }
+}
+
+.woocommerce-Button {
+    text-transform: uppercase !important;
+    border-bottom: 2px solid !important;
+    letter-spacing: 1.5px !important;
+    display: table !important;
+    font-weight: 600 !important;
+    background: transparent !important;
+    padding: 0 !important;
+
+    // font-size: inherit !important;
+    border-radius: 0 !important;
+    display: inline-block !important;
+    color: map-get($brown, main) !important;
+    border-bottom: 2px solid !important;
+    background-color: transparent !important;
+    padding: 0 !important;
+    padding-bottom: 2px !important;
+    text-align: right !important;
+    border-radius: 0 !important;
 }

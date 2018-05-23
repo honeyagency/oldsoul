@@ -24,7 +24,7 @@
             .content {
                 @include media($max-sm) {
                     font-size: .8em;
-                    line-height: 1.9;
+                    line-height: 1.6;
                     font-weight: 400 !important;
                 }
 
@@ -36,19 +36,26 @@
                 }
             }
 
-            &:nth-of-type(3) {
-               
-            }
+            &:nth-of-type(3) {}
 
             i {
                 margin: 0;
                 flex-basis: 15px;
             }
 
+            .icon-social--facebook {
+                flex-basis: 12px;
+                margin-top: 5px;
+
+                svg {
+                    path {
+                        fill: $black;
+                    }
+                }
+            }
+
             .icon-hand, .icon-hand-short {
                 flex-basis: 18px;
-
-                
             }
 
             @include media($max-sm) {

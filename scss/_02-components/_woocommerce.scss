@@ -175,3 +175,52 @@ table.shop_table, .button {
         }
     }
 }
+
+.woocommerce-info {
+    border-top-color: map-get($brown, dark);
+}
+
+.woocommerce-info::before {
+    color: map-get($brown, dark);
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    background: white;
+    border-radius: 5px;
+}
+
+.wc_payment_method {
+    label {
+        padding-left: 0 !important;
+
+        &:before {
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+
+        img {
+            &:first-of-type {}
+        }
+    }
+}
+
+#add_payment_method #payment div.payment_box, .woocommerce-cart #payment div.payment_box, .woocommerce-checkout #payment div.payment_box {
+    margin-top: 2.5em;
+
+    &:before {
+        display: none;
+        content: none;
+    }
+}
+
+.woocommerce #payment .terms, .woocommerce #payment .wc-terms-and-conditions, .woocommerce-page #payment .terms, .woocommerce-page #payment .wc-terms-and-conditions {
+    padding: 1em !important;
+}
+
+.woocommerce #payment #place_order, .woocommerce-page #payment #place_order {
+    float: none;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 1em;
+}

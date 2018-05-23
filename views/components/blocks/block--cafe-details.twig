@@ -13,5 +13,11 @@
 			<i class="icon-hand-short hidden--dsk" data-grunticon-embed></i><i class="icon-hand hidden--mob" data-grunticon-embed></i>
 			<div class="content"><a href="https://www.google.com/maps/search/{{cafe.info.address}}" class="color--black" target="_blank">{{cafe.info.address}}</a></div>
 		</div>
+		{% if cafe.info.facebook.url %}
+		<div class="piece--detail spacing--horiz-half spacing--vert-half grid--one  flex justify--between nog">
+			<i class="icon-social--facebook" data-grunticon-embed></i>
+			<div class="content"><a href="{{cafe.info.facebook.url}}" class="color--black" target="{{cafe.info.facebook.target}}">{{cafe.info.facebook.title}}</a></div>
+		</div>
+	{% endif %}
 	</div>
 </div>
