@@ -49,7 +49,7 @@ function prepareGlobalCafeFields()
         'hours'    => get_field('field_5a4d3b74fe635'),
         'address'  => get_field('field_5a4d3b7efe636'),
         'email'    => get_field('field_5a540c28d632e'),
-        'facebook' => get_field('field_5aff46929dcb5'),
+        'facebook' => get_field('field_5b05ee7731f4c'),
     );
     return $cafe;
 }

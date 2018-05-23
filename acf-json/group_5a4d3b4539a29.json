@@ -95,6 +95,21 @@
             "maxlength": ""
         },
         {
+            "key": "field_5b05ee7731f4c",
+            "label": "Facebook Link",
+            "name": "cafe_facebook",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        },
+        {
             "key": "field_5a540d5854d77",
             "label": "Cafe Content",
             "name": "",
@@ -435,5 +450,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1527113770
+    "modified": 1527115401
 }
