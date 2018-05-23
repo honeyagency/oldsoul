@@ -99,13 +99,14 @@ function prepareCafeFields()
                     'end'   => get_sub_field('field_5a5521c88e8eb'),
                 );
                 $events[] = array(
-                    'image'  => $eventImage,
-                    'expire' => get_sub_field('field_5aecdaea3d196'),
-                    'title'  => get_sub_field('field_5a540eed365b4'),
-                    'format' => $dateFormat,
-                    'date'   => $date,
-                    'time'   => $time,
-                    'link'   => get_sub_field('field_5a541008365b9'),
+                    'image'       => $eventImage,
+                    'expire'      => get_sub_field('field_5aecdaea3d196'),
+                    'title'       => get_sub_field('field_5a540eed365b4'),
+                    'format'      => $dateFormat,
+                    'date'        => $date,
+                    'time'        => $time,
+                    'link'        => get_sub_field('field_5a541008365b9'),
+                    'descirption' => get_sub_field('field_5b05e7ee20985'),
                 );
             }
         }

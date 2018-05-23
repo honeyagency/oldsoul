@@ -1,24 +1,25 @@
 <div class="block--cafe-event flex flex--wrap justify--between align--items-start border--bot-1 spacing--vert-1 spacing--dsk-vert-2">
-	{% if event.image %}<div class="grid--half"><img data-original="{{event.image|resize(480)}}"  width="240" alt="{{event.image._wp_attachment_image_alt}}"></div>{% endif %}
-	<div class="{% if event.image %}grid--half{% else %}grid--one{% endif %}">
-		<h5>{{event.title}}</h5>
-		<time>
-		<span class=" font--bold font--small">
-			<i class="icon-calendar" data-grunticon-embed></i>
-			{% if event.format == 'date' %}
-				{{event.date|date('M d')}}
-			{% else %}
-				{{event.date}}
-			{% endif %}
-		</span>
-		{% if event.time.start %}
-		<span class="font--bold font--small">
-		<i class="icon-clock" data-grunticon-embed></i> {{event.time.start|date('g')}}{% if event.time.start|date('i') != '00' %}:{{event.time.start|date('i')}}{% endif %}{% if event.time.start|date('a') == 'am' and event.time.end|date('a') == 'pm' %}{{event.time.start|date('a')}}{% endif %}{% if event.time.end %} - {{event.time.end|date('g')}}{% if event.time.end|date('i') != '00' %}:{{event.time.end|date('i')}}{% endif %}{{event.time.end|date('a')}}{% endif %}
+	{% if event.image %}<div class="grid--third"><img data-original="{{event.image|resize(350,350)}}"  width="175" height="" alt="{{event.image._wp_attachment_image_alt}}"></div>{% endif %}
+	<div class="{% if event.image %}grid--two-thirds{% else %}grid--one{% endif %}">
+	<h5 class="margin--bot-half">{{event.title}}</h5>
+	<time>
+	<span class="font--small font--bold">
+		<i class="icon-calendar" data-grunticon-embed></i>
+		{% if event.format == 'date' %}
+			{{event.date|date('M d')}}
+		{% else %}
+			{{event.date}}
+		{% endif %}
+	</span>
+	{% if event.time.start %}
+		<span class="font--small font--bold">
+			<i class="icon-clock" data-grunticon-embed></i> {{event.time.start|date('g')}}{% if event.time.start|date('i') != '00' %}:{{event.time.start|date('i')}}{% endif %}{% if event.time.start|date('a') == 'am' and event.time.end|date('a') == 'pm' %}{{event.time.start|date('a')}}{% endif %}{% if event.time.end %} - {{event.time.end|date('g')}}{% if event.time.end|date('i') != '00' %}:{{event.time.end|date('i')}}{% endif %}{{event.time.end|date('a')}}{% endif %}
 		</span>
 	{% endif %}
-		</time>
-	</div>
-	{% if event.link %}
-		<a href="{{event.link.url}}" target="{{event.link.target}}" title="{{event.link.title}}">{{event.link.title}}</a>
+	{% if event.descirption %}<div class="font--tiny margin--top-1">{{event.descirption}}</div>{% endif %}
+	</time>
+</div>
+{% if event.link %}
+	<a href="{{event.link.url}}" target="{{event.link.target}}" title="{{event.link.title}}">{{event.link.title}}</a>
 {% endif %}
 </div>

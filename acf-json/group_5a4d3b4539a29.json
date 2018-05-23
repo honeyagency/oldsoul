@@ -95,21 +95,6 @@
             "maxlength": ""
         },
         {
-            "key": "field_5aff46929dcb5",
-            "label": "Facebook",
-            "name": "cafe_facebook_link",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
             "key": "field_5a540d5854d77",
             "label": "Cafe Content",
             "name": "",
@@ -410,6 +395,25 @@
                         "id": ""
                     },
                     "return_format": "array"
+                },
+                {
+                    "key": "field_5b05e7ee20985",
+                    "label": "Event Description",
+                    "name": "event_description",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -431,5 +435,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526679204
+    "modified": 1527113770
 }

@@ -1,7 +1,7 @@
 
 	<section class="cafe--events max-wrap flex flex--wrap justify--around margin--center spacing--gutter spacing--vert-2 spacing--dsk-vert-2 margin--bot-3">
 		
-		<div class="grid--one grid--md-two-fifths">
+		<div class="grid--one grid--md-half">
 		{% if cafe.events %}	
 			<div class="font--bold">Upcoming Events</div>
 			{% for event in cafe.events %}
@@ -13,7 +13,7 @@
 		{% endif %}
 		</div>
 		
-		<div class="block--map-icon grid--four-fifths grid--md-two-fifths margin--top-2">
+		<div class="block--map-icon grid--four-fifths grid--md-third margin--top-2">
 			<i class="icon-{{cafe.map}}" data-grunticon-embed></i>
 		</div>
 	</section>
