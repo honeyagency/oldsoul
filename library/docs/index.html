@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Old Soul Wordpress Documentation</title>
+	</head>
+	<body>
+		<h1>Old Soul Wordpress Documentation</h1>
+		<p>Hi there! This document lives here to give you some basic information about your WordPress site and how to update it. Let&#39;s get started!</p>
+		<h6>Table of Contents</h6>
+		<ul>
+			<li><a href="#wordpress-overview">WordPress Overview</a></li>
+			<li><a href="#logging-in">Logging In</a></li>
+			<li><a href="#media-library">Media Library</a>
+			<ul>
+				<li><a href="#adding-a-media-item">Adding a Media Item</a></li>
+			</ul></li>
+			<li><a href="#adding-editing-a-page">Adding/Editing a Page</a>
+			<ul>
+				<li><a href="#adding-a-new-page">Adding A New Page</a></li>
+				<li><a href="#content">Content</a></li>
+				<li><a href="#published-draft-schedulded-private">Published / Draft / Scheduled / Private</a></li>
+				<li><a href="#editing-a-page">Editing a Page</a></li>
+			</ul></li>
+			<li><a href="#adding-featured-images">Adding a Featured Image</a></li>
+			<li><a href="#adding-a-product">Adding a Product</a></li>
+			<li><a href="coffee-details">Coffee Details</a>
+			<ul>
+				<li><a href="#feature">Featured Product Info</a></li>
+				<li><a href="#product-fields">Product Fields</a></li>
+				<li><a href="#adding-variants">Adding Variants</a></li>
+				<li><a href="#featuring-products">Featuring Products (Shop) </a></li>
+			</ul></li>
+			<li><a href="#handling-orders">Handling Orders</a>
+			<ul>
+				<li><a href="#purchasing-labels">Purchasing Labels</a></li>
+				<li><a href="#issuing-refunds">Issuing Refunds</a></li>
+				<li><a href="#reports">Reports</a></li>
+			</ul>
+		</li>
+	</ul>
+	<hr />
+	<h3 id="wordpress-overview">WordPress Overview</h3>
+	<p>If you&#39;re somewhat familiar with WordPress, feel free to skip to the next section, it&#39;s not integral to understanding your new website. WordPress is a Content Management System (CMS) - at a basic level it performs the following functions:</p>
+	<ol>
+		<li>Displaying content to users. (Frontend)</li>
+		<li>Providing a secure, simple location for site-owners to update that content. (Backend)</li>
+	</ol>
+	<p>At Honey Agency, we custom-build the backend so site-owners don&#39;t need to worry about code or formatting, there&#39;s a few fields that you fill out and we take care of formatting via code. We usually re-size images for you as well; so unless you see a note about image sizes when you are uploading them we&#39;re taking care of the size on the front-end.</p>
+	<p>WordPress breaks down content into <code>pages</code> and <code>posts</code>. A <code>page</code> is the most general form of webpage content: you have some text, possibly an image, and you can access that content via a URL. A <code>post</code> is similar to a <code>page</code>, but it&#39;s hierarchy is based on the model of a blog: you generally have the text and image content that you&#39;d have with a <code>page</code>, but posts are displayed in <strong>series</strong> and usually have a <strong>date</strong> and an <strong>author</strong>. </p>
+	<p>These are generalizations, but are the basic grounds of how a lot of the web is built.</p>
+	<p>At Honey Agency, we try to separate content-types into custom versions of a <code>post</code> to make the website hierarchy more simple and streamlined for clients. For example at honeyagency.com, we have a <strong>team</strong> page with individual <strong>team members</strong> so we have a custom <code>post</code> that&#39;s called <code>Team Member</code>. When you want to add a new team member you don&#39;t have to custom-format anything, you just click <strong>Add New Team Member</strong> on the backend; once you fill out all the content required the team member is automatically populated in different places on the site.</p>
+	<p>Depending on your site, you might have a few custom-posts that we&#39;ll go over in the sections below.</p>
+	<hr />
+	<h3 id="logging-in">Logging In</h3>
+	<p>Logging in to your WordPress site is easy: just add <code>/wp-login</code> to the end of your URL, use the Password and Username (or email) provided and you&#39;re on your way. Once you login you will see what&#39;s called the <strong>WordPress dashboard</strong>-from here you can get anywhere you need to update content. If you look at the homepage of your site while logged in, there will be a black-bar along the top of the page with links to various site functions.</p>
+	<hr />
+	<h3 id="media-library">Media Library</h3>
+	<p>One of the perks of having a site with a CMS is that you have a centralized location for any images you&#39;ve added site-wide. So anytime you upload images, PDFs, audio, etc to a post, a page, or a custom post they&#39;ll be added to a folder similar to the <code>Photos</code> or <code>Pictures</code> folder on your computer.</p>
+	<p>To get to your Media Library, click the <code>Media Library</code> navigation item in the left-hand side menu in the WordPress dashboard. You&#39;ll be presented with a gallery of all the images currently on your site.</p>
+	<h5 id="adding-a-media-item">Adding a Media Item</h5>
+	<p>To add a media item, click <code>Add New</code> from the <code>Media Library</code>. From here you can drag-and-drop however many images you like (note the Maximum upload file size, this is per-file) and they&#39;ll automatically be added and have URL&#39;s generated for them. Usually, you&#39;ll simply upload images or PDFs directly to a post or page, in which case they&#39;ll be added to this library.</p>
+	<hr />
+	<h3 id="adding-editing-a-page">Adding/Editing a Page</h3>
+	<p>In the WordPress overview, you heard that the <code>page</code> is the most basic form of content in WordPress, this is how we&#39;ll add &amp; edit those.</p>
+	<h5 id="adding-a-new-page">Adding A New Page</h5>
+	<p>Once you&#39;re logged in you can add a new page from either:</p>
+	<ol>
+		<li>The black bar along the top of the site, hover (tap on mobile) over <code>+ New</code> and click <code>Page</code></li>
+		<li>From the dashboard, there&#39;s a navigation item on the left-hand side of the page called <strong>Pages.</strong> Click this and click <code>Add New</code>.</li>
+	</ol>
+	<p>You&#39;ll be taken to the backend of a page with no title or content, when you add a title the URL will automatically be generated for you. If you want to change that URL click the area of text you want to change and edit the text, WordPress will automatically convert your text to lower-case and will replace spaces with hyphens to be URL-compatible.</p>
+	<h6>Content</h6>
+	<p>After you have your title and URL set, you can use the area below to add content. The large white text-box is called a <strong>WYSIWYG</strong> (<strong>W</strong>hat <strong>Y</strong>ou <strong>S</strong>ee <strong>I</strong>s <strong>W</strong>hat <strong>Y</strong>ou <strong>G</strong>et) and will operate similarly to Microsoft Word, Apple Pages, or Google Docs.</p>
+	<h6>Published / Draft / Scheduled / Private</h6>
+	<p>You&#39;ll see a bar on the right-hand side of the page with options for publishing the page. To publish (make the page go live) the page, click <code>Publish</code>. If you don&#39;t want people to see the content, you can choose <code>Save Draft</code>. If you want to schedule the page, you can change the date where you see <strong>Publish immediately.</strong> If you want to publish the page but <strong>only want people who are logged into the site to see it</strong> (other admins) you can choose <code>Private</code> under the <strong>Visibility</strong> option.</p>
+	<h5 id="editing-a-page">Editing a Page</h5>
+	<p>To edit a page that is already created, you can either click <code>Edit Page</code> in the black top-bar when you&#39;re looking at the page from the front-end, or you can find the page by clicking <code>Pages</code> in the dashboard and clicking the blue title of the page you&#39;re looking for from the list of pages.</p>
+	<hr />
+	<h3 id="adding-a-product">Adding a Product</h3>
+	<p>Adding a product starts similarly to adding pages or posts. </p>
+	<ol>
+		<li>From the dashboard, hover over “Products” in the left-hand menu and click “add new.”</li>
+		<li>Give your product a title and a good description in the content area.</li>
+		<li>Once you have a title and a description, use the tabs below called “Coffee Details” and “Feature” to fill out product information.</li>
+	</ol>
+	<h4 id="coffee-details">Coffee Details<br/></h4>
+	<p>These fields are all pretty self-explanatory, but they display as plain-text in the right-hand aside on the product pages; leaving them blank is okay, it simply hides the title on the front-end.</p>
+	<ul>
+		<li>Altitude</li>
+		<li>Varietal</li>
+		<li>Process</li>
+		<li>Producer</li>
+		<li>Origin(s)</li>
+		<li>Flavors</li>
+		<li>Roast</li>
+	</ul>
+	<h4 id="feature">Feature</h4>
+	<p>This controls the <em>way products look</em> when they’re displayed as features on the shop page, in a few sections there’s an explanation for displaying the products.</p>
+	<p>The following feature types are available, screenshots are </p>
+	<ul>
+		<li><strong>Award</strong>: Highlight awards and great reviews with the review score and (on the product page) a link to the review.</li>
+		<li><strong>Product Highlight</strong>: Highlight items that are back in stock, about to sell out, etc.</li>
+	</ul>
+	<ol>
+		<li><a href="https://dsc.cloud/joshre/shop-page.png">Award / Review highlight on the shop page</a></li>
+		<li><a href="https://dsc.cloud/joshre/review-product-highlight.png">Award / Review highlight on the product page</a></li>
+		<li><a href="https://dsc.cloud/joshre/back-in-stock.png">Product Highlight on the shop page</a></li>
+	</ol>
+	<h4 id="product-fields">Product Fields</h4>
+	<p><strong>General</strong></p>
+	<ul>
+		<li>Regular Price</li>
+		<li>Sale Price
+			<ul>
+				<li>Here you’ll find an option to schedule the sale price of an item.</li>
+			</ul></li>
+			<li>Tax information</li>
+		</ul>
+		<h5 id="adding-variants">Adding Variants</h5>
+		<p>If you’re selling a product that is <em>technically</em> made up of multiple SKU’s (i.e. Shirts: <em>Large Blue</em>, <em>Medium Blue</em>, <em>Medium Yellow</em> or Coffee: <em>Decaf 5lb</em>, <em>Decaf 12oz</em>) we need to set up variants to ensure there’s only one URL with multiple options. The benefit is that it automates the process of adding options one-at-a-time, instead you setup the variants and tell wordpress to create each SKU (for example a shirt with four sizes doesn’t need to be re-created 24 times, you simply choose each color and size and generate).</p>
+		<p><strong>How to enable variants and set up a variable product</strong></p>
+		<p>For this example, we’re adding a new coffee with a 5lb and 12oz variant.</p>
+		<ol>
+			<li>From the general product info pane, <a href="https://dsc.cloud/joshre/product-dropdown.png">click the drop-down</a> to change the product type and select <code>Variable Product</code>.</li>
+			<li>Next, click the “Attributes” tab.</li>
+			<li>Under the dropdown that says “Custom Product Attribute” choose bag size and click <code>Add</code>.</li>
+			<li>You’ll see a small section appear below, click the “Value(s)” field, you’ll see a few options appear. Click each option you want to add (in this case, 5lb and 12oz).</li>
+			<li>Check the <a href="https://dsc.cloud/joshre/variable.png">“Used for variations”</a> box, at this point we’re telling the site that we want to add a handful of variations and how it should generate them. Click <code>Save Attributes</code>.</li>
+			<li>Click on the “Variations” tab.</li>
+			<li>Choose <a href="https://dsc.cloud/joshre/usevar.png">“Create variations from all attributes”</a> and click <code>Go</code>. Accept any browser dialogs that popup.</li>
+			<li>Now you should see two <a href="https://dsc.cloud/joshre/default.png">distinct SKU’s</a> and a drop-down for <a href="https://dsc.cloud/joshre/default.png">“default form values”</a> — choose the lowest-price SKU.</li>
+			<li>Simply click a SKU <a href="https://dsc.cloud/joshre/Screen-Shot-2018-06-07-at-4.17.30-PM.png">to expand it’s options</a>, the only fields you need to update are price and weight.</li>
+		</ol>
+		<h5 id="featuring-products">Featuring Products</h5>
+		<p>Featuring products is an action that takes place in site options instead of <em>within</em> products. That takes the guesswork out of sifting through product posts to see what’s featured and what isn’t.</p>
+		<p>To choose which products are featured, first navigate to your dashboard. </p>
+		<ol>
+			<li>Hover over the navigation item on the left-hand menu titled “Options” and choose <code>Shop</code>.</li>
+			<li>There’s a simple search feature to select the featured product.</li>
+			<li>That’s it!</li>
+		</ol>
+		<h3 id="handling-orders">Handling Orders</h3>
+		<p>All orders are organized in the dashboard under the “Woocommerce” navigation item. Hover over the nav-item and select <code>Orders</code> to see a list of all orders.</p>
+		<h5 id="purchasing-labels">Purchasing Labels</h5>
+		<p>Purchasing labels happens per-product and is really easy to do. Once an order is placed, the customer will receive an email to let them know that their order is in the queue to be processed. Once the order is ready to ship, navigate to the order.</p>
+		<ol>
+			<li>On the right-hand side of the page there’s a button titled “Create New Label.” Click this and follow the directions to print the generated PDF. The tracking information (if available, subject to chosen shipping options) will automatically be sent to the customer.</li>
+		</ol>
+		<h5 id="issuing-refunds">Issuing Refunds</h5>
+		<p>Issuing refunds are simple. You can issue a full refund or a partial refund if there’s any hiccup in the ordering process or if a customer runs into issues.</p>
+		<ol>
+			<li>Click on the order, in the bottom-left-hand side of the order you’ll <a href="https://dsc.cloud/joshre/Screen-Shot-2018-06-07-at-4.33.58-PM.png">see a button labeled <code>Refund</code></a> </li>
+			<li>A section will expand that has a field for you to enter in how much you want to refund on the order. Choosing “Refund with Stripe” will open stripe and handle the refund process entirely. The customer will receive an email to notify them of the refund.</li>
+		</ol>
+		<h5 id="reports">Reports</h5>
+		<p>Reports are a great way to get an overview of orders. </p>
+		<p><strong>To get to reports:</strong></p>
+		<ol>
+			<li>Go to the WordPress dashboard</li>
+			<li>Hover over “Woocommerce” in the left-hand-side navigation, choose the <code>Reports</code> link.</li>
+		</ol>
+		<p>From here you can filter orders for the last 7 days, the current calendar month, the previous calendar month, the current calendar year, or a custom date range.</p>
+		<p>The following metrics are available and are graphed to the date range:</p>
+		<ul>
+			<li>Gross Sales in This Period</li>
+			<li>Average Gross Daily Sales</li>
+			<li>Net Sales in This Period</li>
+			<li>Average Net Daily Sales</li>
+			<li>Orders Placed</li>
+			<li>Items Purchased</li>
+			<li>Refunded 0 Orders (0 Items)</li>
+			<li>Charged for Shipping</li>
+			<li>Worth of Coupons Used</li>
+		</ul>
+	</body>
+</html>

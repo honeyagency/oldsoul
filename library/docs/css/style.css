@@ -1,0 +1,121 @@
+/*
+	San Francisco
+
+	Visit http://www.ulyssesapp.com/styles for full reference
+
+*/
+a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+body {margin: 0 auto;display: block;max-width: 700px;padding: 0 1em;font-size: 1.1rem;color:#333;background:#ffffff;font-family:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;line-height: 1.6;-webkit-font-smoothing: antialiased;}
+
+h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#333;}
+
+h1 {font-size:3em;line-height:1;margin-bottom:0.5em;margin-top:2em;font-weight:800;letter-spacing: -1px;color:#272727;}
+
+h2 {font-size:2em;margin-bottom:0.25em;margin-top:0.5em;font-weight: 700;color:#272727;}
+
+h3 {font-size:1.8em;line-height:1;margin-bottom:.75em;margin-top:1.5em;font-weight: 700;color:#272727;}
+
+h4 {font-size:1.3em;line-height:1.25;margin-bottom:0.5em;}
+
+h5 {font-size:1.3em;line-height:1;margin-bottom:0.5em;margin-top:1.5em;font-weight: 600;color:#616669;letter-spacing: -.5px;}
+
+h6 {font-size:1em;margin-bottom:0.25em;margin-top:1.5em;font-weight:600;letter-spacing: -.5px;}
+
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {margin:0;}
+
+img {max-width: 100%;}
+
+p {margin-bottom: 1em;}
+a:focus, a:hover {color:#2185d5;}
+a {color:#2185d5;text-decoration:none;}
+blockquote {margin:1.5em;color:#666;}
+strong, dfn {font-weight:bold;}
+em, dfn {font-style:italic;}
+
+del {color:#666;}
+pre {margin:1.5em 0;white-space:pre;}
+pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}
+
+li ul, li ol {margin:0;line-height: 1.6}
+ul, ol {margin:0 3em 1em 1em;padding-left:1em;}
+ul {list-style: square outside;margin: 1em 0 1em 1.25em;}
+ol {list-style: decimal outside;margin: 1em 0 1em 1.25em;}
+li{line-height: 1.52947;font-weight: 400;letter-spacing: -0.021em;}
+figure {margin: 1.5em 0; width: 100%; text-align: center; }
+figcaption {font-size: 0.75em;padding:0.5em 2em;margin-bottom: 2em;}
+figure img {margin-bottom: 0px;}
+
+code {font-family: Menlo, monospace; font-size:90%;}
+p > code {padding: 3px 7px;border-radius: 2px;font-size: .9rem;background: #e1e9ed;margin: 0px .5px;}
+pre {text-align:left; overflow-x: scroll; color: #d3bd7e; background: #202020; padding: 10pt 15pt; border-radius: 3px;}
+
+hr {border: 0px; border-top: 1px solid #ddd; border-bottom: 1px solid #fff;margin-top:2.5em;margin-bottom: 2em;}
+
+h1 + hr {margin-top: 2em;}
+
+ol#footnotes {font-size: 0.75em;padding-top: 1.5em;margin-top: 3em;margin-left: 0;}
+ol#footnotes:before {content: "———"; letter-spacing: -4px;margin-left: -1.5em;}
+
+ol p, ul p {margin-bottom: 0px;}
+
+
+
+@keyframes highfade {
+    0% {
+		background-color: none;
+    }
+    20% {
+		background-color: yellow;
+	}
+    100% {
+		background-color: none;
+    }
+}
+
+@-webkit-keyframes highfade {
+    0% {
+		background-color: none;
+    }
+    20% {
+		background-color: yellow;
+	}
+    100% {
+		background-color: none;
+    }
+}
+
+a:target, ol#footnotes li:target, sup a:target  {
+    animation-name: highfade;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-name: highfade;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+a:target {border:0;outline: 0;}
+
+@media screen and (max-width: 768px) {
+	body {
+		margin:0px;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	body {
+		margin:00px;
+	}	
+	ul,ol {
+		margin: 0;
+	}
+	h1 {
+		font-size: 2em;
+	}
+	h2 {
+		font-size: 1.8em;
+	}
+}
