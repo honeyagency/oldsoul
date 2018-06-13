@@ -146,3 +146,9 @@ function getParentTitle($id)
     return $title;
 
 }
+
+
+function new_excerpt_more($more) {
+  return '<i class="icon-hand-short" data-grunticon-embed></i>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');

@@ -6,20 +6,21 @@
 		<section class="content max-wrap margin--center spacing--gutter spacing--dsk-vert-2">{{post.content}}</section>
 	{% endif %}
 	<section class="cafe-wrap margin--center flex flex--wrap justify--between align--items-start spacing--vert-2 spacing--dsk-vert-5">
-		<div class="grid--sm-three-fifths spacing--gutter-mob font--content">
+		<div class="grid--sm-three-fourths margin--center spacing--gutter-mob font--content">
 			{% for post in posts %}
-				<div>
-	
-					{# <time class="font--small">{{post.date|date('M j, Y')}}</time> #}
-					<strong class="block">{{post.author.first_name}} {{post.author.last_name}}</strong>
-					<h3 class="mar--no">{{post.title}}</h3>
-									{% if post.image %}<img align="right" width="170" src="{{post.image|resize(50,50)}}" data-original="{{post.image|resize(340, 340)}}" alt="{{post.image.caption}}">{% endif %}{{post.excerpt}}
-					<a href="{{post.link}}">Read</a>
-					<hr class="color--brown-light">
+				<div class="margin--vert-2 post--tease">
+					<h2 class="mar--">{{post.title}}</h2>
+
+					<h5 class="block text--uppercase margin--vert-1">{{post.author.first_name}} {{post.author.last_name}} | <time class="font--small text--uppercase">{{post.date}}</time></h5>
+
+					{% if post.image %}<img align="right" width="170" src="{{post.image|resize(50,50)}}" data-original="{{post.image|resize(340, 340)}}" alt="{{post.image.caption}}">{% endif %}{{post.excerpt}}
+					<a class="ha-button margin--top-1" href="{{post.link}}">Read More</a>
+					
 				</div>
+				<hr class="color--brown-light">
 			{% endfor %}
 		</div>
-		<div class="grid--one grid--sm-third font--small spacing--dsk-horiz-1 spacing--gutter-mob sidebar">
+	{# 	<div class="grid--one grid--sm-third font--small spacing--dsk-horiz-1 spacing--gutter-mob sidebar">
 			<hr class="color--brown-light">
 			<div class="font--small block--sidebar-content">
 				<strong class="text--uppercase letter--1">Categories</strong>
@@ -28,7 +29,7 @@
 				{% endfor %}
 			</div>
 			
-		</div>
+		</div> #}
 	</section>
 </article>
 {% endblock %}

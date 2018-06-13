@@ -35,7 +35,7 @@
         }
 
         .price {
-            color: $green;
+            color: $black;
         }
 
         select {
@@ -136,11 +136,11 @@
             }
         }
 
-        
         font-size: 0.85em;
     }
 
-min-height: 280px;
+
+    min-height: 280px;
 
     .media-figure {
         img {
@@ -162,4 +162,5 @@ min-height: 280px;
 
 .price {
     font-family: $base-serif-font;
+    font-size: 1rem;
 }

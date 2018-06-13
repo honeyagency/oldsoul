@@ -77,8 +77,9 @@ function getSinglePost($posttype = null, $postId = null)
         'last_name'  => get_the_author_lastname($postId),
     );
     // setup an array to change the post data returned
+
     $singlePostArray = array(
-        'date'       => strtotime(get_the_date($postId)),
+        'date'       => get_the_date('M j, Y', $postId),
         'id'         => $postId,
         'title'      => get_the_title($postId),
         'categories' => $categories,

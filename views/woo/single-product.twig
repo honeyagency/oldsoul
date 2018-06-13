@@ -11,10 +11,9 @@
             {% do action('woocommerce_before_single_product_summary') %}
             <h1 class="product--title hidden--mob">{{post.title}}</h1>
             <div class="font--content">{{post.content}}</div>
-
             {% if options.shop.featured and options.shop.featured.info.feature.type == 'award' %}
-            {% include 'components/sections/section--product-review.twig' %}
-        {% endif  %}
+                {% include 'components/sections/section--product-review.twig' %}
+            {% endif  %}
             {% if gallery %}
                 {# {% include 'components/sections/section--product-gallery.twig' %} #}
             {% endif %}

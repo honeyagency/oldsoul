@@ -1,3 +1,18 @@
+.shop-button {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: table;
+    background: map-get($brown, main);
+    color: white;
+    padding: 4px 15px;
+    font-size: 1.2rem;
+    border: 0;
+    // border-radius: 4px !important;
+
+    &.color--brown {
+        color: white;
+    }
+}
 .button, .ha-button {
     text-transform: uppercase;
     border-bottom: 2px solid;
@@ -10,7 +25,6 @@
     // font-size: inherit;
     border-radius: 0;
 }
-
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
     display: inline-block;
     color: map-get($brown, main);
@@ -26,21 +40,6 @@
     &:hover {
         background: transparent;
         color: darken(map-get($brown, main), 5%);
-    }
-}
-
-.ha-addtocart {
-    text-align: right;
-    margin-bottom: 2em;
-    margin-top: 1em;
-
-    .icon-cart {
-        width: 16px;
-        margin-right: .5em;
-    }
-
-    button {
-        top: -5px;
     }
 }
 
@@ -63,4 +62,29 @@
     padding-bottom: 2px !important;
     text-align: right !important;
     border-radius: 0 !important;
+}
+
+.ha-addtocart {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+    .icon-cart {
+        width: 13px;
+        display: inline-block;
+        margin-right: .5em;
+
+        svg {
+            g {
+                stroke: white;
+            }
+        }
+    }
+
+    button {
+        // top: -5px;
+        color: white !important;
+        border: 0 !important;
+    }
 }

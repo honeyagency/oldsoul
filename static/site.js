@@ -28,12 +28,12 @@ jQuery(document).ready(function($) {
     //     reappear: true,
     // });
     // $('select').selectric();
-    $('select.woocommerce-widget-layered-nav-dropdown').addClass('icon-arrow-down-green');
-    $('.before-shop-loop').find('.orderby').addClass('icon-arrow-down-green');
+    $('select.woocommerce-widget-layered-nav-dropdown').addClass('icon-arrow-down-black');
+    $('.before-shop-loop').find('.orderby').addClass('icon-arrow-down-black');
     $va = $('.product-type-variable');
     $va.each(function() {
         if ($(this).hasClass('product_cat-featured')) {
-            $(this).find('select').addClass('icon-arrow-down-green');
+            $(this).find('select').addClass('icon-arrow-down-black');
         } else {
             $(this).find('select').addClass('icon-arrow-down-black');
         }

@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'compressed',
+                    style: 'nested',
                     sourcemap: 'none'
                 },
                 files: {
@@ -37,10 +37,10 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
-                autoprefixer: {
-                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
-                    add: true
-                }
+                // autoprefixer: {
+                //     browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                //     add: true
+                // }
             },
             dist: {
                 files: {
@@ -77,18 +77,6 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true,
                 },
-            },
-            cssnano: {
-                files: ["<%= conf.sass %>"],
-                tasks: ["cssnano"]
-            },
-            svgmin: {
-                files: ["<%= conf.iconts %>/*.svg"],
-                tasks: ["svgmin:dist"]
-            },
-            grunticon: {
-                files: ["<%= conf.icons %>/optimized/*.svg"],
-                tasks: ["grunticon:myIcons", "copy"]
             }
         },
         svgmin: {
@@ -117,11 +105,7 @@ module.exports = function(grunt) {
                 options: {
                     enhanceSVG: true,
                     pngpath: '<%= conf.appIcons %>',
-                    compressPNG: true,
-                    colors: {
-                        green: "#898f65",
-                        black: "#232111"
-                    }
+                    compressPNG: true
                 }
             }
         },
@@ -162,7 +146,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-notify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-sass');
+    grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-svgmin');
