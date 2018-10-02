@@ -1,5 +1,7 @@
 <div class="block--featured-product text--center spacing--vert-5 grid--one margin--bot-1" style="background-image:url('{{options.shop.featured.info.feature.featimg|resize(960)}}')">
 	{% if options.shop.featured.info.feature.type == 'award' %}<img class="reviewimage" width="110" height="110" src="{{options.shop.featured.info.feature.reviewimage|resize(220,220)}}" alt="">{% else %}<i class="icon-tab"><i class="icon-beans--two" data-grunticon-embed></i></i>{% endif %}
+		{{options.shop.featured.info.feature.reviewimage}}
+		{# {{options.shop|print_R}} #}
 	<div class="block--content">
 		<h2 class="color--white ">
 		{% if options.shop.featured.info.feature.type == 'award' %}
