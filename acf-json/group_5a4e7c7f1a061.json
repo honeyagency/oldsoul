@@ -271,6 +271,42 @@
             "return_format": "array"
         },
         {
+            "key": "field_5bbe8cf3acf9f",
+            "label": "Links",
+            "name": "bottom_footer_link",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Link",
+            "sub_fields": [
+                {
+                    "key": "field_5bbe8d13acfa0",
+                    "label": "Link",
+                    "name": "bottom_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
+        },
+        {
             "key": "field_5a4e7e689fa57",
             "label": "Miscellaneous",
             "name": "",
@@ -385,5 +421,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1526428655
+    "modified": 1539214622
 }

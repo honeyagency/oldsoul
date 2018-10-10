@@ -184,11 +184,15 @@ function prepareSiteOptions()
         'link'     => get_field('field_5a4e7e2bebbb2', 'options'),
         'featured' => $featuredPost,
     );
-    $subfooter = array(
-        'privacy' => get_field('field_5a4e81c8daa78', 'options'),
-        'press'   => get_field('field_5a4e81de20899', 'options'),
-    );
 
+    if (have_rows('field_5bbe8cf3acf9f', 'options')) {
+        $bottom = array();
+        while (have_rows('field_5bbe8cf3acf9f', 'options')) {
+            the_row();
+
+            $bottom[] = get_sub_field('field_5bbe8d13acfa0', 'options');
+        }
+    }
     $defaultImageId = get_field('field_5a4e7eaf9fa5b', 'options');
     if ($defaultImageId != null) {
         $defaultImage = new TimberImage($defaultImageId);
@@ -207,7 +211,7 @@ function prepareSiteOptions()
         'contact' => $contact,
         'shop'    => $shop,
         'search'  => $search,
-        'footer'  => $subfooter,
+        'footer'  => $bottom,
         'misc'    => $misc,
     );
 

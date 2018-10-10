@@ -1,3 +1,6 @@
 <section class="section--bottom-footer flex flex--wrap justify--center spacing--dsk-vert-3 max-wrap margin--center font--smaller letter--1 font--bold spacing--vert-1 spacing--gutter">
-	<span>Copyright &copy; {{"now"|date('Y')}} {{site.name}}</span><span class="spacing--horiz-1"> | </span><a class="color--black" href="{{options.footer.privacy.url}}" target="{{options.footer.privacy.target}}" title="{{options.footer.privacy.title}}">{{options.footer.privacy.title}}</a><span class="spacing--horiz-1"> | </span><a class="color--black" href="{{options.footer.press.url}}" target="{{options.footer.press.target}}" title="{{options.footer.press.title}}">{{options.footer.press.title}}</a><span class="spacing--horiz-1"> | </span><a class="color--black" href="https://honeyagency.com" target="_blank">Site by Honey Agency</a>
+	<span>Copyright &copy; {{"now"|date('Y')}} {{site.name}}</span>
+	{% for link in options.footer %}
+	    <span class="spacing--horiz-1"> | </span><a href="{{link.url}}" target="{{link.target}}" title="{{link.title}}" class="color--black">{{link.title}}</a>
+	{% endfor %}
 </section>
