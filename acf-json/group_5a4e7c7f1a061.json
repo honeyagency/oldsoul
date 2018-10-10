@@ -226,7 +226,7 @@
         },
         {
             "key": "field_5a4e81b8daa77",
-            "label": "Bottom Nav (Very Last Footer)",
+            "label": "Bottom Nav",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -239,36 +239,6 @@
             },
             "placement": "left",
             "endpoint": 0
-        },
-        {
-            "key": "field_5a4e81c8daa78",
-            "label": "Privacy Link",
-            "name": "privacy_link",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
-        },
-        {
-            "key": "field_5a4e81de20899",
-            "label": "Press Link",
-            "name": "press_link",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
         },
         {
             "key": "field_5bbe8cf3acf9f",
@@ -421,5 +391,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1539214622
+    "modified": 1539215064
 }
