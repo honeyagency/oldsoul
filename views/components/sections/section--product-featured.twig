@@ -1,9 +1,9 @@
-<div class="block--featured-product text--center spacing--vert-5 grid--one margin--bot-1" style="background-image:url('{{options.shop.featured.info.feature.featimg|resize(960)}}')">
+<div class="block--featured-product text--center spacing--vert-5 grid--one margin--bot-1 bg--brown-dark"   style="background-image:url('{{options.shop.featured.info.feature.featimg|resize(960)}}')">
 	{% if options.shop.featured.info.feature.type == 'award' %}<img class="reviewimage" width="110" height="110" src="{{options.shop.featured.info.feature.reviewimage|resize(220,220)}}" alt="">{% else %}<i class="icon-tab"><i class="icon-beans--two" data-grunticon-embed></i></i>{% endif %}
 		{{options.shop.featured.info.feature.reviewimage}}
 		{# {{options.shop|print_R}} #}
 	<div class="block--content">
-		<h2 class="color--white ">
+		<h2 class="color--white color--white grid--sm-three-fifths margin--bot-half margin--center">
 		{% if options.shop.featured.info.feature.type == 'award' %}
 			{{options.shop.featured.title}}
 		{% else %}
@@ -11,9 +11,9 @@
 		{% endif %}
 		</h2>
 		{% if options.shop.featured.info.feature.type == 'award' %}
-				{% if options.shop.featured.info.feature.title %}<h4 class="font--sans color--white margin--bot-half">{{options.shop.featured.info.feature.title}}</h4>{% endif %}
+				{% if options.shop.featured.info.feature.title %}<h4 class="font--sans color--white margin--bot-1">{{options.shop.featured.info.feature.title}}</h4>{% endif %}
 		{% else %}
-				{% if options.shop.featured.info.feature.subtitle %}<h4 class="font--sans color--white margin--bot-half">{{options.shop.featured.info.feature.subtitle}}</h4>{% endif %}
+				{% if options.shop.featured.info.feature.subtitle %}<h4 class="font--sans color--white margin--bot-1">{{options.shop.featured.info.feature.subtitle}}</h4>{% endif %}
 		{% endif %}
 
 		<a class="shop-button center font--small letter--0" href="{{options.shop.featured.link}}">Shop Now</a>

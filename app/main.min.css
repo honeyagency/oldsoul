@@ -830,6 +830,9 @@ input[type=checkbox] {
 .flex, .section--checkout-wrap .woocommerce .woocommerce-order, .section--checkout-wrap .woocommerce .woocommerce-order section.woocommerce-customer-details {
   display: flex; }
 
+.grow {
+  flex-grow: 1; }
+
 @media screen and (min-width: 768px) {
   .dsk--flex {
     display: flex; } }

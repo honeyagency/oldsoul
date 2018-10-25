@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.grow {
+    flex-grow: 1;
+}
+
 .dsk--flex {
     @include media($screen-sm) {
         display: flex;
@@ -64,13 +68,12 @@
         height: auto;
     }
 }
-.cafe-wrap{
+
+.cafe-wrap {
     max-width: 960px;
-
 }
-.sidebar{
 
-}
+.sidebar {}
 
 .margin--center {
     margin: 0 auto;
@@ -117,6 +120,7 @@
         display: none !important;
     }
 }
+
 .hidden--dsk {
     @include media($screen-sm) {
         display: none !important;

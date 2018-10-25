@@ -93,7 +93,7 @@ function getSinglePost($posttype = null, $postId = null)
     if ($posttype == 'cafe') {
         $singlePostArray['cafe'] = prepareGlobalCafeFields();
     } elseif ($posttype == 'product') {
-        $singlePostArray['info'] = prepareProductFields();
+        $singlePostArray['info'] = prepareProductFields($postId);
     }
     // Restores original Post Data
     wp_reset_postdata();

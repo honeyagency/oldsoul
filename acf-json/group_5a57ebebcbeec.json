@@ -19,6 +19,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_5bd255e27f2e2",
+            "label": "Product Subtitle",
+            "name": "product_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5a67a95b683af",
             "label": "Altitude",
             "name": "coffee_altitude",
@@ -312,5 +331,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1529007298
+    "modified": 1540511229
 }

@@ -1,11 +1,8 @@
 <section class="section--single-product-header dsk--flex flex--wrap">
-	
-	
 	{% for image in gallery %}
-		
-		<div class="block--single-image grid--one grid--md-sixth nog">
-			<img class="hidden--mob" data-original="{{image|resize(475,475)}}" width="100%" data-action="zoom" data-zoom-target="{{image|resize(2560)}}" alt="">
-			<img class="hidden--dsk" src="{{image|resize(150,150)}}" data-flickity-lazyload="{{image|resize(750,750)}}" alt="{{image.caption}}" width="100%" data-original-set="{{image|resize(640,640)}}  640w,{{image|resize(750,750)}}  750w,{{image|resize(1080,1080)}} 1080w,{{image|resize(1280,1280)}} 1280w,{{image|resize(1366,1366)}} 1366w,{{image|resize(1440,1440)}} 1440w,{{image|resize(1500,1500)}} 1536w,{{image|resize(1920,1920)}} 1920w, {{image|resize(2880,2880)}} 2880w" sizes="100vw" data-action="zoom" data-zoom-target="{{image|resize(1300)}}">
+		<div class="block--single-image grid--one grid--md-sixth nog grow">
+			<img class="hidden--mob" data-original="{{image|resize(475,475)}}" width="100%" data-action="zoom" data-zoom-target="{{image}}" alt="">
+			<img class="hidden--dsk" src="{{image|resize(150,150)}}" data-flickity-lazyload="{{image|resize(750,750)}}" alt="{{image.caption}}" width="100%" data-original-set="{{image|resize(640,640)}}  640w,{{image|resize(750,750)}}  750w,{{image|resize(1080,1080)}} 1080w,{{image|resize(1280,1280)}} 1280w" sizes="100vw" data-action="zoom" data-zoom-target="{{image}}">
 		</div>
 	{% endfor %}
 </section>

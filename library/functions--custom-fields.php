@@ -245,6 +245,7 @@ function prepareProductFields($id = null)
     );
 
     $details = array(
+        'subtitle' => get_field('field_5bd255e27f2e2', $id),
         'process'  => get_field('field_5a67a57d683ae'),
         'altitude' => get_field('field_5a67a95b683af'),
         'varietal' => get_field('field_5a67a974683b0'),
