@@ -1,9 +1,10 @@
+
 <section class="section--product-review bg--brown-lightfade grid--one margin--bot-1 text--center margin--top-4">
-	{% if options.shop.featured.info.feature.reviewimage %}<img class="reviewimage margin--center" width="110" height="110" src="{{options.shop.featured.info.feature.reviewimage|resize(220,220)}}" alt="">{% endif %}
+	{% if info.feature.reviewimage %}<img class="reviewimage margin--center" width="110" height="110" src="{{info.feature.reviewimage|resize(220,220)}}" alt="">{% endif %}
 	<div class="block--content spacing--vert-3 margin--center grid--three-fourths">
-		<h2 class="margin--bot-half">{{options.shop.featured.info.feature.title}}</h2>
-		{% if options.shop.featured.info.feature.subtitle %}<div class="font--sans font--medium margin--bot-half">{{options.shop.featured.info.feature.subtitle}}</div>{% endif %}
-		<a class="ha-button center font--small letter--0" href="{{post.feature_link.url}}" target="{{post.feature_link.target}}" title="{{post.feature_link.title}}">{{post.feature_link.title}}</a>
+		<h2 class="margin--bot-half">{{info.feature.title}}</h2>
+		{% if info.feature.subtitle %}<div class="font--sans font--medium margin--bot-half">{{info.feature.subtitle}}</div>{% endif %}
+		<a class="ha-button center font--small letter--0" href="{{info.feature.link.url}}" target="{{info.feature.link.target}}" title="{{info.feature.link.title}}">{{info.feature.link.title}}</a>
 	</div>
 </section>
 
