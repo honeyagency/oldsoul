@@ -158,6 +158,13 @@
     &.product_cat-featured {
         order: 1;
     }
+
+    .product-title {
+        text-transform: none !important;
+        letter-spacing: 0.2px;
+        font-weight: 400 !important;
+        font-size: 1rem;
+    }
 }
 
 .price {
