@@ -9,6 +9,7 @@
 
     @include media($screen-xs) {}
 
+
     @include media($screen-sm) {}
 
 
@@ -16,5 +17,25 @@
 
     @include media($screen-md) {
         justify-content: space-between;
+    }
+}
+
+.post-1541 {
+    @extend .flex--double;
+    .entry-summary, .block--product-aside {
+        @extend .grid--md-half;
+
+        .pwgc-label {
+            margin-bottom: .5em;
+        }
+
+        #{$all-text-inputs} {
+            font-size: .9rem;
+        }
+    }
+}
+.section--product-header{
+    &.noimg{
+        border-bottom:1px solid map-get($brown, light);
     }
 }

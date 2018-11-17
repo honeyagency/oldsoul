@@ -1,10 +1,1 @@
-
-<section class="section--product-review bg--brown-lightfade grid--one margin--bot-1 text--center margin--top-4">
-	{% if info.feature.reviewimage %}<img class="reviewimage margin--center" width="110" height="110" src="{{info.feature.reviewimage|resize(220,220)}}" alt="">{% endif %}
-	<div class="block--content spacing--vert-3 margin--center grid--three-fourths">
-		<h2 class="margin--bot-half">{{info.feature.title}}</h2>
-		{% if info.feature.subtitle %}<div class="font--sans font--medium margin--bot-half">{{info.feature.subtitle}}</div>{% endif %}
-		<a class="ha-button center font--small letter--0" href="{{info.feature.link.url}}" target="{{info.feature.link.target}}" title="{{info.feature.link.title}}">{{info.feature.link.title}}</a>
-	</div>
-</section>
-
+<section class="section--product-review bg--brown-lightfade grid--one margin--bot-1 text--center margin--top-4">{% spaceless %}{% if info.feature.reviewimage %}<img class="reviewimage margin--center" width="110" height="110" src="{{info.feature.reviewimage|resize(220,220)}}" alt="">{% endif %}{% if info.feature.title %}<div class="block--content spacing--vert-3 margin--center grid--three-fourths"><h2 class="margin--bot-half">{{info.feature.title}}</h2>{% if info.feature.subtitle %}<div class="font--sans font--medium margin--bot-half">{{info.feature.subtitle}}</div>{% endif %}<a class="ha-button center font--small letter--0" href="{{info.feature.link.url}}" target="{{info.feature.link.target}}" title="{{info.feature.link.title}}">{{info.feature.link.title}}</a></div>{% endif %}{% endspaceless %}</section>
