@@ -13,23 +13,13 @@
 
 					<h5 class="block text--uppercase margin--vert-1">{{post.author.first_name}} {{post.author.last_name}} | <time class="font--small text--uppercase">{{post.date}}</time></h5>
 
-					{% if post.image %}<img align="right" width="170" src="{{post.image|resize(50,50)}}" data-original="{{post.image|resize(340, 340)}}" alt="{{post.image.caption}}">{% endif %}{{post.excerpt}}
+					{% if post.image %}<img align="right" class="lazy" width="170" src="{{post.image|resize(50,50)}}" data-src="{{post.image|resize(340, 340)}}" alt="{{post.image.caption}}">{% endif %}{{post.excerpt}}
 					<a class="ha-button margin--top-1" href="{{post.link}}">Read More</a>
 					
 				</div>
 				<hr class="color--brown-light">
 			{% endfor %}
 		</div>
-	{# 	<div class="grid--one grid--sm-third font--small spacing--dsk-horiz-1 spacing--gutter-mob sidebar">
-			<hr class="color--brown-light">
-			<div class="font--small block--sidebar-content">
-				<strong class="text--uppercase letter--1">Categories</strong>
-				{% for category in categories %}
-					<a class="block">{{category.title}}</a>
-				{% endfor %}
-			</div>
-			
-		</div> #}
 	</section>
 </article>
 {% endblock %}

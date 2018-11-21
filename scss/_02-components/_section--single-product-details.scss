@@ -7,12 +7,6 @@
         display: none !important;
     }
 
-    @include media($screen-xs) {}
-
-
-    @include media($screen-sm) {}
-
-
     justify-content: space-around;
 
     @include media($screen-md) {
@@ -22,6 +16,7 @@
 
 .post-1541 {
     @extend .flex--double;
+
     .entry-summary, .block--product-aside {
         @extend .grid--md-half;
 
@@ -34,8 +29,9 @@
         }
     }
 }
-.section--product-header{
-    &.noimg{
-        border-bottom:1px solid map-get($brown, light);
+
+.section--product-header {
+    &.noimg {
+        border-bottom: 1px solid map-get($brown, light);
     }
 }

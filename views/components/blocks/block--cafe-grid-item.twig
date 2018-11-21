@@ -1,9 +1,13 @@
-
 <div class="block--cafe-grid-item grid--one grid--sm-half nog margin--mob-bot-1">
-	<a href="{{cafe.link}}" class="hidden--mob" ><img src="{{cafe.image|resize(480,260)}}" data-original="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 "></a>
-	<a href="{{cafe.link}}" class="hidden--dsk"><img src="{{cafe.image|resize(120,65)}}" {% if post.slug == 'home' %}data-flickity-lazyload{% else %}data-original{% endif %}="{{cafe.image|resize(666,360)}}" width="100%" class="margin--bot-1"></a>
+	<a href="{{cafe.link}}" class="hidden--mob" ><img src="{{cafe.image|resize(480,260)}}" data-src="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 lazy"></a>
+	<a href="{{cafe.link}}" class="hidden--dsk">
+		<picture class="margin--bot-1 lazy">
+			<source type="image/webp" alt="{{cafe.image.caption}}" data-srcset="{{cafe.image|resize(666,360)|towebp}}">
+			<source type="image/jpeg" alt="{{cafe.image.caption}}" data-srcset="{{cafe.image|resize(666,360)}}">
+			<img class="lazy" src="{{cafe.image|resize(67,36)}}" data-flickity-lazyload="{{cafe.image|resize(666,360)}}">
+		</picture>
+	{# <img src="{{cafe.image|resize(120,65)}}" data-flickity-lazyload="{{cafe.image|resize(666,360)}}" width="100%" class=""></a> #}
 	<div>
-
 		<h3><a  class="color--black" href="{{cafe.link}}">{{cafe.title}}</a></h3>
 		<div class="flex flex--wrap justify--between cafe--meta">
 			<div class="grid--one grid--sm-two-fifths mob--flex flex--wrap justify--between">

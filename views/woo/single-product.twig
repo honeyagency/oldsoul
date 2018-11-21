@@ -7,6 +7,27 @@
         {% include 'components/sections/section--product-aside.twig' %}
         <div class="summary entry-summary grid--sm-three-fifths spacing--gutter-mob">
             {% do action('woocommerce_before_single_product_summary') %}
+            {% if post.thumbnail %}
+                <picture>
+                    <source type="image/webp" alt="{{post.thumbnail.caption}}" data-src="{{post.thumbnail.src|resize(50,50)|towebp}}"
+                    data-srcset="
+                    {{post.thumbnail.src|resize(586,586)|towebp}} 320w,
+                    {{post.thumbnail.src|resize(744,744)|towebp}} 414w,
+                    {{post.thumbnail.src|resize(1196,1196)|towebp}} 640w,
+                    {{post.thumbnail.src|resize(1416,1416)|towebp}} 750w,
+                    {{post.thumbnail.src|resize(1136,1136)|towebp}} 1080w"
+                    sizes="calc(100vw-1.4em),(min-width: 1080px) 50vw">
+                    <source type="image/jpeg" alt="{{post.thumbnail.caption}}" data-src="{{post.thumbnail.src|resize(50,50)}}"
+                    data-srcset="
+                    {{post.thumbnail.src|resize(586,586)}} 320w,
+                    {{post.thumbnail.src|resize(744,744)}} 414w,
+                    {{post.thumbnail.src|resize(1196,1196)}} 640w,
+                    {{post.thumbnail.src|resize(1416,1416)}} 750w,
+                    {{post.thumbnail.src|resize(1136,1136)}} 1080w"
+                    sizes="calc(100vw-1.4em),(min-width: 1080px) 50vw">
+                    <img class="lazy" src="{{post.thumbnail.src|resize(50,50)}}">
+                </picture>
+            {% endif %}
             <h1 class="product--title hidden--mob">{{post.title}}</h1>
             <div class="font--content">{{post.content}}</div>
             {% if info.feature.type != 'none' %}

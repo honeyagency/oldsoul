@@ -1,9 +1,7 @@
 jQuery(document).ready(function($) {
-    var myLazyLoad = new LazyLoad({
-        // example of options object -> see options section
+     var myLazyLoad = new LazyLoad({
         threshold: 500,
-        throttle: 30,
-        show_while_loading: false,
+        elements_selector: ".lazy"
     });
     $trig = $('.menu--trigger');
     $trig.on('click touchstart', function(event) {

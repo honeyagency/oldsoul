@@ -2,7 +2,7 @@
 <div class="grid--one text--center spacing--vert-1"><h2>{{partners.title}}</h2></div>
 {% for partner in partners.grid %}
 	<div class="block--about-partner grid--half grid--sm-fifth text--center">
-		<img src="{{partner.image|resize(90)}}" width="160" {% if partners.grid|length > 5 %}data-flickity-lazyload{% else %}data-original{% endif %}="{{partner.image|resize(320)}}" alt="">
+		<img  class="lazy" src="{{partner.image|resize(90)}}" width="160" {% if partners.grid|length > 5 %}data-flickity-lazyload{% else %}data-src{% endif %}="{{partner.image|resize(320)}}" alt="">
 		<p class="font--small font--bold">{{partner.name}}</p>
 	</div>
 {% endfor %}

@@ -1,26 +1,16 @@
 <a href="{{ post.link }}" {{ fn('post_class', ['entry', 'block--product color--black grid--half grid--sm-third grid--lg-third border--1 margin--bot-1 margin--dsk-bot-2 '], post.ID ) }}{% for term in post.terms('product_cat') if term == 'Featured' %}data-feat="true"{% endfor %}>
 {{ fn('timber_set_product', post) }}
-{% if post.thumbnail %}
-{# <div class="media-figure"> #}
-
-        <img src="{{ post.thumbnail.src|resize(100,65)}}" data-original="{{post.thumbnail.src|resize(560,364)}}" alt="{{post.thumbnail.caption}}" width="100%" data-original-set="{{post.thumbnail.src|resize(258, 167)}} 320w,{{post.thumbnail.src|resize(352, 228)}} 414w,{{post.thumbnail.src|resize(540, 351)}}  640w,{{post.thumbnail.src|resize(314, 204)}}  750w,{{post.thumbnail.src|resize(470,305)}} 1080w,{{post.thumbnail.src|resize(528,343)}} 1242w,{{post.thumbnail.src|resize(560,364)}} 1280w,{{post.thumbnail.src|resize(560,364)}} 1366w,{{post.thumbnail.src|resize(560,364)}} 1440w,{{post.thumbnail.src|resize(560,364)}} 1920w, {{post.thumbnail.src|resize(486,316)}} 2224w,{{post.thumbnail.src|resize(560,364)}} 2880w">
-
-{# </div> #}
-{% endif %}
-    {% for term in post.terms('product_cat') if term == 'Coffee' %}
-        <div class="notice--coffee {% for term in post.terms('product_cat') if term == 'Featured' %}feat{% endfor %} font--smaller font--bold letter--1 text--uppercase color--green spacing--horiz-half spacing--dsk-horiz-1  spacing--vert-half spacing--dsk-vert-1">{% for term in post.terms('product_cat') if term == 'Featured' %}Featured {% endfor %}<i class="icon-beans--two" data-grunticon-embed></i></div>
-    {% endfor %}
+{% include 'components/blocks/block--product-header-image.twig' %}
 {% do action('woocommerce_before_shop_loop_item_title') %}
 <div class="block--product-bottom ">
-    <div class="title-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1 {% if post.sell_note_type == 'award' %}flex flex--wrap justify--between grid--one border-box{% endif %}">
-    {% if post.sell_note_type == 'award' %}<i class="icon-award inline-block" title="{{post.sell_note}}" data-grunticon-embed></i>{% endif %}
-        <h4 class="product-title  font--sans  font--smaller font--bold letter--1 inline-block text--uppercase">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</h4>
-    </div>
-
-    <div class="block--price-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-half flex flex--wrap justify--between align--items-center">
-        {% do action( 'woocommerce_after_shop_loop_item_title' ) %}
-        {# {% do action( 'woocommerce_after_shop_loop_item' ) %} #}
-        {# <a href="{{ post.link }}" class="text--uppercase shop-button font--small letter--2  text--center inline-block">View</a> #}
-    </div>
+<div class="title-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1 {% if post.sell_note_type == 'award' %}flex flex--wrap justify--between grid--one border-box{% endif %}">
+<h4 class="product-title  font--sans  font--smaller font--bold letter--1 inline-block text--uppercase">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</h4>
+</div>
+{% if post.sell_note_type == 'award' %}
+{% include 'components/blocks/block--award.twig' %}
+{% endif %}
+<div class="block--price-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-half flex flex--wrap justify--between align--items-center">
+{% do action( 'woocommerce_after_shop_loop_item_title' ) %}
+</div>
 </div>
 </a>

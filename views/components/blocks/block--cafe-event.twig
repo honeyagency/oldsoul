@@ -1,5 +1,5 @@
 <div class="block--cafe-event flex flex--wrap justify--between align--items-start border--bot-1 spacing--vert-1 spacing--dsk-vert-2">
-	{% if event.image %}<div class="grid--third"><img data-original="{{event.image|resize(350,350)}}"  width="175" height="" alt="{{event.image._wp_attachment_image_alt}}"></div>{% endif %}
+	{% if event.image %}<div class="grid--third"><img class="lazy" src="{{event.image|resize(35,35)}}" data-src="{{event.image|resize(350,350)}}"  width="175" height="" alt="{{event.image._wp_attachment_image_alt}}"></div>{% endif %}
 	<div class="{% if event.image %}grid--two-thirds{% else %}grid--one{% endif %}">
 	<h5 class="margin--bot-half">{{event.title}}</h5>
 	<time>

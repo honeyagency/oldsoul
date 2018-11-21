@@ -1,3 +1,25 @@
 <section class="section--cafe-header">
-	<img src="{{post.thumbnail|resize(480,260)}}" data-original="{{post.thumbnail|resize(1200, 650)}}" alt="{{post.thumbnail.caption}}" class="grid--one block" data-original-set="{{post.thumbnail|resize(640, 346)}}  640w,{{post.thumbnail|resize(750, 406)}}  750w,{{post.thumbnail|resize(1080,585)}} 1080w,{{post.thumbnail|resize(1200, 650)}} 1280w,{{post.thumbnail|resize(1366,607)}} 1366w,{{post.thumbnail|resize(1440,780)}} 1440w,{{post.thumbnail|resize(1920,1040)}} 1920w, {{post.thumbnail|resize(2880,1560)}} 2880w" sizes="100vw">
+	<picture>
+		<source type="image/webp" alt="{{post.thumbnail.caption}}"
+		data-srcset="
+		{{post.thumbnail|resize(640,640)|towebp}} 320w,
+		{{post.thumbnail|resize(1280,1280)|towebp}} 640w,
+		{{post.thumbnail|resize(1500,1500)|towebp}} 750w,
+		{{post.thumbnail|resize(1280,693)|towebp}} 1280w,
+		{{post.thumbnail|resize(1440,780)|towebp}} 1440w,
+		{{post.thumbnail|resize(2560,1387)|towebp}} 2560w,
+		{{post.thumbnail|resize(2880,1560)|towebp}} 2880w"
+		sizes="100vw">
+		<source type="image/jpeg" alt="{{post.thumbnail.caption}}"
+		data-srcset="
+		{{post.thumbnail|resize(640,640)}} 320w,
+		{{post.thumbnail|resize(1280,1280)}} 640w,
+		{{post.thumbnail|resize(1500,1500)}} 750w,
+		{{post.thumbnail|resize(1280,693)}} 1280w,
+		{{post.thumbnail|resize(1440,780)}} 1440w,
+		{{post.thumbnail|resize(2560,1387)}} 2560w,
+		{{post.thumbnail|resize(2880,1560)}} 2880w"
+		sizes="100vw">
+		<img class="lazy" src="{{post.thumbnail|resize(64,64)}}">
+	</picture>
 </section>

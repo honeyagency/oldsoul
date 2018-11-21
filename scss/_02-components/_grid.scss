@@ -1,6 +1,9 @@
 $gutter: $grid;
 
 // this variable is in variables
+div[class*="grid--"] {
+    box-sizing: border-box;
+}
 
 .grid--one {
     flex-basis: 100%;

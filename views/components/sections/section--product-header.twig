@@ -1,8 +1,7 @@
 <section class="section--product-header {% if post.thumbnail %}{% else %}noimg{% endif %}">
-        {% if post.thumbnail %}<img src="{{post.thumbnail|resize(480,125)}}" data-original="{{post.thumbnail|resize(1280, 333)}}" alt="{{post.thumbnail.caption}}" class="grid--one block" data-original-set="{{post.thumbnail|resize(640, 167)}}  640w,{{post.thumbnail|resize(750, 195)}}  750w,{{post.thumbnail|resize(1080,281)}} 1080w,{{post.thumbnail|resize(1280, 333)}} 1280w,{{post.thumbnail|resize(1366,356)}} 1366w,{{post.thumbnail|resize(1440,375)}} 1440w,{{post.thumbnail|resize(1920,500)}} 1920w, {{post.thumbnail|resize(2880,750)}} 2880w" sizes="100vw">
-        {% else %}
+        
         {% if gallery|length > 3 %}
         	{% include 'components/sections/section--product-gallery.twig' %}
         {% endif %}
-        {% endif %}
+        {# {% endif %} #}
 </section>

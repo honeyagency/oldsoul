@@ -1,0 +1,11 @@
+{% if post.thumbnail %}
+	<picture>
+		<source type="image/webp" alt="{{post.thumbnail.caption}}" src="{{post.thumbnail.src|resize(50,50)|towebp}}" data-src="{{post.thumbnail.src|resize(50,50)|towebp}}"
+		data-srcset="{{post.thumbnail.src|resize(258,258)|towebp}} 320w,{{post.thumbnail.src|resize(356,356)|towebp}} 414w,{{post.thumbnail.src|resize(580,580)|towebp}} 640w,{{post.thumbnail.src|resize(690,690)|towebp}} 750w,{{post.thumbnail.src|resize(506,506)|towebp}} 1080w,{{post.thumbnail.src|resize(520,520)|towebp}} 1280w,{{post.thumbnail.src|resize(560,560)|towebp}} 1366w,{{post.thumbnail.src|resize(560,560)|towebp}} 1440w,{{post.thumbnail.src|resize(560,560)|towebp}} 1920w,{{post.thumbnail.src|resize(560,560)|towebp}} 2880w"
+		sizes="42vw,(min-width: 1280px) 20vw,(min-width: 2880px) 15vw, (min-width: 2880px) 9vw">
+		<source type="image/jpeg" alt="{{post.thumbnail.caption}}" src="{{post.thumbnail.src|resize(50,50)}}" data-src="{{post.thumbnail.src|resize(50,50)}}"
+		data-srcset="{{post.thumbnail.src|resize(258,258)}} 320w,{{post.thumbnail.src|resize(356,356)}} 414w,{{post.thumbnail.src|resize(580,580)}} 640w,{{post.thumbnail.src|resize(690,690)}} 750w,{{post.thumbnail.src|resize(506,506)}} 1080w,{{post.thumbnail.src|resize(520,520)}} 1280w,{{post.thumbnail.src|resize(560,560)}} 1366w,{{post.thumbnail.src|resize(560,560)}} 1440w,{{post.thumbnail.src|resize(560,560)}} 1920w,{{post.thumbnail.src|resize(560,560)}} 2880w"
+		sizes="42vw,(min-width: 1280px) 20vw,(min-width: 2880px) 15vw, (min-width: 2880px) 9vw">
+		<img class="lazy" src="{{post.thumbnail.src|resize(50,50)}}">
+	</picture>
+{% endif %}
