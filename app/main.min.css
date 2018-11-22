@@ -2463,50 +2463,52 @@ body.admin-bar .section--cart-notice {
       .section--home-about h2 br {
         display: none; } }
 
-.section--home-cafe-grid .block--cafe-grid-item {
-  box-sizing: border-box; }
-  .section--home-cafe-grid .block--cafe-grid-item i {
-    width: 15px;
-    display: inline-block;
-    margin-right: 0.5em; }
-    .section--home-cafe-grid .block--cafe-grid-item i svg {
-      width: 100%; }
-  .section--home-cafe-grid .block--cafe-grid-item .icon-hand {
-    width: 22px; }
-  @media screen and (min-width: 768px) {
-    .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(-n+2) {
-      border-bottom: 1px solid #D4CC9A;
-      padding-bottom: 2em; }
-    .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(n+3) {
-      padding-top: 2em; }
-    .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(odd) {
-      border-right: 1px solid #D4CC9A;
-      padding-right: 2em; }
-    .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(even) {
-      padding-left: 2em; } }
-  .section--home-cafe-grid .block--cafe-grid-item .cafe--meta {
-    font-weight: 600;
-    letter-spacing: 1.5px; }
-    @media screen and (min-width: 992px) {
-      .section--home-cafe-grid .block--cafe-grid-item .cafe--meta {
-        font-size: .8em; } }
-    @media screen and (min-width: 1200px) {
-      .section--home-cafe-grid .block--cafe-grid-item .cafe--meta {
-        font-size: .9em; } }
-    .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta {
-      padding: 5px 0 8px 0; }
-      .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta small {
-        color: #7e7a70; }
-      @media screen and (min-width: 768px) {
-        .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta {
-          padding-bottom: 8px; } }
-      @media screen and (max-width: 767px) {
-        .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta {
-          display: block; } }
-      .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta span {
-        font-weight: 400;
-        font-size: .9em;
-        line-height: 1.4; }
+.section--home-cafe-grid {
+  box-sizing: content-box; }
+  .section--home-cafe-grid .block--cafe-grid-item {
+    box-sizing: border-box; }
+    .section--home-cafe-grid .block--cafe-grid-item i {
+      width: 15px;
+      display: inline-block;
+      margin-right: 0.5em; }
+      .section--home-cafe-grid .block--cafe-grid-item i svg {
+        width: 100%; }
+    .section--home-cafe-grid .block--cafe-grid-item .icon-hand {
+      width: 22px; }
+    @media screen and (min-width: 768px) {
+      .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(-n+2) {
+        border-bottom: 1px solid #D4CC9A;
+        padding-bottom: 2em; }
+      .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(n+3) {
+        padding-top: 2em; }
+      .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(odd) {
+        border-right: 1px solid #D4CC9A;
+        padding-right: 2em; }
+      .section--home-cafe-grid .block--cafe-grid-item:nth-of-type(even) {
+        padding-left: 2em; } }
+    .section--home-cafe-grid .block--cafe-grid-item .cafe--meta {
+      font-weight: 600;
+      letter-spacing: 1.5px; }
+      @media screen and (min-width: 992px) {
+        .section--home-cafe-grid .block--cafe-grid-item .cafe--meta {
+          font-size: .8em; } }
+      @media screen and (min-width: 1200px) {
+        .section--home-cafe-grid .block--cafe-grid-item .cafe--meta {
+          font-size: .9em; } }
+      .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta {
+        padding: 5px 0 8px 0; }
+        .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta small {
+          color: #7e7a70; }
+        @media screen and (min-width: 768px) {
+          .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta {
+            padding-bottom: 8px; } }
+        @media screen and (max-width: 767px) {
+          .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta {
+            display: block; } }
+        .section--home-cafe-grid .block--cafe-grid-item .cafe--meta .meta span {
+          font-weight: 400;
+          font-size: .9em;
+          line-height: 1.4; }
 
 @media screen and (max-width: 767px) {
   .section--home-header img {
