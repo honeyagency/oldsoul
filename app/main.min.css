@@ -595,10 +595,10 @@ input[type=checkbox] {
       display: none; } }
   .block--product .product-award {
     margin-bottom: 1rem; }
-    .block--product .product-award div:nth-of-type(1) {
+    .block--product .product-award div.icon {
       flex-basis: 35px; }
-    .block--product .product-award div:nth-of-type(2) {
-      flex-basis: calc(100% - 35px); }
+      .block--product .product-award div.icon + div {
+        flex-basis: calc(100% - 35px); }
   @media screen and (max-width: 767px) {
     .block--product .block--product-award, .block--product .notice--coffee {
       font-size: 0.7em;
