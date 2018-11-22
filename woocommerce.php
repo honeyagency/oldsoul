@@ -7,9 +7,9 @@ if (!class_exists('Timber')) {
 }
 // remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail' );
 
-add_action( 'woocommerce_before_single_product', 'wc_print_notices', 10 );
+add_action('woocommerce_before_single_product', 'wc_print_notices', 10);
 //
-add_action( 'wc_add_to_cart_message', 'wc_add_to_cart_message', 10 );
+add_action('wc_add_to_cart_message', 'wc_add_to_cart_message', 10);
 // add_action( 'woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20 );
 //
 // add_action( 'woocommerce_product_thumbnails', 'woocommerce_show_product_thumbnails', 20 );
@@ -75,15 +75,13 @@ if (is_singular('product')) {
     if ($product->is_type('variable')) {
         remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
     }
-   add_action('wp_enqueue_scripts', 'slider_scripts');
+    add_action('wp_enqueue_scripts', 'slider_scripts');
     Timber::render('views/woo/single-product.twig', $context);
 } else {
-
     $posts               = Timber::get_posts();
-
     $context['products'] = $posts;
 
-// getting any category that isn't a child category
+    // getting any category that isn't a child category
     $parentQuery = array(
         'taxonomy' => 'product_cat',
         'parent'   => 0,

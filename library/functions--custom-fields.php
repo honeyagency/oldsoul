@@ -2,23 +2,18 @@
 
 function prepareHomepageFields()
 {
-
     $leftImageId = get_field('field_5a4d2bf42917c');
 
     $rightImageId = get_field('field_5a4d2c632917d');
 
     if (!empty($leftImageId)) {
-
         $leftImage = new TimberImage($leftImageId);
-
     } else {
         $leftImage = null;
     }
 
     if (!empty($rightImageId)) {
-
         $rightImage = new TimberImage($rightImageId);
-
     } else {
         $rightImage = null;
     }
@@ -38,12 +33,10 @@ function prepareHomepageFields()
         'about'  => $about,
     );
     return $home;
-
 }
 
 function prepareGlobalCafeFields()
 {
-
     $cafe = array(
         'phone'    => get_field('field_5a4d3b56fe634'),
         'hours'    => get_field('field_5a4d3b74fe635'),
@@ -78,9 +71,7 @@ function prepareCafeFields()
             $date_now        = date("Ymd");
 
             if ($date_now > $eventExpireDate) {
-
             } else {
-
                 $eventImageId = get_sub_field('field_5a540e6b365b3');
                 if ($eventImageId != null) {
                     $eventImage = new TimberImage($eventImageId);
@@ -90,7 +81,6 @@ function prepareCafeFields()
                 $dateFormat = get_sub_field('field_5a540efb365b5');
                 if ($dateFormat == 'date') {
                     $date = get_sub_field('field_5a540fc3365b6');
-
                 } else {
                     $date = get_sub_field('field_5a540fdc365b7');
                 }
@@ -142,23 +132,19 @@ function prepareGlobalPreFooter()
             'title'  => get_field('field_5a4d2660fce95'),
             'link'   => get_field('field_5a4d269afce96'),
         );
-
     } elseif ($layout == 'testimonial') {
         $footer = array(
             'layout'      => $layout,
             'testimonial' => get_field('field_5a4d26aafce97'),
             'author'      => get_field('field_5a4d26b8fce98'),
         );
-
     } else {
         $footer = 'blank';
     }
     return $footer;
-
 }
 function prepareSiteOptions()
 {
-
     $email = array(
         'title' => get_field('field_5a4e7c9c26722', 'options'),
         'form'  => get_field('field_5a4e7cb826723', 'options'),
@@ -180,9 +166,10 @@ function prepareSiteOptions()
         $featuredPost = getSinglePost('product', $featuredPostId);
     }
     $shop = array(
-        'title'    => get_field('field_5a4e7e1eebbb1', 'options'),
-        'link'     => get_field('field_5a4e7e2bebbb2', 'options'),
-        'featured' => $featuredPost,
+        'title'     => get_field('field_5a4e7e1eebbb1', 'options'),
+        'link'      => get_field('field_5a4e7e2bebbb2', 'options'),
+        'featured'  => $featuredPost,
+        'header'    =>  get_field('field_5bf604ef67d35', 'options'),
     );
 
     if (have_rows('field_5bbe8cf3acf9f', 'options')) {
@@ -216,7 +203,6 @@ function prepareSiteOptions()
     );
 
     return $options;
-
 }
 function prepareProductFields($id = null)
 {
@@ -298,7 +284,6 @@ function prepareAboutPagePartners()
 }
 function prepareContentFields()
 {
-
     if (have_rows('field_5a6b8ac104c9f')) {
         $pageContentSection = array();
 
@@ -317,7 +302,6 @@ function prepareContentFields()
                     'image'   => $sidebarImage,
                     'caption' => get_sub_field('field_5a6b8b1b04ca4'),
                 );
-
             }
             if ($sidebarType == 'content') {
                 if (have_rows('field_5a6b8b3204ca5')) {
@@ -331,7 +315,6 @@ function prepareContentFields()
                     }
                     $sidebar = $sidebarContent;
                 }
-
             }
 
             $pageContentSection[] = array(
@@ -341,7 +324,6 @@ function prepareContentFields()
                 'sidebar'     => $sidebar,
             );
         }
-
     }
 
     return $pageContentSection;
