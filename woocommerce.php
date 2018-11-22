@@ -80,7 +80,9 @@ if (is_singular('product')) {
 } else {
 
     $posts               = Timber::get_posts();
+
     $context['products'] = $posts;
+
 // getting any category that isn't a child category
     $parentQuery = array(
         'taxonomy' => 'product_cat',

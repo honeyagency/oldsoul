@@ -2,7 +2,7 @@
 	<div class="title-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1 {% if post.sell_note_type == 'award' %}flex flex--wrap justify--between grid--one border-box{% endif %}">
 	<h4 class="product-title  font--sans  font--smaller font--bold letter--1 inline-block text--uppercase">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</h4>
 </div>
-{% if post.sell_note %}
+{% if post.custom.feature_type %}
 	{% include 'components/blocks/block--award.twig' %}
 {% endif %}
 <div class="block--price-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-half flex flex--wrap justify--between align--items-center">

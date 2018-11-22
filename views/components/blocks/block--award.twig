@@ -1,10 +1,10 @@
 <div class="product-award flex flex--wrap justify--between align--items-center grid--one spacing--horiz-1 color--green">
-	{% if post.sell_note_type == 'award' %}
+	{% if post.custom.feature_type == 'award' %}
 		<div class="icon">
 			<i class="icon-award inline-block" data-grunticon-embed></i>
 		</div>
 	{% endif %}
 	<div class="font--tiny">
-		{{post.sell_note}}
+		{{post.custom.feature_title}}
 	</div>
 </div>
