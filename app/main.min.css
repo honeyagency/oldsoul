@@ -2240,6 +2240,9 @@ body.admin-bar .section--cart-notice {
 [type=radio] {
   appearance: radio; }
 
+.woocommerce-shipping-destination {
+  display: none; }
+
 .the-cart-count:not(:first-of-type) {
   display: none !important; }
 

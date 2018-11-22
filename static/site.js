@@ -1,5 +1,5 @@
 jQuery(document).ready(function($) {
-     var myLazyLoad = new LazyLoad({
+    var myLazyLoad = new LazyLoad({
         threshold: 500,
         elements_selector: ".lazy"
     });
@@ -8,6 +8,7 @@ jQuery(document).ready(function($) {
         event.preventDefault();
         $('body').toggleClass('navopen');
     });
+    
     // appear({
     //     init: function init() {
     //     },
