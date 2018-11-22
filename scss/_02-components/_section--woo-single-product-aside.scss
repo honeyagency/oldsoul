@@ -1,5 +1,4 @@
 .block--product-aside {
-    border-left: 1px solid map-get($brown, light);
     position: relative;
 
     .posted_in {
@@ -10,7 +9,6 @@
         .input-text.qty {
             float: none !important;
             margin-right: 0 !important;
-            margin-bottom: 1em;
             display: block;
             width: 100%;
             position: relative;
@@ -39,6 +37,18 @@
 
         #wc-stripe-payment-request-wrapper {
             padding: 0 !important;
+        }
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        > .woocommerce-variation {
+            flex-basis: 100%;
+        }
+
+        .quantity, table.variations {
+            @extend .grid--half;
         }
     }
 
@@ -103,6 +113,9 @@
         .amount {
             letter-spacing: 0px;
         }
+
+        margin-bottom: 1em;
+        display: block;
     }
 
     .woocommerce-variation-add-to-cart {

@@ -1,27 +1,11 @@
 {% extends 'base.twig' %}
 {% block content %}
     {% do action('woocommerce_before_main_content') %}
-    <header class="section--shop-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-6">
-        <i class="icon-logo-monogram block margin--center" data-grunticon-embed></i>
-        <h2 class="color--white text--center grid--one ">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
-    </header>
+    {% include 'components/sections/section--shop-header.twig' %}
     
     <section class="section--shop flex flex--wrap  justify--between align--items-start max-wrap margin--center spacing--grid spacing--dsk-vert-5 spacing--gutter-tab spacing--gutter-mob">
         
-        <aside class="before-shop-loop grid--one grid--md-fourth spacing--vert-2 spacing--dsk-vert-0">
-            {{sidebar}}
-            {% do action('woocommerce_before_shop_loop') %}
-            <div class="product-categories spacing--vert-1">
-                <div>View By Type:</div>
-                <a href="{{site.url}}/shop" class="{% if category %}{% else %}current {% endif %} text--underline font--bold font--small letter--2 text--uppercase margin--bot-half table">All</a>
-                {% for cat in categories %}
-                    {% if cat.count != 0 %}
-                        <a href="{{cat.link}}" class="{% if cat.id == category.id %}current {% endif %} text--underline font--bold font--small letter--2 text--uppercase margin--bot-half table">{{cat.title}}</a>
-                    {% endif %}
-                {% endfor %}
-                
-            </div>
-        </aside>
+        {% include 'components/sections/section--shop-aside.twig' %}
         <section class="section--shop-product-grid grid--one grid--md-three-fourths flex--double flex--wrap justify--between">
             {% if options.shop.featured and options.shop.featured.info.feature.type != 'none' %}
                 {% include 'components/sections/section--product-featured.twig' %}

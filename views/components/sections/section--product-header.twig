@@ -1,7 +1,5 @@
 <section class="section--product-header {% if post.thumbnail %}{% else %}noimg{% endif %}">
-        
-        {% if gallery|length > 3 %}
-        	{% include 'components/sections/section--product-gallery.twig' %}
-        {% endif %}
-        {# {% endif %} #}
+	{% if gallery|length > 3 %}
+		{% include 'components/sections/section--product-gallery.twig' %}
+	{% endif %}
 </section>

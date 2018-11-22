@@ -1,8 +1,8 @@
 <section class="section--single-product-header dsk--flex flex--wrap">
 	{% for image in gallery %}
-		<div class="block--single-image grid--one grid--md-sixth nog grow">
-			<img class="hidden--mob lazy" data-src="{{image|resize(475,475)}}" width="100%" data-action="zoom" data-zoom-target="{{image}}" alt="">
-			<img class="hidden--dsk lazy" src="{{image|resize(150,150)}}" data-flickity-lazyload="{{image|resize(750,750)}}" alt="{{image.caption}}" width="100%" data-srcset="{{image|resize(640,640)}}  640w,{{image|resize(750,750)}}  750w,{{image|resize(1080,1080)}} 1080w,{{image|resize(1280,1280)}} 1280w" sizes="100vw" data-action="zoom" data-zoom-target="{{image}}">
+		<div class="block--single-image grid--one grid--sm-sixth nog grow">
+			<img class="hidden--mob lazy" data-src="{{image|resize(475,475)}}" width="100%" alt="">
+			<img class="hidden--dsk lazy" src="{{image|resize(150,150)}}" data-flickity-lazyload="{{image|resize(750,750)}}" alt="{{image.caption}}" width="100%" data-srcset="{{image|resize(640,640)}}  640w,{{image|resize(750,750)}}  750w,{{image|resize(1080,1080)}} 1080w,{{image|resize(1280,1280)}} 1280w" sizes="100vw">
 		</div>
 	{% endfor %}
 </section>

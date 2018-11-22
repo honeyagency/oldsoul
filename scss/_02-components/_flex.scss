@@ -56,12 +56,10 @@
 
 .max-wrap {
     max-width: $max-wrap;
-    box-sizing: content-box;
 }
 
 .content-wrap {
     max-width: $max-wrap / 2;
-    box-sizing: content-box;
 
     img {
         max-width: 100%;
