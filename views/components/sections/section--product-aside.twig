@@ -1,5 +1,6 @@
 <aside class="block--product-aside grid--one grid--sm-two-fifths font--small spacing--dsk-horiz-1 spacing--gutter-mob order--2">
 	<h1 class="product--title h2">{{post.title}}</h1>
+	<div class="text--uppercase  color--green">{{post.custom.product_subtitle}}</div>
 	{% do action('woocommerce_single_product_summary') %}
 	{% if info.details.altitude %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Altitude</strong> <p>{{info.details.altitude}}</p></div>{% endif %}
 	{% if info.details.varietal %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Varietal</strong> <p>{{info.details.varietal}}</p></div>{% endif %}

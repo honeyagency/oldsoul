@@ -73,7 +73,7 @@ if (is_singular('product')) {
     wp_enqueue_script('zoom');
     $context['gallery'] = $gallery;
     if ($product->is_type('variable')) {
-        remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+        // remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
     }
     add_action('wp_enqueue_scripts', 'slider_scripts');
     Timber::render('views/woo/single-product.twig', $context);

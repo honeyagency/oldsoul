@@ -1,3 +1,5 @@
+const sass = require('node-sass');
+var Fiber = require("fibers");
 module.exports = function(grunt) {
     grunt.initConfig({
         conf: {
@@ -22,8 +24,9 @@ module.exports = function(grunt) {
         sass: {
             dist: {
                 options: {
-                    style: 'nested',
-                    sourcemap: 'none'
+                    implementation: sass,
+                    fiber: Fiber,
+                    sourceMap: false
                 },
                 files: {
                     '<%= conf.app %>/main.min.css': 'scss/main.scss',
@@ -37,10 +40,10 @@ module.exports = function(grunt) {
                 'postcss-merge-idents': true,
                 'postcss-discard-duplicates': true,
                 'postcss-convert-values': true,
-                // autoprefixer: {
-                //     browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
-                //     add: true
-                // }
+                autoprefixer: {
+                    browsers: ['> 1%', 'last 2 versions', 'Firefox >= 20'],
+                    add: true
+                }
             },
             dist: {
                 files: {
@@ -77,6 +80,18 @@ module.exports = function(grunt) {
                 options: {
                     livereload: true,
                 },
+            },
+            cssnano: {
+                files: ["<%= conf.sass %>"],
+                tasks: ["cssnano"]
+            },
+            svgmin: {
+                files: ["<%= conf.iconts %>/*.svg"],
+                tasks: ["svgmin:dist"]
+            },
+            grunticon: {
+                files: ["<%= conf.icons %>/optimized/*.svg"],
+                tasks: ["grunticon:myIcons", "copy"]
             }
         },
         svgmin: {

@@ -1,5 +1,7 @@
 .block--product-aside {
     position: relative;
+    position: sticky;
+    top: 1em;
 
     .posted_in {
         display: none;
@@ -16,14 +18,14 @@
 
         .quantity {
             position: relative;
+            margin-bottom: 1em;
+            flex-grow: 1;
 
             &:before {
                 content: 'QTY';
+                font-size: .85rem;
                 font-weight: 600;
                 color: map-get($brown, formtext);
-
-                @extend .font--small;
-
                 display: block;
                 position: absolute;
                 top: 50%;
@@ -42,6 +44,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: baseline;
 
         > .woocommerce-variation {
             flex-basis: 100%;
@@ -82,17 +85,27 @@
 
                         &:before {
                             content: 'SIZE';
+                            font-size: .85rem;
                             font-weight: 600;
                             color: map-get($brown, formtext);
-
-                            @extend .font--small;
-
                             display: block;
                             position: absolute;
                             top: 50%;
                             transform: translateY(-50%);
                             left: 1em;
                             letter-spacing: 1px;
+                        }
+
+                        &.style {
+                            &:before {
+                                content: "STYLE" !important;
+                            }
+                        }
+
+                        &.color {
+                            &:before {
+                                content: "COLOR" !important;
+                            }
                         }
                     }
 
@@ -101,6 +114,21 @@
                     }
 
                     select {}
+                }
+            }
+        }
+
+        &.var-2 {
+            flex-basis: 100% !important;
+
+            tbody {
+                display: flex;
+                justify-content: space-between;
+                align-items: start;
+                flex-wrap: wrap;
+
+                tr {
+                    @extend .grid--half;
                 }
             }
         }
@@ -125,9 +153,10 @@
 
     select, input[type="number"] {
         background-position: 95% center;
-
-        // text-indent: 80%;
-        font-size: 1em;
+        background-position-x: calc(100% - 15px);
+        background-position-y: center;
+        font-size: 1rem;
+        letter-spacing: 0.3px;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -136,8 +165,8 @@
         font-weight: 400;
         padding: 0;
         border: 0;
-        padding: 10px 30px 10px 10px;
-        background-size: 12px;
+        padding: 10px 35px 10px 10px;
+        background-size: 10px;
         display: block;
         margin: 0;
         border: 1px solid map-get($brown, light);

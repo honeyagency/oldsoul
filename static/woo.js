@@ -9,4 +9,14 @@ jQuery(document).ready(function($) {
         $tab.parent().addClass('active');
         return false;
     });
+    if ($('table.variations').length > 0) {
+        $table = $('table.variations');
+        $table.addClass('var-' + $table.find('tr').length);
+        $labels = $table.find('.label');
+        $.each($labels, function(index, val) {
+            $title = $(this).find('label').text().toLowerCase();
+            $value = $(this).siblings('.value');
+            $value.addClass($title);
+        });
+    }
 });
