@@ -1,7 +1,6 @@
 <?php
 
-function prepareHomepageFields()
-{
+function prepareHomepageFields() {
     $leftImageId = get_field('field_5a4d2bf42917c');
 
     $rightImageId = get_field('field_5a4d2c632917d');
@@ -35,8 +34,7 @@ function prepareHomepageFields()
     return $home;
 }
 
-function prepareGlobalCafeFields()
-{
+function prepareGlobalCafeFields() {
     $cafe = array(
         'phone'    => get_field('field_5a4d3b56fe634'),
         'hours'    => get_field('field_5a4d3b74fe635'),
@@ -46,8 +44,7 @@ function prepareGlobalCafeFields()
     );
     return $cafe;
 }
-function prepareCafeFields()
-{
+function prepareCafeFields() {
     $detailImageId = get_field('field_5a540d6554d78');
     if ($detailImageId != null) {
         $detailImage = new TimberImage($detailImageId);
@@ -115,8 +112,7 @@ function prepareCafeFields()
     return $cafe;
 }
 
-function prepareGlobalPreFooter()
-{
+function prepareGlobalPreFooter() {
     $layout = get_field('field_5a4d256efce93');
     if ($layout == 'bg-img') {
         $bgImgId = get_field('field_5a4d25befce94');
@@ -143,8 +139,7 @@ function prepareGlobalPreFooter()
     }
     return $footer;
 }
-function prepareSiteOptions()
-{
+function prepareSiteOptions() {
     $email = array(
         'title' => get_field('field_5a4e7c9c26722', 'options'),
         'form'  => get_field('field_5a4e7cb826723', 'options'),
@@ -166,10 +161,10 @@ function prepareSiteOptions()
         $featuredPost = getSinglePost('product', $featuredPostId);
     }
     $shop = array(
-        'title'     => get_field('field_5a4e7e1eebbb1', 'options'),
-        'link'      => get_field('field_5a4e7e2bebbb2', 'options'),
-        'featured'  => $featuredPost,
-        'header'    =>  get_field('field_5bf604ef67d35', 'options'),
+        'title'    => get_field('field_5a4e7e1eebbb1', 'options'),
+        'link'     => get_field('field_5a4e7e2bebbb2', 'options'),
+        'featured' => $featuredPost,
+        'header'   => get_field('field_5bf604ef67d35', 'options'),
     );
 
     if (have_rows('field_5bbe8cf3acf9f', 'options')) {
@@ -204,8 +199,7 @@ function prepareSiteOptions()
 
     return $options;
 }
-function prepareProductFields($id = null)
-{
+function prepareProductFields($id = null) {
     if ($id == null) {
         $id = get_the_ID();
     }
@@ -245,18 +239,17 @@ function prepareProductFields($id = null)
     );
     return $product;
 }
-function prepareBasePageFields()
-{
+function prepareBasePageFields() {
     $header = array(
-        'title' => get_field('field_5a4ec16d65fdf'),
+        'title'    => get_field('field_5a4ec16d65fdf'),
+        'subtitle' => get_field('field_5bfc94f1fa397'),
     );
     $base = array(
         'header' => $header,
     );
     return $base;
 }
-function prepareAboutPagePartners()
-{
+function prepareAboutPagePartners() {
     if (have_rows('field_5a68c95b0295e')) {
         $grid = array();
         while (have_rows('field_5a68c95b0295e')) {
@@ -282,8 +275,7 @@ function prepareAboutPagePartners()
 
     return $partners;
 }
-function prepareContentFields()
-{
+function prepareContentFields() {
     if (have_rows('field_5a6b8ac104c9f')) {
         $pageContentSection = array();
 
