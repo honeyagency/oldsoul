@@ -1,7 +1,7 @@
 <div class="block--product-bottom">
 	<div class="title-wrap spacing--horiz-half spacing--dsk-horiz-1 spacing--vert-1 {% if post.sell_note_type == 'award' %}flex flex--wrap justify--between grid--one border-box{% endif %}">
 	<h4 class="product-title  font--sans  font--smaller font--bold letter--1 inline-block text--uppercase">{% if post.title %}{{ post.title }}{% else %}{{ fn('the_title') }}{% endif %}</h4>
-	<div class="text--uppercase font--tiny color--green">{{post.custom.product_subtitle}}</div>
+	<div class="text-- font--tiny color--green">{{post.custom.product_subtitle}}</div>
 </div>
 {% if post.custom.feature_type != null and post.custom.feature_title %}
 	{% include 'components/blocks/block--award.twig' %}
