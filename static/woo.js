@@ -14,9 +14,13 @@ jQuery(document).ready(function($) {
         $table.addClass('var-' + $table.find('tr').length);
         $labels = $table.find('.label');
         $.each($labels, function(index, val) {
-            $title = $(this).find('label').text().toLowerCase();
+            $title = $(this).find('label').text();
             $value = $(this).siblings('.value');
-            $value.addClass($title);
+            $value.addClass($title).data('var', $title);
+            if ($title == 'Coffee') {
+
+                $value.find('select > option:first').text($title);
+            }
         });
     }
 });

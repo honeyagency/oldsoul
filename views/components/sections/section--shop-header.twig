@@ -1,6 +1,10 @@
-<header class="section--shop-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-6">
+<header class="section--shop-header bg--brown-dark spacing--vert-2 spacing--dsk-vert-5">
 	<i class="icon-logo-monogram block margin--center" data-grunticon-embed></i>
 	
 	<h2 class="color--white text--center grid--one ">{% if category %}{{title}}{% else %}All Products{% endif %}</h2>
-	{% if options.shop.header %}<div class="grid--two-fifths margin--center color--white font--large text--center margin--top-1">{{options.shop.header}}</div>{% endif %}
+	{% if description %}
+		<div class="grid--two-fifths margin--center color--white font--large text--center margin--top-1">{{description}}</div>
+	{% elseif options.shop.header %}<div class="block--shop-header-text grid--half margin--center color--white font--medium text--center margin--top-1">{{options.shop.header|striptags('<p>')}}</div>
+	{% endif %}
+	
 </header>

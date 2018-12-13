@@ -93,6 +93,10 @@ if (is_singular('product')) {
         $term_id             = $queried_object->term_id;
         $context['category'] = Timber::get_term($term_id, 'product_cat');
         $context['title']    = single_term_title('', false);
+        $description = term_description($term_id);
+        if (!empty($description)) {
+            $context['description']    = $description;
+        }
     }
 
     Timber::render('views/woo/archive.twig', $context);

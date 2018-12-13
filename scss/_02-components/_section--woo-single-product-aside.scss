@@ -70,43 +70,66 @@
             width: 100%;
 
             tr {
+                position: relative;
                 display: block;
                 width: 100%;
 
                 td {
                     &.label {
-                        display: none;
+                        width: 100%;
+                        position: absolute;
+                        font-size: .8rem;
+
+                        label {
+                            position: absolute;
+                            top: -1.6em;
+                        }
                     }
 
                     &.value {
                         display: block;
                         width: 100%;
                         position: relative;
-
-                        &:before {
-                            content: 'SIZE';
-                            font-size: .85rem;
-                            font-weight: 600;
-                            color: map-get($brown, formtext);
-                            display: block;
-                            position: absolute;
-                            top: 50%;
-                            transform: translateY(-50%);
-                            left: 1em;
-                            letter-spacing: 1px;
-                        }
-
-                        &.style {
-                            &:before {
-                                content: "STYLE" !important;
+&:nth-of-type(n+1){
+                      select {
+                                text-align-last: left !important;
                             }
-                        }
+}
+                        // &:before {
+                        //     content: 'SIZE';
+                        //     font-size: .85rem;
+                        //     font-weight: 600;
+                        //     color: map-get($brown, formtext);
+                        //     display: block;
+                        //     position: absolute;
+                        //     top: 50%;
+                        //     transform: translateY(-50%);
+                        //     left: 1em;
+                        //     letter-spacing: 1px;
+                        // }
 
-                        &.color {
-                            &:before {
-                                content: "COLOR" !important;
-                            }
-                        }
+                        // &.coffee, &.Coffee {
+                        //     &:before {
+                        //         display: none !important;
+                        //     }
+
+                        //     select {
+                        //         text-align-last: left !important;
+                        //     }
+                        // }
+
+                        // &.style {
+                        //     &:before {
+                        //         content: "STYLE" !important;
+                        //     }
+                        // }
+
+                        // &.color {
+                        //     &:before {
+                        //         content: "COLOR" !important;
+                        //     }
+                        // }
+                   
                     }
 
                     .reset_variations {
