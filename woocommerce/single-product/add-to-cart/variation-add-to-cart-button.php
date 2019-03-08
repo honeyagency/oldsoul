@@ -10,6 +10,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+do_action( 'woocommerce_before_add_to_cart_quantity' ); 
 
 global $product;
 ?>
