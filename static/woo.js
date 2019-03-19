@@ -23,4 +23,9 @@ jQuery(document).ready(function($) {
             }
         });
     }
+    if ($('#pwgc-balance-title').length > 0) {
+        $('#pwgc-balance-title').text('Check Gift Certificate Balance');
+        $('#pwgc-balance-number').attr('placeholder', 'Gift Certificate Number');
+        $('#pwgc-balance-reload').attr('value', 'Add more funds to this gift certificate.');
+    }
 });
