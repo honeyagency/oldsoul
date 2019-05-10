@@ -56,10 +56,10 @@ if (is_singular('product')) {
     $product            = wc_get_product($context['post']->ID);
     $context['product'] = $product;
     // print_r(expression)
-    $context['info'] = prepareProductFields();
-    $relatedProductIds  = wc_get_related_products($product->get_id(), 4, array());
+    $context['info']   = prepareProductFields();
+    $relatedProductIds = wc_get_related_products($product->get_id(), 4, array());
 
-    $related            = array();
+    $related = array();
     foreach ($relatedProductIds as $relatedProductId) {
         $related[] = get_product($relatedProductId);
     }
@@ -78,6 +78,7 @@ if (is_singular('product')) {
     add_action('wp_enqueue_scripts', 'slider_scripts');
     Timber::render('views/woo/single-product.twig', $context);
 } else {
+    
     $posts               = Timber::get_posts();
     $context['products'] = $posts;
 
@@ -93,9 +94,9 @@ if (is_singular('product')) {
         $term_id             = $queried_object->term_id;
         $context['category'] = Timber::get_term($term_id, 'product_cat');
         $context['title']    = single_term_title('', false);
-        $description = term_description($term_id);
+        $description         = term_description($term_id);
         if (!empty($description)) {
-            $context['description']    = $description;
+            $context['description'] = $description;
         }
     }
 

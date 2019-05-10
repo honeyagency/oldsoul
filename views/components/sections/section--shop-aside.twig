@@ -6,7 +6,10 @@
         <a href="{{site.url}}/shop" class="{% if category %}{% else %}current {% endif %} text--underline font--bold font--small letter--2 text--uppercase margin--bot-half table">All</a>
         {% for cat in categories %}
             {% if cat.count != 0 %}
+                {# this is to hide the classes  #}
+                {% if cat.id != 107 %}
                 <a href="{{cat.link}}" class="{% if cat.id == category.id %}current {% endif %} text--underline font--bold font--small letter--2 text--uppercase margin--bot-half table">{{cat.title}}</a>
+                {% endif %}
             {% endif %}
         {% endfor %}
         

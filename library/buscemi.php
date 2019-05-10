@@ -153,3 +153,21 @@ function new_excerpt_more($more) {
   return '<i class="icon-hand-short" data-grunticon-embed></i>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+add_action( 'woocommerce_product_query', 'ha_hide_products_category_shop' );
+  
+function ha_hide_products_category_shop( $q ) {
+ 
+    $tax_query = (array) $q->get( 'tax_query' );
+ 
+    $tax_query[] = array(
+           'taxonomy' => 'product_cat',
+           'field' => 'slug',
+           'terms' => array( 'classes' ), // Category slug here
+           'operator' => 'NOT IN'
+    );
+ 
+ 
+    $q->set( 'tax_query', $tax_query );
+ 
+}

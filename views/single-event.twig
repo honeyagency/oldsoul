@@ -1,0 +1,13 @@
+{% extends "base.twig" %}
+{% block content %}
+	<article class="post-type-{{post.post_type}} flex flex--wrap justify--between max-wrap align--items-start margin--center spacing--vert-1 spacing--dsk-vert-5 spacing--gutter" id="post-{{post.ID}}">
+		{% include 'components/sections/section--cafe-header.twig' %}
+<div class="grid--one grid--sm-two-thirds">
+	<h1 class="h2">{{post.title|widowless}}</h1>
+	{{post.content}}
+</div>
+		<div class="grid--one grid--sm-third">
+			{% filter shortcodes %}[add_to_cart id="{{event.product[0]}}"]{% endfilter %}
+		</div>
+	</article>
+{% endblock %}

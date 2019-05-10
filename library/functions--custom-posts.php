@@ -94,6 +94,8 @@ function getSinglePost($posttype = null, $postId = null)
         $singlePostArray['cafe'] = prepareGlobalCafeFields();
     } elseif ($posttype == 'product') {
         $singlePostArray['info'] = prepareProductFields($postId);
+    } elseif ($posttype == 'event') {
+        $singlePostArray['event'] = prepareEventFields($postId);
     }
     // Restores original Post Data
     wp_reset_postdata();

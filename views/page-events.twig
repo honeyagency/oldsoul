@@ -1,0 +1,34 @@
+{% extends "base.twig" %}
+{% block content %}
+	{% include 'components/sections/section--base-header.twig' %}
+	<article class="post-type-{{post.post_type}} page-events spacing--vert-1 spacing--dsk-vert-6" id="post-{{post.ID}}">
+		<section class="grid--two-thirds margin--center spacing--gutter ">
+			<div>{{post.content}}</div>
+			<hr class="color--green small text--left margin--vert-2">
+		</section>
+		<section class="dsk--flex flex--wrap justify--between max-wrap margin--center spacing--gutter">
+			
+			
+			{% for event in events %}
+				<div class="block--cafe-grid-item grid--one grid--sm-half  margin--vert-3">
+					
+					<h3>{{event.title}}</h3>
+					<div class="meta margin--bot-1 flex flex--wrap justify--start">
+						<div class="margin--right-1">
+							<i class="icon-calendar" data-grunticon-embed></i>
+						<span>{{event.event.start|date('M d, Y')}}</span>
+						</div>
+						<div>
+							<i class="icon-clock margin--left-1" data-grunticon-embed></i>
+						<span>{% if  event.event.time %} {{event.event.time}}{% endif %}</span>
+						</div>
+					</div>
+					
+					{{event.event.description}}
+				{% filter shortcodes %}[add_to_cart id="{{event.event.product[0]}}"]{% endfilter %}
+			</div>
+		{% endfor %}
+		
+	</section>
+</article>
+{% endblock %}

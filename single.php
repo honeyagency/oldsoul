@@ -19,6 +19,8 @@ if ($post->post_type == 'cafe') {
 	
 	$context['next'] = getNextPostLooped();
   $context['previous'] = getPreviousPostLooped();
+}elseif ($post->post_type == 'event') {
+$context['event'] = prepareEventFields($post->ID);
 }
 $context['cafes'] = getCustomPosts('cafe', 4 , null, 'date', null, null);
 if ( post_password_required( $post->ID ) ) {

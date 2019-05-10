@@ -1,0 +1,12 @@
+.page-events {
+    .product.woocommerce.add_to_cart_inline {
+        padding: 0 !important;
+        border: 0 !important;
+        .button{
+        	background-color:  map-get($brown, main)!important;
+color: white;
+padding: 0.6rem 0.8rem;
+margin-left: 1rem;
+        }
+    }
+}

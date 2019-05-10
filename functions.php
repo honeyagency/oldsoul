@@ -37,11 +37,11 @@ class StarterSite extends TimberSite
 
     public function add_to_context($context)
     {
-        $context['menu']    = new TimberMenu('15');
-        $context['submenu'] = new TimberMenu('16');
-        $context['site']    = $this;
-        $context['options'] = prepareSiteOptions();
-        $context['assets']  = get_template_directory_uri() . '/app';
+        $context['menu']      = new TimberMenu('15');
+        $context['submenu']   = new TimberMenu('16');
+        $context['site']      = $this;
+        $context['options']   = prepareSiteOptions();
+        $context['assets']    = get_template_directory_uri() . '/app';
         $context['cartcount'] = WC()->cart->get_cart_contents_count();
 
         return $context;
@@ -55,11 +55,23 @@ class StarterSite extends TimberSite
         $twig->addFunction(new Timber\Twig_Function('getChildExcerpt', 'getChildExcerpt'));
         $twig->addFunction(new Timber\Twig_Function('getParentTitle', 'getParentTitle'));
         $twig->addFunction(new Timber\Twig_Function('get_price_html', 'get_price_html'));
-
+        $twig->addFilter('widowless', new Twig_Filter_Function('word_wrapper'));
         return $twig;
     }
 }
 
+function word_wrapper($text)
+{
+    $minWords = 3;
+    $return   = $text;
+    $arr      = explode(' ', $text);
+    if (count($arr) >= $minWords) {
+        $arr[count($arr) - 2] .= '&nbsp;' . $arr[count($arr) - 1];
+        array_pop($arr);
+        $return = implode(' ', $arr);
+    }
+    return $return;
+}
 new StarterSite();
 
 // Woocommerce settings
@@ -229,7 +241,7 @@ function ha_woo_cart_notice($message, $product_id)
     $message = array(
         'message' => $addedToCart,
         'cart'    => $viewCart,
-        'url'     => WC_Cart::get_cart_url() ,
+        'url'     => WC_Cart::get_cart_url(),
         'product' => $productObject,
     );
     return $message;
