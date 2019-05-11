@@ -53,7 +53,7 @@ if (is_front_page()) {
     $context['posts'] = getCustomPosts('post', -1, null, 'date', null, null);
     $context['categories'] = Timber::get_terms($categories);
 }elseif (is_page('events')) {
-    $context['events'] = getCustomPosts('event', -1, null,'date', null, null, null);
+    $context['events'] = getCustomPosts('events', -1, null,'date', null, null, null);
 }
 $context['sections'] = prepareContentFields();
 
