@@ -5,29 +5,21 @@
 		<section class="grid--two-thirds margin--center spacing--gutter ">
 			<div>{{post.content}}</div>
 		</section>
-		<section class="dsk--flex flex--wrap justify--between max-wrap margin--center spacing--gutter">
-			
-			
-			{% for event in events %}
-				<div class="block--cafe-grid-item grid--one grid--sm-half  margin--vert-3">
-					
-					<h3>{{event.title}}</h3>
-					<div class="meta margin--bot-1 flex flex--wrap justify--start">
-						<div class="margin--right-1">
-							<i class="icon-calendar" data-grunticon-embed></i>
-						<span>{{event.event.start|date('M d, Y')}}</span>
-						</div>
-						<div>
-							<i class="icon-clock margin--left-1" data-grunticon-embed></i>
-						<span>{% if  event.event.time %} {{event.event.time}}{% endif %}</span>
-						</div>
-					</div>
-					
-					{{event.event.description}}
-				{% filter shortcodes %}[add_to_cart id="{{event.event.product[0]}}"]{% endfilter %}
-			</div>
-		{% endfor %}
-		
+		<section class="cafe-wrap margin--center flex flex--wrap justify--between align--items-start spacing--vert-2 spacing--dsk-vert-5">
+			<div class="grid--sm-three-fourths margin--center spacing--gutter-mob font--content">
+				
+				{{events|print_r}}
+				{% for event in events %}
+					<div class="margin--vert-2 post--tease">
+						<h2 class="mar--">{{event.title}}</h2>
+						<h5 class="block text--uppercase margin--vert-1"><i class="icon-calendar" data-grunticon-embed></i>
+								<span>{{event.event.start|date('M d, Y')}}</span>{% if  event.event.time %} | <i class="icon-clock margin--left-1" data-grunticon-embed></i> <time class="font--small text--uppercase">{{event.event.time}}</time>{% endif %}</h5>
+						<div class="meta margin--bot-1 flex flex--wrap justify--start">{{event.event.description}}</div>
+						{% filter shortcodes %}[add_to_cart id="{{event.event.product[0]}}"]{% endfilter %}
+						<hr class="color--brown-light">
+				</div>
+			{% endfor %}
+		</div>
 	</section>
 </article>
 {% endblock %}

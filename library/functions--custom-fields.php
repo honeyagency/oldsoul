@@ -339,5 +339,7 @@ function prepareEventFields($id)
         'time'        => get_field('field_5cd5fd9c0d568', $id),
         'product'     => get_field('field_5cd2335268b52', $id),
     );
+
+
     return $event;
 }
