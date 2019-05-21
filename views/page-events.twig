@@ -9,7 +9,7 @@
 			<div class="grid--sm-three-fourths margin--center spacing--gutter-mob font--content">
 				
 				{% for event in events %}
-					<div class="margin--vert-2 post--tease">
+					<div class="margin--vert-2 post--">
 						<h2 class="mar--">{{event.title}}</h2>
 						<h5 class="block text--uppercase margin--vert-1"><i class="icon-calendar" data-grunticon-embed></i>
 								<span>{{event.event.start|date('M d, Y')}}</span>{% if  event.event.time %} | <i class="icon-clock margin--left-1" data-grunticon-embed></i> <time class="font--small text--uppercase">{{event.event.time}}</time>{% endif %}</h5>
