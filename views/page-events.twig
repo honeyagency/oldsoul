@@ -13,13 +13,13 @@
 						<h2 class="mar--">{{event.title}}</h2>
 						<div class="font--content">
 							
-						
-						<h5 class="block text--uppercase margin--vert-1 font--content"><i class="icon-calendar" data-grunticon-embed></i>
-								<span>{{event.event.start|date('M d, Y')}}</span>{% if  event.event.time %} | <i class="icon-clock margin--left-1" data-grunticon-embed></i> <time class="font--small text--uppercase">{{event.event.time}}</time>{% endif %}</h5>
-						<div class="meta margin--bot-1 flex flex--wrap justify--start font--content">{{event.event.description}}</div>
+
+							<h5 class="block text--uppercase margin--vert-1 font--content"><i class="icon-calendar" data-grunticon-embed></i>
+							<span>{{event.event.start|date('M d, Y')}}</span>{% if  event.event.time %}<span class="spacing--horiz-1">|</span><span><i class="icon-clock" data-grunticon-embed></i> <time class="font--small text--uppercase">{{event.event.time}}</time></span>{% endif %}{% if  event.event.cafe[0] %}<span class="spacing--horiz-1">|</span> <span><a class="font--small color--green font--bold text--uppercase" href="{{event.event.cafe[0].guid}}">{{event.event.cafe[0].post_title}}</a></span>{% endif %}</h5>
+							<div class="meta margin--bot-1 flex flex--wrap justify--start font--content">{{event.event.description}}</div>
 						{% filter shortcodes %}[add_to_cart id="{{event.event.product[0]}}"]{% endfilter %}
-							</div>
-						<hr class="color--brown-light">
+					</div>
+					<hr class="color--brown-light">
 				</div>
 			{% endfor %}
 		</div>

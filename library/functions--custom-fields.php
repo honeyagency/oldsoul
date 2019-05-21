@@ -338,8 +338,8 @@ function prepareEventFields($id)
         'description' => get_field('field_5cd5fd0e4e6ab', $id),
         'time'        => get_field('field_5cd5fd9c0d568', $id),
         'product'     => get_field('field_5cd2335268b52', $id),
+        'cafe'        => get_field('field_5cd5ff3213d36', $id),
     );
-
 
     return $event;
 }
