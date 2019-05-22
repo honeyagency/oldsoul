@@ -1,7 +1,7 @@
 <nav role="navigation" class="section--sub-nav grid--sm-three-fifths order--1">
 	
 	<ul class="dsk--flex flex--wrap justify--between align--items-center">
-		<a class="text--uppercase font--smaller font--bold letter--2 trigger--search" href="" id="triggerSearch"><i class="icon-search" data-grunticon-embed></i><span class="hidden--md"> Search</span></a>
+		<a class="text--uppercase font--smaller font--bold letter--2 trigger--search" href="" id="triggerSearch"><i class="icon-search" data-grunticon-embed></i></a>
 		{% for item in submenu.get_items %}
 			<li class="nav-item text--uppercase font--smaller font--bold letter--1  {{item.classes | join(' ')}}">
 				<a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
