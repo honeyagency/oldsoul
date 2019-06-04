@@ -91,7 +91,7 @@ function getSinglePost($posttype = null, $postId = null)
         'author'     => $author,
     );
     if ($posttype == 'cafe') {
-        $singlePostArray['cafe'] = prepareGlobalCafeFields();
+        $singlePostArray['cafe'] = prepareGlobalCafeFields($postId);
     } elseif ($posttype == 'product') {
         $singlePostArray['info'] = prepareProductFields($postId);
     } elseif ($posttype == 'events') {

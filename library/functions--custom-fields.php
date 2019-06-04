@@ -35,18 +35,19 @@ function prepareHomepageFields()
     return $home;
 }
 
-function prepareGlobalCafeFields()
+function prepareGlobalCafeFields($id)
 {
     $cafe = array(
-        'phone'    => get_field('field_5a4d3b56fe634'),
-        'hours'    => get_field('field_5a4d3b74fe635'),
-        'address'  => get_field('field_5a4d3b7efe636'),
-        'email'    => get_field('field_5a540c28d632e'),
-        'facebook' => get_field('field_5b05ee7731f4c'),
+        'phone'    => get_field('field_5a4d3b56fe634', $id),
+        'hours'    => get_field('field_5a4d3b74fe635', $id),
+        'address'  => get_field('field_5a4d3b7efe636', $id),
+        'email'    => get_field('field_5a540c28d632e', $id),
+        'facebook' => get_field('field_5b05ee7731f4c', $id),
+        'online'   => get_field('field_5cf6eececb37c', $id),
     );
     return $cafe;
 }
-function prepareCafeFields()
+function prepareCafeFields($id)
 {
     $detailImageId = get_field('field_5a540d6554d78');
     if ($detailImageId != null) {
@@ -107,7 +108,7 @@ function prepareCafeFields()
     );
 
     $cafe = array(
-        'info'   => prepareGlobalCafeFields(),
+        'info'   => prepareGlobalCafeFields($id),
         'images' => $images,
         'events' => $events,
         'map'    => get_field('field_5a55424fcf199'),

@@ -1,14 +1,13 @@
 <div class="block--cafe-grid-item grid--one grid--sm-half nog margin--mob-bot-1">
 	<a href="{{cafe.link}}" class="hidden--mob" ><img src="{{cafe.image|resize(480,260)}}" data-src="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 lazy"></a>
-	<a href="{{cafe.link}}" class="hidden--dsk">
+	<a href="{{cafe.link}}" class="hidden--dsk ">
 		<picture class="margin--bot-1 lazy">
 			<source type="image/webp" alt="{{cafe.image.caption}}" data-srcset="{{cafe.image|resize(666,360)|towebp}}">
 			<source type="image/jpeg" alt="{{cafe.image.caption}}" data-srcset="{{cafe.image|resize(666,360)}}">
-			<img class="lazy" src="{{cafe.image|resize(67,36)}}" data-flickity-lazyload="{{cafe.image|resize(666,360)}}">
+			<img class="lazy margin--bot-1" src="{{cafe.image|resize(67,36)}}" alt="An image of {{cafe.title}}" data-flickity-lazyload="{{cafe.image|resize(666,360)}}">
 		</picture>
-	{# <img src="{{cafe.image|resize(120,65)}}" data-flickity-lazyload="{{cafe.image|resize(666,360)}}" width="100%" class=""></a> #}
 	<div>
-		<h3><a  class="color--black" href="{{cafe.link}}">{{cafe.title}}</a></h3>
+		<h3><a aria-label="A link to the {{cafe.title}} cafe page" class="color--black" href="{{cafe.link}}">{{cafe.title}}</a></h3>
 		<div class="flex flex--wrap justify--between cafe--meta">
 			<div class="grid--one grid--sm-two-fifths mob--flex flex--wrap justify--between">
 				<div class="meta hidden--mob"><i class="icon-phone" data-grunticon-embed></i><span>{{cafe.cafe.phone}}</span></div>
@@ -17,9 +16,11 @@
 			<div class="grid--sm-two-fifths hidden--mob">
 				<div class="table meta"><i class="icon-hand table-cell" data-grunticon-embed></i><div class="table-cell"><span>{{cafe.cafe.address}}</span></div></div>
 			</div>
+			{# {{cafe|print_r}} #}
 			<div class="grid--one grid--sm-fifth">
-				<a href="{{cafe.link}}" class="button inline-block float--right-dsk font--smaller">Explore</a>&nbsp;&nbsp;&nbsp;
-				<a href="tel:{{cafe.phone}}" class="button inline-block hidden--dsk font--smaller">call</a>
+				<a href="{{cafe.link}}" class="button inline-block float--right-dsk font--smaller">Explore</a>
+				<span class="hidden--dsk">&nbsp;&nbsp;&nbsp; <a href="tel:{{cafe.cafe.phone}}" class="button inline-block font--smaller">call</a></span>
+				<span class="hidden--dsk">&nbsp;&nbsp;&nbsp;</span>{% if cafe.cafe.online.url %}<a href="{{cafe.cafe.online.url}}" target="{{cafe.cafe.online.target}}" title="Online ordering for {{cafe.title}}" aria-label="{{cafe.cafe.online.title}}" class="button inline-block font--smaller float--right-dsk margin--top-short">{{cafe.cafe.online.title}}</a>{% endif %}
 			</div>
 		</div>
 	</div>

@@ -15,7 +15,7 @@ $context['post'] = $post;
 $context['comment_form'] = TimberHelper::get_comment_form();
 $context['prefooter'] = prepareGlobalPreFooter();
 if ($post->post_type == 'cafe') {
-	$context['cafe'] = prepareCafeFields();
+	$context['cafe'] = prepareCafeFields($post->ID);
 	
 	$context['next'] = getNextPostLooped();
   $context['previous'] = getPreviousPostLooped();

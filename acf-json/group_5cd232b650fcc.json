@@ -105,7 +105,7 @@
             "elements": "",
             "min": "",
             "max": "",
-            "return_format": "object"
+            "return_format": "id"
         }
     ],
     "location": [
@@ -133,5 +133,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1558399942
+    "modified": 1559686832
 }
