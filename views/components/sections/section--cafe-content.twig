@@ -4,7 +4,7 @@
 		<h1 class="h2">{{post.title}}</h1>
 		{{post.content}}
 		{% if cafe.info.online.url %}
-			<h3 class="block font--sans font--smaller font--bold letter--1 inline-block text--uppercase margin--top-2">Online Ordering</h3>
+			<h3 class="block font--sans font--smaller font--bold letter--1 inline-block text--uppercase margin--top-2" id="order-{{post.title|lower|replace(" ","-")}}">Online Ordering</h3>
 			<a href="{{cafe.info.online.url}}" target="{{cafe.info.online.target}}" title="Online ordering for {{cafe.title}}" aria-label="{{cafe.info.online.title}}" class="button inline-block font--smaller">{{cafe.info.online.title}}</a>
 		{% endif %}
 	</div>
