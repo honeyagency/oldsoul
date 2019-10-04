@@ -42,14 +42,31 @@
     }
 }
 
+%hover-styles {
+    opacity: 1;
+    transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
+    transform: translateY(0);
+}
+
 .menu-item-32, .menu-item-has-children {
     // cursor: pointer;
-    @include media($screen-sm) {
-        &:hover {
-            .section--cafe-nav, .section--child-nav {
-                opacity: 1;
-                transition: transform 0.3s $base-animation, opacity 0.3s $base-animation;
-                transform: translateY(0);
+
+    &:hover, &:focus {
+        .section--cafe-nav, .section--child-nav {
+            @extend %hover-styles;
+        }
+    }
+
+    &:focus-within {
+        .section--cafe-nav, .section--child-nav {
+            @extend %hover-styles;
+        }
+    }
+
+    a {
+        &:focus {
+            + .section--cafe-nav, + .section--child-nav {
+                @extend %hover-styles;
             }
         }
     }
