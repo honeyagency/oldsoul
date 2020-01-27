@@ -1,6 +1,11 @@
 .block--product-aside {
     position: relative;
-    position: sticky;
+
+    @include media($screen-sm) {
+        position: sticky;
+    }
+
+
     top: 1em;
 
     .posted_in {
@@ -90,11 +95,13 @@
                         display: block;
                         width: 100%;
                         position: relative;
-&:nth-of-type(n+1){
-                      select {
+
+                        &:nth-of-type(n+1) {
+                            select {
                                 text-align-last: left !important;
                             }
-}
+                        }
+
                         // &:before {
                         //     content: 'SIZE';
                         //     font-size: .85rem;
