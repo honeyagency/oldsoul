@@ -6,8 +6,8 @@
 			{% include 'components/sections/section--main-nav.twig' %}
 			{% include 'components/sections/section--sub-nav.twig' %}
 		</section>
-		<i class="icon-cart hidden--dsk" data-grunticon-embed></i>
-		{# {% do action('cart_count') %} #}
+		{# <i class="icon-cart hidden--dsk" data-grunticon-embed></i> #}
+		{% do action('cart_count') %}
 	</section>
 </header>
 {% if wc_notices %}
