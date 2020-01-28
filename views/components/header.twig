@@ -7,7 +7,9 @@
 			{% include 'components/sections/section--sub-nav.twig' %}
 		</section>
 		{# <i class="icon-cart hidden--dsk" data-grunticon-embed></i> #}
-		{% do action('cart_count') %}
+		<div class="hidden--dsk">
+			{% do action('cart_count') %}
+		</div>
 	</section>
 </header>
 {% if wc_notices %}
