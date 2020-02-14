@@ -90,6 +90,9 @@ function buscemi_scripts()
 }
 add_action('wp_enqueue_scripts', 'buscemi_scripts');
 
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+
 // Allowing SVG preveiw in WP Upload
 function cc_mime_types($mimes)
 {

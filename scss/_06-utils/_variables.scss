@@ -1,23 +1,16 @@
 $link-color: map-get($brown, main);
 
 $default-font: "europa", -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !default;
+
 // $default-font:  -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif !default;
 
-$base-serif-font: "bookman-jf-pro",serif;
+$base-serif-font: "bookman-jf-pro", serif;
+
 // $base-serif-font: serif;
-$base-sans-font:$default-font;
-$heading-font-family:$base-serif-font;
+$base-sans-font: $default-font;
+$heading-font-family: $base-serif-font;
 
 $heading-font-weight: 300;
-
-$max-width: (
-	ex: 330px,
-	xs: 480px,
-	sm: 768px,
-	md: 992px,
-	lg: 1200px,
-	xl: 1640px
-);
 
 $base-animation: cubic-bezier(0.4, 0.01, 0.165, 0.99);
 
@@ -26,43 +19,64 @@ $base-font-size: 1.1em;
 $base-padding: 1em;
 $base-line-height: 1.6;
 
-$base-border-radius: 8px;
-$gr:1.610833;
+//
+// Media Queries & Breakpoints
+//
+$spacing-gutter: 1.1rem;
+$spacing-gutter-xs: 1.7rem;
+$spacing-gutter-mdl: 4.5rem;
 
-$grid:			1;
-$max-wrap:		1280px;
+$base-border-radius: 8px;
+$gr: 1.610833;
+
+$grid: 1;
+$max-wrap: 1280px;
 
 //
 // Media Queries & Breakpoints
-// 
+//
+$max-width: (ex: 330px, xs: 480px, xsm: 640px, sm: 768px, smd: 834px, md: 992px, mdl: 1110px, lg: 1200px, xl: 1640px);
 
 // Extra small screen / phone
-$screen-ex:                  map-get($max-width, ex) !default;
+$screen-ex: map-get($max-width, ex) !default;
+$screen-ex-max: $screen-ex - 1 !default;
+$max-ex: new-breakpoint(max-width $screen-ex-max 12);
 
 // Extra small screen / phone
-$screen-xs:                  map-get($max-width, xs) !default;
+$screen-xs: map-get($max-width, xs) !default;
+
+$screen-xsm: map-get($max-width, xsm) !default;
 
 // Small screen / tablet
-$screen-sm:                  map-get($max-width, sm) !default;
+$screen-sm: map-get($max-width, sm) !default;
+
+// Small screen / tablet
+$screen-smd: map-get($max-width, smd) !default;
 
 // Medium screen / desktop
-$screen-md:                  map-get($max-width, md) !default;
+$screen-md: map-get($max-width, md) !default;
+
+$screen-mdl: map-get($max-width, mdl) !default;
 
 // Large screen / wide desktop
-$screen-lg:                  map-get($max-width, lg) !default;
+$screen-lg: map-get($max-width, lg) !default;
 
 // Monster Screen
-$screen-xl:                  map-get($max-width, xl) !default;
+$screen-xl: map-get($max-width, xl) !default;
 
 // So media queries don't overlap when required, provide a maximum
-$screen-ex-max:              ($screen-ex - 1) !default;
-$screen-xs-max:              ($screen-xs - 1) !default;
-$screen-sm-max:              ($screen-sm - 1) !default;
-$screen-md-max:              ($screen-md - 1) !default;
-$screen-lg-max:              ($screen-lg - 1) !default;
+$screen-xs-max: $screen-xs - 1 !default;
+$screen-xsm-max: $screen-xsm - 1 !default;
+$screen-sm-max: $screen-sm - 1 !default;
+$screen-smd-max: $screen-smd - 1 !default;
+$screen-md-max: $screen-md - 1 !default;
+$screen-mdl-max: $screen-mdl - 1 !default;
+$screen-lg-max: $screen-lg - 1 !default;
 
-$max-ex:  	new-breakpoint(max-width $screen-ex-max 12);
-$max-xs:  	new-breakpoint(max-width $screen-xs-max 12);
-$max-sm: 	new-breakpoint(max-width $screen-sm-max 12);
-$max-md:  	new-breakpoint(max-width $screen-md-max  6);
-$max-lg:  	new-breakpoint(max-width $screen-lg-max  6);
+$max-xs: new-breakpoint(max-width $screen-xs-max 12);
+$max-xsm: new-breakpoint(max-width $screen-xsm-max 12);
+$max-sm: new-breakpoint(max-width $screen-sm-max 12);
+$max-smd: new-breakpoint(max-width $screen-smd-max 12);
+$max-md: new-breakpoint(max-width $screen-md-max 6);
+$max-mdl: new-breakpoint(max-width $screen-mdl-max 6);
+$max-lg: new-breakpoint(max-width $screen-lg-max 6);

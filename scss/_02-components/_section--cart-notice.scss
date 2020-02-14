@@ -1,6 +1,6 @@
 @keyframes addToCartNotice {
     0% {
-        transform: translatey(-150%);
+        transform: translateY(-150%);
     }
 
     10% {
@@ -12,25 +12,7 @@
     }
 
     100% {
-        transform: translatey(-150%);
-    }
-}
-
-@keyframes addToCartNoticeStick {
-    0% {
-        transform: translatey(0);
-    }
-
-    10% {
-        transform: translatey(0);
-    }
-
-    90% {
-        transform: translatey(0);
-    }
-
-    100% {
-        transform: translatey(0);
+        transform: translateY(-150%);
     }
 }
 
@@ -46,12 +28,15 @@
     animation-fill-mode: forwards;
     animation-timing-function: $base-animation;
     transition: transform 0.3s $base-animation;
-    transform: translatey(-150%);
+    box-shadow: 1px 1px 4px 2px transparentize($black, 0.7);
+    animation-name: addToCartNotice;
+    animation-play-state: paused;
+    transform: translateY(-150%);
 }
 
 .wf-active {
     .section--cart-notice {
-        animation-name: addToCartNotice;
+        animation-play-state: running;
 
         &:hover {
             -webkit-animation-play-state: paused;

@@ -17,66 +17,52 @@
 
 .button, .ha-button {
     text-transform: uppercase;
-    border-bottom: 2px solid;
     letter-spacing: 1.5px;
     display: table;
     font-weight: 600;
-    background: transparent !important;
     padding: 0;
-
-    // font-size: inherit;
-    border-radius: 0;
+    background: $black;
+    padding: 0.3rem 0.9rem;
+    border-radius: 3px;
+    border-bottom: 0;
+    margin-left: 1rem;
+    text-decoration: none;
 }
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    display: inline-block;
-    color: map-get($brown, main);
-    border-bottom: 2px solid;
-    background-color: transparent !important;
-    padding: 0;
-    padding-bottom: 2px;
-    text-align: right;
-    border-radius: 0;
+    font-size: .9rem !important;
+    color: $white;
+    background-color: map-get($brown, dark);
+    padding: 0.3rem 0.9rem;
+    border: none;
+    border-radius: 3px !important;
+    text-decoration: none;
+    transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation;
+    box-shadow: 1px 1px 3px 1px transparent;
 
-    @extend .font--small;
+    &:hover, &:focus {
+        background-color: $black;
+        transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation;
+        box-shadow: 1px 1px 3px 1px transparentize($black, 0.7);
+    }
 
-    &:hover {
-        background: transparent !important;
-        color: darken(map-get($brown, main), 5%);
+    &:active {
+        background-color: lighten(map-get($brown, dark), 10%);
+        transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation;
+        box-shadow: 1px 1px 3px 1px transparent;
     }
 }
 
-.woocommerce-Button {
-    text-transform: uppercase !important;
-    border-bottom: 2px solid !important;
-    letter-spacing: 1.5px !important;
-    display: table !important;
-    font-weight: 600 !important;
-    background: transparent !important;
-    padding: 0 !important;
-
-    // font-size: inherit !important;
-    border-radius: 0 !important;
-    display: inline-block !important;
-    color: map-get($brown, main) !important;
-    border-bottom: 2px solid !important;
-    background-color: transparent !important;
-    padding: 0 !important;
-    padding-bottom: 2px !important;
-    text-align: right !important;
-    border-radius: 0 !important;
-}
-
 .ha-addtocart {
-    margin-bottom: 2em;
-    margin-top: 1em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 
     .icon-cart {
         width: 13px;
         display: inline-block;
-        margin-right: .5em;
+        margin-right: .5rem;
 
         svg {
             g {

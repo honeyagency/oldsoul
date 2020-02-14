@@ -49,7 +49,8 @@ $context['sidebar'] = Timber::get_widgets('shopbar');
 $context['cafes']   = getCustomPosts('cafe', 4, null, 'date', null, null);
 // WooCommerce Notices
 $context['wc_notices'] = wc_get_notices();
-wc_clear_notices();
+// print_r($context['wc_notices'])
+// wc_clear_notices();
 
 if (is_singular('product')) {
     $context['post']    = Timber::get_post();

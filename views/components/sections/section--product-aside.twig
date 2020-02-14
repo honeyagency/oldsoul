@@ -1,11 +1,11 @@
 <aside class="block--product-aside grid--one grid--sm-two-fifths font--small spacing--dsk-horiz-1 spacing--gutter-mob order--2">
 	<h1 class="product--title h2">{{post.title}}</h1>
-	<div class="text--  color--green">{{post.custom.product_subtitle}}</div>
+	<div class="piece--subtitle color--brown-dark bg--brown-light">{{post.custom.product_subtitle}}</div>
 	{% do action('woocommerce_single_product_summary') %}
-	{% if info.details.altitude %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Altitude</strong> <p>{{info.details.altitude}}</p></div>{% endif %}
-	{% if info.details.varietal %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Varietal</strong> <p>{{info.details.varietal}}</p></div>{% endif %}
-	{% if info.details.process %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Process</strong> <p>{{info.details.process}}</p></div>{% endif %}
-	{% if info.details.roast %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Roast Profile</strong> <p>{{info.details.roast}}</p></div>{% endif %}
-	{% if info.details.flavors %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Flavors</strong> <p>{{info.details.flavors}}</p></div>{% endif %}
-	{% if info.details.producer %}<div class="border--top-1 spacing--vert-half"><strong class="text--uppercase">Producer</strong> <p>{{info.details.producer}}</p></div>{% endif %}
+	{% if info.details.altitude %}<div class="piece--detail border--top-1 spacing--vert-1"><strong class="text--uppercase color--brown-dark">Altitude</strong> <p>{{info.details.altitude}}</p></div>{% endif %}
+	{% if info.details.varietal %}<div class="piece--detail border--top-1 spacing--vert-1"><strong class="text--uppercase color--brown-dark">Varietal</strong> <p>{{info.details.varietal}}</p></div>{% endif %}
+	{% if info.details.process %}<div class="piece--detail border--top-1 spacing--vert-1"><strong class="text--uppercase color--brown-dark">Process</strong> <p>{{info.details.process}}</p></div>{% endif %}
+	{% if info.details.roast %}<div class="piece--detail border--top-1 spacing--vert-1"><strong class="text--uppercase color--brown-dark">Roast Profile</strong> <p>{{info.details.roast}}</p></div>{% endif %}
+	{% if info.details.flavors %}<div class="piece--detail border--top-1 spacing--vert-1"><strong class="text--uppercase color--brown-dark">Flavors</strong> <p>{{info.details.flavors}}</p></div>{% endif %}
+	{% if info.details.producer %}<div class="piece--detail border--top-1 spacing--vert-1"><strong class="text--uppercase color--brown-dark">Producer</strong> <p>{{info.details.producer}}</p></div>{% endif %}
 </aside>

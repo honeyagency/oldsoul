@@ -6,7 +6,6 @@
 			{% include 'components/sections/section--main-nav.twig' %}
 			{% include 'components/sections/section--sub-nav.twig' %}
 		</section>
-		{# <i class="icon-cart hidden--dsk" data-grunticon-embed></i> #}
 		<div class="hidden--dsk">
 			{% do action('cart_count') %}
 		</div>
@@ -16,7 +15,7 @@
 	<section class="section--cart-notice bg--green color--white text--center spacing--gutter spacing--vert-1">
 		
 		{% for item in wc_notices.success %}
-			<div><strong>{{item.product.get_title}}</strong> {{item.message}} <a href="{{item.url}}" class="ha-button color--white font--small inline-block">{{item.cart}}</a></div>
+			<div><strong>{{item.notice.product.get_title}}</strong> {{item.notice.message}} <a href="{{item.notice.url}}" class="ha-button color--white font--small inline-block">{{item.notice.cart}}</a></div>
 			
 		{% endfor %}
 		

@@ -5,28 +5,23 @@
 </head>
 {% endblock %}
 <body class="{{body_class}} bg--brown-faded color--black" data-template="base.twig">
-
-	{% block header %}
-		{% include 'components/header.twig' %}
-	{% endblock %}
-
+{% block header %}
+	{% include 'components/header.twig' %}
+{% endblock %}
 <main role="main" class="content-wrapper">
-	
-	{# {% if title %}<h1>{{title}}</h1>{% endif %} #}
-		{% block content %}
-			Sorry, no content
-		{% endblock %}
-
+	{% block content %}
+		Sorry, no content
+	{% endblock %}
 </main>
 {% block footer %}
 	
-		{% include 'footer.twig' %}
+	{% include 'footer.twig' %}
 	
 	{{ function('wp_footer') }}
 {% endblock %}
 {% include 'components/sections/section--search-modal.twig' %}
 <script type="application/javascript">
-  (function(b, o, n, g, s, r, c) { if (b[s]) return; b[s] = {}; b[s].scriptToken = "XzE1NTU4MzQ5NjM"; r = o.createElement(n); c = o.getElementsByTagName(n)[0]; r.async = 1; r.src = g; r.id = s + n; c.parentNode.insertBefore(r, c); })(window, document, "script", "//cdn.oribi.io/XzE1NTU4MzQ5NjM/oribi.js", "ORIBI");
+(function(b, o, n, g, s, r, c) { if (b[s]) return; b[s] = {}; b[s].scriptToken = "XzE1NTU4MzQ5NjM"; r = o.createElement(n); c = o.getElementsByTagName(n)[0]; r.async = 1; r.src = g; r.id = s + n; c.parentNode.insertBefore(r, c); })(window, document, "script", "//cdn.oribi.io/XzE1NTU4MzQ5NjM/oribi.js", "ORIBI");
 </script>
 </body>
 </html>
