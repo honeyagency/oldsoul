@@ -232,3 +232,7 @@ table.shop_table {
     border-radius: 0 !important;
     border-color: map-get($brown, formtext);
 }
+
+.woocommerce-notices-wrapper {
+    @extend .screenreader;
+}
