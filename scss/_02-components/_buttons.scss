@@ -17,39 +17,40 @@
 
 .button, .ha-button {
     text-transform: uppercase;
+    border-bottom: 2px solid;
     letter-spacing: 1.5px;
     display: table;
     font-weight: 600;
+    background: transparent;
     padding: 0;
-    background: $black;
-    padding: 0.3rem 0.9rem;
-    border-radius: 3px;
-    border-bottom: 0;
-    margin-left: 1rem;
-    text-decoration: none;
+
+    // font-size: inherit;
+    border-radius: 0;
 }
 
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    font-size: .9rem !important;
-    color: $white;
-    background-color: map-get($brown, dark);
-    padding: 0.3rem 0.9rem;
-    border: none;
-    border-radius: 3px !important;
-    text-decoration: none;
-    transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation;
-    box-shadow: 1px 1px 3px 1px transparent;
+.single-product {
+    [name="add-to-cart"], .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+        font-size: .9rem !important;
+        color: $white !important;
+        background-color: map-get($brown, dark) !important;
+        padding: 0.3rem 0.9rem !important;
+        border: none !important;
+        border-radius: 3px !important;
+        text-decoration: none !important;
+        transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation !important;
+        box-shadow: 1px 1px 3px 1px transparent !important;
 
-    &:hover, &:focus {
-        background-color: $black;
-        transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation;
-        box-shadow: 1px 1px 3px 1px transparentize($black, 0.7);
-    }
+        &:hover, &:focus {
+            background-color: $black !important;
+            transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation !important;
+            box-shadow: 1px 1px 3px 1px transparentize($black, 0.7) !important;
+        }
 
-    &:active {
-        background-color: lighten(map-get($brown, dark), 10%);
-        transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation;
-        box-shadow: 1px 1px 3px 1px transparent;
+        &:active {
+            background-color: lighten(map-get($brown, dark), 10%) !important;
+            transition: background-color 0.15s $base-animation, box-shadow 0.15s $base-animation !important;
+            box-shadow: 1px 1px 3px 1px transparent !important;
+        }
     }
 }
 
