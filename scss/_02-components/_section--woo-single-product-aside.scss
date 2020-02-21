@@ -249,8 +249,12 @@
 }
 
 .block--product-aside {
-    form {
-        margin-top: 1rem;
+    .cart {
+        margin-top: 2rem;
+
+        &.variations_form {
+            margin-top: 1rem;
+        }
     }
 
     .variations_form {
