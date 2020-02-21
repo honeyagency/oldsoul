@@ -29,11 +29,11 @@
 }
 
 .single-product {
-    [name="add-to-cart"], .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+    button.single_add_to_cart_button, [name="add-to-cart"], .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
         font-size: .9rem !important;
         color: $white !important;
         background-color: map-get($brown, dark) !important;
-        padding: 0.3rem 0.9rem !important;
+        padding: 0.9rem 0.9rem !important;
         border: none !important;
         border-radius: 3px !important;
         text-decoration: none !important;
@@ -76,5 +76,11 @@
         // top: -5px;
         color: white !important;
         border: 0 !important;
+    }
+}
+
+.ha-addtocart {
+    button {
+        background-color: transparent !important;
     }
 }

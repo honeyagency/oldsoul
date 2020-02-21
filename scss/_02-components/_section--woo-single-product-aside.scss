@@ -14,6 +14,15 @@
         }
     }
 
+    .pricevariable {
+        font-size: 1.2rem !important;
+        font-weight: 600 !important;
+        color: $green;
+        font-family: $base-sans-font;
+        padding-bottom: .5rem;
+        border-bottom: 1px solid;
+    }
+
     .piece--detail {
         p {
             margin-bottom: 0;
@@ -44,6 +53,8 @@
     }
 
     .single_variation_wrap {
+        margin-top: 0;
+
         .input-text.qty {
             float: none !important;
             margin-right: 0 !important;
@@ -56,21 +67,6 @@
             position: relative;
             margin-bottom: 1rem;
             flex-grow: 1;
-
-            &:before {
-                content: 'QTY';
-                font-size: .85rem;
-                font-weight: 600;
-                color: map-get($brown, formtext);
-                display: block;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                left: 1rem;
-                letter-spacing: 1px;
-            }
-
-            select {}
         }
 
         #wc-stripe-payment-request-wrapper {
@@ -222,7 +218,7 @@
         .quantity {
             @extend .grid--half;
 
-            @extend .grid--lg-fourth;
+            @extend .grid--lg-third;
         }
     }
 
@@ -248,6 +244,62 @@
 
         &.size-medium {
             width: 300px;
+        }
+    }
+}
+
+.block--product-aside {
+    form {
+        margin-top: 1rem;
+    }
+
+    .variations_form {
+        .single_variation_wrap {
+            align-items: stretch;
+
+            .single_variation {
+                flex-basis: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .quantity {
+                margin-bottom: 0;
+                flex-grow: 0;
+
+                label {
+                    position: absolute;
+                    top: -1.6rem;
+                    font-size: 0.8rem !important;
+                }
+
+                input {
+                    margin: 0;
+                    height: 100%;
+                }
+
+                @extend .grid--half;
+            }
+        }
+    }
+
+    .woocommerce-variation-add-to-cart {
+        margin-top: 1rem;
+    }
+
+    .quantity {
+        position: relative;
+        margin-right: 1rem;
+
+        > label {
+            font-size: .8rem;
+            position: absolute;
+            top: -1.6rem;
+
+            + input {
+                width: 100% !important;
+                height: 100%;
+                margin-bottom: 0;
+            }
         }
     }
 }

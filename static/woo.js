@@ -18,7 +18,6 @@ jQuery(document).ready(function($) {
             $value = $(this).siblings('.value');
             $value.addClass($title).data('var', $title);
             if ($title == 'Coffee') {
-
                 $value.find('select > option:first').text($title);
             }
         });
@@ -27,5 +26,9 @@ jQuery(document).ready(function($) {
         $('#pwgc-balance-title').text('Check Gift Certificate Balance');
         $('#pwgc-balance-number').attr('placeholder', 'Gift Certificate Number');
         $('#pwgc-balance-reload').attr('value', 'Add more funds to this gift certificate.');
+    }
+    if ($('.block--product-aside').length > 0) {
+        $('p.price').remove();
+        $('.block--product-aside .quantity input').prev('label').removeClass('screen-reader-text').text('Quantity');
     }
 });
