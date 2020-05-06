@@ -5,7 +5,7 @@
     {% include 'components/sections/section--product-header.twig' %}
     <article itemscope itemtype="http://schema.org/Product" class="section--single-product-details {{ post.class }} dsk--flex flex--wrap justify--between max-wrap align--items-start margin--center spacing--vert-1 spacing--dsk-vert-5 spacing--gutter">
         {% include 'components/sections/section--product-aside.twig' %}
-        <div class="summary entry-summary grid--sm-half">
+        <div class="summary entry-summary grid--one grid--sm-half">
             {% do action('woocommerce_before_single_product_summary') %}
             {% if post.thumbnail %}
                 <picture>

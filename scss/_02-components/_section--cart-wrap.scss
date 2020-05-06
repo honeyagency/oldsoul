@@ -15,12 +15,16 @@
 
             @extend .grid--sm-three-fifths;
 
+            th {
+                font-size: .8rem;
+            }
+
             table.shop_table {
                 .input-text,input,
                 select,
                 textarea,
                 #{$all-text-inputs},[type="submit"] {
-                    font-size: 1rem !important;
+                    font-size: .9rem !important;
                     font-weight: 600 !important;
                     font-family: $base-sans-font !important;
                     color: $formtextcolor !important;
@@ -250,9 +254,11 @@
 [type=radio] {
     appearance: radio;
 }
-.woocommerce-shipping-destination{
+
+.woocommerce-shipping-destination {
     display: none;
 }
+
 .the-cart-count:not(:first-of-type) {
     display: none !important;
 }

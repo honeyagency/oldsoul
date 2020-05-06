@@ -16,8 +16,7 @@
             width: 14px;
             font-size: 8px;
             content: attr(data-cart-items);
+            z-index: 9999999;
         }
     }
-
-    /* no quotes around attribute name! */
 }

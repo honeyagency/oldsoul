@@ -6,8 +6,7 @@
 		<h2 class="color--white transform--no margin--bot-1">
 		{{ home.header.title }}
 		</h2>
-		<a href="{{ home.header.link.url }}" target="{{ home.header.link.target }}" class="button font--smaller center">
-			{{ home.header.link.title }}
-		</a>
+		{% if home.header.link.url %}<a href="{{home.header.link.url}}" target="{{home.header.link.target}}" class="button font--smaller center {% if home.header.second.url %}margin--bot-1{% else %}margin--bot-3{% endif %}">{{home.header.link.title}}</a>{% endif %}
+			{% if home.header.second.url %}<a href="{{home.header.second.url}}" target="{{home.header.second.target}}" class="button font--smaller center margin--bot-3">{{home.header.second.title}}</a>{% endif %}
 	</div>
 </section>

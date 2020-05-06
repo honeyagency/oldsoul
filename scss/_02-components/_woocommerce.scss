@@ -236,3 +236,21 @@ table.shop_table {
 .woocommerce-notices-wrapper {
     @extend .screenreader;
 }
+
+#add_payment_method #payment ul.payment_methods li img, .woocommerce-cart #payment ul.payment_methods li img, .woocommerce-checkout #payment ul.payment_methods li img {
+    max-width: 20px;
+}
+
+.woocommerce-terms-and-conditions-checkbox-text {
+    display: block;
+    width: calc(100% - 2rem);
+    float: right;
+    line-height: 1.3;
+    top: -1rem;
+    position: relative;
+}
+
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment {
+    background: transparent;
+    border-radius: 0;
+}

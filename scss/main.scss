@@ -1,76 +1,70 @@
-@import
-  '_07-vendors/bourbon/bourbon',
-  '_07-vendors/neat/neat';
+@import "_07-vendors/bourbon/bourbon";
+@import "_07-vendors/neat/neat";
 
-@import
-  '_06-utils/color-palette',
-  '_06-utils/variables',
-  '_06-utils/mixins';
+@import "_06-utils/color-palette";
+@import "_06-utils/variables";
+@import "_06-utils/mixins";
 
-@import
-  '_01-base/reset',
-  '_01-base/typography',
-  '_01-base/base';
+@import "_01-base/reset";
+@import "_01-base/fonts";
+@import "_01-base/typography";
+@import "_01-base/base";
 
 // @import '_03-layout/to-delete';
 
-@import
-  '_03-layout/navigation',
-  '_03-layout/header',
-  '_03-layout/footer',
-  '_03-layout/forms';
+@import "_03-layout/navigation";
+@import "_03-layout/header";
+@import "_03-layout/footer";
+@import "_03-layout/forms";
 
-@import
-  '_02-components/bg--color',
-  '_02-components/block--cafe-details',
-  '_02-components/block--cafe-event',
-  '_02-components/block--cafe-nav-item',
-  '_02-components/block--cart-icon',
-  '_02-components/block--featured-product',
-  '_02-components/block--home-header-right',
-  '_02-components/block--product',
-  '_02-components/borders',
-  '_02-components/buttons',
-  '_02-components/color',
-  '_02-components/display',
-  '_02-components/events',
-  '_02-components/flex',
-  '_02-components/font--utils',
-  '_02-components/grid',
-  '_02-components/grid--double',
-  '_02-components/grunticon--load',
-  '_02-components/icons',
-  '_02-components/margin',
-  '_02-components/mobile--nav',
-  '_02-components/post--tease',
-  '_02-components/section--about-partners',
-  '_02-components/section--about-team',
-  '_02-components/section--cafe-nav',
-  '_02-components/section--cart-notice',
-  '_02-components/section--cart-wrap',
-  '_02-components/section--checkout-wrap',
-  '_02-components/section--footer',
-  '_02-components/section--header-wrap',
-  '_02-components/section--home-about',
-  '_02-components/section--home-cafe-grid',
-  '_02-components/section--home-header',
-  '_02-components/section--image-header',
-  '_02-components/section--main-nav',
-  '_02-components/section--pre-footer',
-  '_02-components/section--product-review',
-  '_02-components/section--shop-header',
-  '_02-components/section--search-modal',
-  '_02-components/spacing',
-  '_02-components/section--shop-product-grid',
-  '_02-components/section--single-cafe-nav',
-  '_02-components/section--single-product-details',
-  '_02-components/section--single-product-header',
-  '_02-components/section--woo-cart',
-  '_02-components/section--woo-single-product-aside',
-  '_02-components/section--woo-single-product-tabs',
-  '_02-components/woocommerce',
-  '_02-components/zoomzoom';
+@import "_02-components/bg--color";
+@import "_02-components/block--cafe-details";
+@import "_02-components/block--cafe-event";
+@import "_02-components/block--cafe-nav-item";
+@import "_02-components/block--cart-icon";
+@import "_02-components/block--featured-product";
+@import "_02-components/block--home-header-right";
+@import "_02-components/block--product";
+@import "_02-components/borders";
+@import "_02-components/buttons";
+@import "_02-components/color";
+@import "_02-components/display";
+@import "_02-components/events";
+@import "_02-components/flex";
+@import "_02-components/font--utils";
+@import "_02-components/grid";
+@import "_02-components/grid--double";
+@import "_02-components/grunticon--load";
+@import "_02-components/icons";
+@import "_02-components/margin";
+@import "_02-components/mobile--nav";
+@import "_02-components/post--tease";
+@import "_02-components/section--about-partners";
+@import "_02-components/section--about-team";
+@import "_02-components/section--cafe-nav";
+@import "_02-components/section--cart-notice";
+@import "_02-components/section--cart-wrap";
+@import "_02-components/section--checkout-wrap";
+@import "_02-components/section--footer";
+@import "_02-components/section--header-wrap";
+@import "_02-components/section--home-about";
+@import "_02-components/section--home-cafe-grid";
+@import "_02-components/section--home-header";
+@import "_02-components/section--image-header";
+@import "_02-components/section--main-nav";
+@import "_02-components/section--pre-footer";
+@import "_02-components/section--product-review";
+@import "_02-components/section--shop-header";
+@import "_02-components/section--search-modal";
+@import "_02-components/spacing";
+@import "_02-components/section--shop-product-grid";
+@import "_02-components/section--single-cafe-nav";
+@import "_02-components/section--single-product-details";
+@import "_02-components/section--single-product-header";
+@import "_02-components/section--woo-cart";
+@import "_02-components/section--woo-single-product-aside";
+@import "_02-components/section--woo-single-product-tabs";
+@import "_02-components/woocommerce";
+@import "_02-components/zoomzoom";
 
-@import
-
-  '_04-pages/home';
+@import "_04-pages/home";

@@ -67,6 +67,10 @@
             position: relative;
             margin-bottom: 1rem;
             flex-grow: 1;
+            display: block;
+            position: relative;
+            margin-top: 2rem;
+            order: 3;
         }
 
         #wc-stripe-payment-request-wrapper {
@@ -236,6 +240,11 @@
 }
 
 .entry-summary {
+    @include media($max-sm) {
+        margin-top: 2rem;
+    }
+
+
     img {
         display: block;
         width: 100%;

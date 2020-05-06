@@ -23,6 +23,7 @@ function prepareHomepageFields()
         'rightimage' => $rightImage,
         'title'      => get_field('field_5a4d2485130a5'),
         'link'       => get_field('field_5a4d248e130a6'),
+        'second'     => get_field('field_5eb1ff2210d29'),
     );
     $about = array(
         'title' => get_field('field_5a4d24aa7e192'),

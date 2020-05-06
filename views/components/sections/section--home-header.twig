@@ -2,8 +2,9 @@
 	<div class="grid--one grid--sm-half order--2 nog relative flex flex--column flex--wrap justify--end overflow-no">
 		<img class="inline-background lazy" src="{{home.header.rightimage|resize(363,330)}}" data-src="{{home.header.rightimage|resize(1430,1300)}}" alt="">
 		<div class="bg--brown-dark text--center spacing--vert-2 spacing--horiz-1 relative z-99">
-			<a href="{{home.header.link.url}}" target="{{home.header.link.target}}" class="button font--smaller center">{{home.header.link.title}}</a>
-			<h2 class="color--white transform--no margin--vert-1">{{home.header.title}}</h2>
+			<h2 class="color--white transform--no margin--top-1 margin--bot-2">{{home.header.title}}</h2>
+			{% if home.header.link.url %}<a href="{{home.header.link.url}}" target="{{home.header.link.target}}" class="button font--smaller center {% if home.header.second.url %}margin--bot-half{% else %}margin--bot-3{% endif %}">{{home.header.link.title}}</a>{% endif %}
+			{% if home.header.second.url %}<a href="{{home.header.second.url}}" target="{{home.header.second.target}}" class="button font--smaller center margin--bot-3">{{home.header.second.title}}</a>{% endif %}
 			<i class="icon-logo-monogram hidden--mob" data-grunticon-embed></i>
 		</div>
 	</div>

@@ -33,7 +33,7 @@ input,
 select,
 textarea,
 #{$all-text-inputs},[type="submit"] {
-    font-size: 1rem;
+    font-size: $forms-font-size;
     font-weight: 600;
     font-family: $base-sans-font;
     color: $formtextcolor;
@@ -159,7 +159,7 @@ span.wpcf7-not-valid-tip {
     border-left: 1px solid $formbordercolor;
     border-right: 1px solid $formbordercolor;
     border-bottom: 1px solid $formbordercolor;
-    font-size: 1rem;
+    font-size: $forms-font-size;
     font-weight: normal;
     padding: 5px 15px;
     display: block;
@@ -274,7 +274,7 @@ input[type=checkbox] {
 
 /* class applies to select element itself, not a wrapper element */
 select {
-    font-size: $base-font-size;
+    font-size: $forms-font-size;
     font-family: $base-sans-font;
     color: $formtextcolor;
     border: 1px solid $formbordercolor;
