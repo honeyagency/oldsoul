@@ -17,13 +17,19 @@ function prepareHomepageFields()
     } else {
         $rightImage = null;
     }
+    if (have_rows('field_5ebc258a4d484')) {
+        $links = array();
+        while (have_rows('field_5ebc258a4d484')) {
+            the_row();
 
+            $links[] = get_sub_field('field_5ebc25a04d485');
+        }
+    }
     $header = array(
         'leftimage'  => $leftImage,
         'rightimage' => $rightImage,
         'title'      => get_field('field_5a4d2485130a5'),
-        'link'       => get_field('field_5a4d248e130a6'),
-        'second'     => get_field('field_5eb1ff2210d29'),
+        'links'      => $links,
     );
     $about = array(
         'title' => get_field('field_5a4d24aa7e192'),

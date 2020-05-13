@@ -1,12 +1,13 @@
 <section class="section--home-header hidden--dsk flex flex--wrap">
 	<div class="grid--one nog relative">
-	<img src="{{home.header.rightimage|resize(150,100)}}" data-src="{{home.header.rightimage|resize(750, 500)}}" alt="{{home.header.rightimage.caption}}" width="100%" data-srcset="{{home.header.rightimage|resize(640, 425)}}  640w,{{home.header.rightimage|resize(750, 500)}}  750w,{{home.header.rightimage|resize(1080,720)}} 1080w,{{home.header.rightimage|resize(1280, 853)}} 1280w,{{home.header.rightimage|resize(1366,910)}} 1366w,{{home.header.rightimage|resize(1440,960)}} 1440w,{{home.header.rightimage|resize(1500,1000)}} 1536w,{{home.header.rightimage|resize(1920,1280)}} 1920w, {{home.header.rightimage|resize(2880,1920)}} 2880w" sizes="100vw" class="lazy">
+		<img src="{{home.header.rightimage|resize(150,100)}}" data-src="{{home.header.rightimage|resize(750, 500)}}" alt="{{home.header.rightimage.caption}}" width="100%" data-srcset="{{home.header.rightimage|resize(640, 425)}}  640w,{{home.header.rightimage|resize(750, 500)}}  750w,{{home.header.rightimage|resize(1080,720)}} 1080w,{{home.header.rightimage|resize(1280, 853)}} 1280w,{{home.header.rightimage|resize(1366,910)}} 1366w,{{home.header.rightimage|resize(1440,960)}} 1440w,{{home.header.rightimage|resize(1500,1000)}} 1536w,{{home.header.rightimage|resize(1920,1280)}} 1920w, {{home.header.rightimage|resize(2880,1920)}} 2880w" sizes="100vw" class="lazy">
 	</div>
 	<div class="grid--one nog bg--brown-dark text--center spacing--vert-2 spacing--horiz-1">
 		<h2 class="color--white transform--no margin--bot-1">
 		{{ home.header.title }}
 		</h2>
-		{% if home.header.link.url %}<a href="{{home.header.link.url}}" target="{{home.header.link.target}}" class="button font--smaller center {% if home.header.second.url %}margin--bot-1{% else %}margin--bot-3{% endif %}">{{home.header.link.title}}</a>{% endif %}
-			{% if home.header.second.url %}<a href="{{home.header.second.url}}" target="{{home.header.second.target}}" class="button font--smaller center margin--bot-3">{{home.header.second.title}}</a>{% endif %}
+		{% for link in home.header.links %}
+			{% if link.url %}<a href="{{link.url}}" target="{{link.target}}" class="button font--smaller center {% if loop.last %}margin--bot-3{% else %}margin--bot-1{% endif %}">{{link.title}}</a>{% endif %}
+		{% endfor %}
 	</div>
 </section>

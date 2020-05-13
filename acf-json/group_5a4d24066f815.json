@@ -86,10 +86,10 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a4d248e130a6",
-            "label": "Link",
-            "name": "header_home_link",
-            "type": "link",
+            "key": "field_5ebc258a4d484",
+            "label": "Links",
+            "name": "header_links",
+            "type": "repeater",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -98,22 +98,28 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
-        },
-        {
-            "key": "field_5eb1ff2210d29",
-            "label": "Second Link",
-            "name": "header_home_second",
-            "type": "link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array"
+            "collapsed": "",
+            "min": 0,
+            "max": 4,
+            "layout": "block",
+            "button_label": "Add Link",
+            "sub_fields": [
+                {
+                    "key": "field_5ebc25a04d485",
+                    "label": "Link",
+                    "name": "th_e_link",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                }
+            ]
         },
         {
             "key": "field_5a4d24a27e191",
@@ -185,5 +191,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1588723674
+    "modified": 1589388799
 }

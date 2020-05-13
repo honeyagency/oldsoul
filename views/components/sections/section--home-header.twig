@@ -3,8 +3,9 @@
 		<img class="inline-background lazy" src="{{home.header.rightimage|resize(363,330)}}" data-src="{{home.header.rightimage|resize(1430,1300)}}" alt="">
 		<div class="bg--brown-dark text--center spacing--vert-2 spacing--horiz-1 relative z-99">
 			<h2 class="color--white transform--no margin--top-1 margin--bot-2">{{home.header.title}}</h2>
-			{% if home.header.link.url %}<a href="{{home.header.link.url}}" target="{{home.header.link.target}}" class="button font--smaller center {% if home.header.second.url %}margin--bot-half{% else %}margin--bot-3{% endif %}">{{home.header.link.title}}</a>{% endif %}
-			{% if home.header.second.url %}<a href="{{home.header.second.url}}" target="{{home.header.second.target}}" class="button font--smaller center margin--bot-3">{{home.header.second.title}}</a>{% endif %}
+			{% for link in home.header.links %}
+				{% if link.url %}<a href="{{link.url}}" target="{{link.target}}" class="button font--smaller center {% if loop.last %}margin--bot-3{% else %}margin--bot-half{% endif %}">{{link.title}}</a>{% endif %}
+			{% endfor %}	
 			<i class="icon-logo-monogram hidden--mob" data-grunticon-embed></i>
 		</div>
 	</div>
