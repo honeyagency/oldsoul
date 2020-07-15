@@ -1,4 +1,4 @@
-<div class="block--cafe-grid-item grid--one grid--sm-half nog margin--mob-bot-1">
+<div class="block--cafe-grid-item grid--one grid--sm-half nog margin--mob-bot-3">
 	<a href="{{cafe.link}}" class="hidden--mob" ><img src="{{cafe.image|resize(480,260)}}" data-src="{{cafe.image|resize(1200,650)}}" width="100%" class="margin--bot-1 lazy"></a>
 	<a href="{{cafe.link}}" class="hidden--dsk ">
 		<picture class="margin--bot-1 lazy">
@@ -6,6 +6,7 @@
 			<source type="image/jpeg" alt="{{cafe.image.caption}}" data-srcset="{{cafe.image|resize(666,360)}}">
 			<img class="lazy margin--bot-1" src="{{cafe.image|resize(67,36)}}" alt="An image of {{cafe.title}}" data-flickity-lazyload="{{cafe.image|resize(666,360)}}">
 		</picture>
+	</a>
 	<div>
 		<h3><a aria-label="A link to the {{cafe.title}} cafe page" class="color--black" href="{{cafe.link}}">{{cafe.title}}</a></h3>
 		<div class="flex flex--wrap justify--between cafe--meta">
